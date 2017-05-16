@@ -16,8 +16,8 @@
  /*// Grid
  @import "base/grid.scss";*/
 
-// Core
-@import "base/colors.scss";
+/*// Core*/
+/*@import "stylesheets/base/colors.scss";*/
 
 * {
   box-sizing: border-box;
