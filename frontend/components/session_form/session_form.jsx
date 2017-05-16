@@ -26,7 +26,6 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state);
     const user = this.state;
     this.props.processForm({user});
   }
@@ -37,6 +36,10 @@ class SessionForm extends React.Component {
     } else {
       return <Link to="/login">log in instead</Link>;
     }
+  }
+
+  logInLink() {
+    return <Link to="/login"> Log in</Link>;
   }
 
   renderErrors() {
@@ -53,11 +56,8 @@ class SessionForm extends React.Component {
 
   render() {
     const signInForm = (
-      <div className="login-form-container">
+      <div className="col-md-1">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to BetterPlaylists!
-          <br/>
-          Please {this.props.formType} or {this.navLink()}
           {this.renderErrors()}
           <div className="login-form">
             <br/>
@@ -86,16 +86,15 @@ class SessionForm extends React.Component {
             </label>
             <br/>
             <input type="submit" value="Continue" />
+            <p>Already have an account?{this.logInLink()} instead.</p>
           </div>
         </form>
       </div>
     )
 
     const logInForm = (
-      <div className="login-form-container">
+      <div>
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to BetterPlaylists!
-          <br/>
           Please {this.props.formType} or {this.navLink()}
           {this.renderErrors()}
           <div className="login-form">
@@ -131,7 +130,7 @@ class SessionForm extends React.Component {
     }
 
     return (
-      <div>
+      <div className="login-form-container row">
         {formContainer}
       </div>
     );

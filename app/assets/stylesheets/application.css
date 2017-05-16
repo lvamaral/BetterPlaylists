@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+ /*// Grid
+ @import "base/grid.scss";*/
+
+// Core
+@import "base/colors.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+ html {
+   height: 100%;
+   min-height: 600px;
+   min-width: 375px;
+   width: 100%;
+ }
+
+a {
+  text-decoration: none;
+  color: green;
+}
