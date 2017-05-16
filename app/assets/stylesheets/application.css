@@ -17,7 +17,7 @@
  @import "base/grid.scss";*/
 
 /*// Core*/
-@import "colors.scss";
+/*// @import "colors.scss";*/
 
 * {
   box-sizing: border-box;
@@ -32,7 +32,7 @@
 
 a {
   text-decoration: none;
-  color: $green;
+  color: purple;
 }
 
 input {
