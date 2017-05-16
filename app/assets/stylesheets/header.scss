@@ -1,38 +1,29 @@
-header {
+.header {
   width: 100%;
   height: 40px;
   background-color: black;
   color: white;
-}
-
-header nav {
   align-items: center;
   display: flex;
-  justify-content: space-around;
-  padding-top: 7px;
 }
 
 .title {
   text-align: left;
-  flex: 8;
-  font-size: 1.5em;
+  flex: 7;
+  font-size: 1.2em;
 }
 
-.account_nav {
-  text-align: right;
-  flex: 2;
-}
-
-.account-group {
-  text-align: right;
-  flex: 2;
+.account-nav {
   display: flex;
-}
-
-.account-group h2 {
+  text-align: right;
   flex: 3;
 }
 
-.account-group button {
+.header-name {
+  flex: 3;
+}
+
+.header-button {
+  margin-left: 10px;
   flex: 1;
 }

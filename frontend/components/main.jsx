@@ -6,13 +6,11 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const Main = () => (
   <div>
-  <header>
+  <header className="header">
       <div className="title">
           <h1>BetterPlaylists</h1>
       </div>
-      <div className="account_nav">
-        <GreetingContainer />
-      </div>
+      <GreetingContainer />
   </header>
   </div>
 
