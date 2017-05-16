@@ -1,20 +1,28 @@
 .splash {
-  padding-top: 200px;
+  background: url("/splash.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
   background-color: black;
   box-sizing: border-box;
 }
 
 .login-form-container {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   align-items: center;
   justify-content: center;
+  color: rgb(190,183,183);
 }
 
 .login-form-container h1 {
   font-size: 2em;
-  color: white;
 }
 
 .login-form-container div {
@@ -24,13 +32,22 @@
   font-size: 1.2em;
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 
 .login-form input, button {
   background-color: rgb(51,51,51);
-  color: rgb(130,158,160);
+  color: rgb(190,183,183);
   border-radius: 5px;
   height: 40px;
   font-size: 1.1em;
   padding-left: 5px;
+}
+
+.login-form input:focus {
+  outline-color: white;
+}
+
+.login-form p {
+  margin-top: 10px;
 }

@@ -30,16 +30,13 @@ class SessionForm extends React.Component {
     this.props.processForm({user});
   }
 
-  navLink() {
-    if (this.props.formType === 'login') {
-      return <Link to="/signup">Sign Up</Link>;
-    } else {
-      return <Link to="/login">log In</Link>;
-    }
-  }
 
   logInLink() {
     return <Link to="/login"> Log in</Link>;
+  }
+
+  SignUpLink() {
+    return <Link to="/signup">Sign Up</Link>;
   }
 
   renderErrors() {
@@ -61,29 +58,26 @@ class SessionForm extends React.Component {
           {this.renderErrors()}
           <div className="login-form">
             <br/>
-            <label>Username:
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="login-input"
+                placeholder="Username"
               />
-            </label>
             <br/>
-            <label>Password:
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
+                placeholder="Password"
               />
-            </label>
             <br/>
-            <label>Email:
               <input type="email"
                 value={this.state.email}
                 onChange={this.update('email')}
                 className="login-input"
+                placeholder="Email"
               />
-            </label>
             <br/>
             <input type="submit" value="Continue" />
             <p>Already have an account?{this.logInLink()} instead.</p>
@@ -113,6 +107,7 @@ class SessionForm extends React.Component {
               />
             <br/>
             <input type="submit" value="Log In" />
+            <p>Don't have an account? {this.SignUpLink()} instead.</p>
           </div>
         </form>
       </div>
