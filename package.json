@@ -17,9 +17,16 @@
     "react-redux": "^5.0.4",
     "react-router-dom": "^4.1.1",
     "redux": "^3.6.0",
+    "redux-thunk": "^2.1.0",
     "webpack": "^2.5.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^5.0.1",
+    "eslint-plugin-react": "^7.0.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
