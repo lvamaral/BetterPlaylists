@@ -79,7 +79,7 @@ class SessionForm extends React.Component {
                 placeholder="Email"
               />
             <br/>
-            <input type="submit" value="Continue" />
+            <input type="submit" value="Sign Up" />
             <p>Already have an account?{this.logInLink()} instead.</p>
           </div>
         </form>
