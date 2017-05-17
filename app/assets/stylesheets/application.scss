@@ -17,7 +17,7 @@
  @import "base/grid.scss";*/
 
 /*// Core*/
-/*// @import "colors.scss";*/
+@import "base/colors.scss";
 
 * {
   box-sizing: border-box;
@@ -32,7 +32,11 @@
 
 a {
   text-decoration: none;
-  color: purple;
+  color: $purple;
+}
+
+h1 {
+  color: $gray;
 }
 
 input {
@@ -42,4 +46,28 @@ input {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
+}
+
+.main {
+  height: 100%;
+}
+
+.content {
+  display: flex;
+  height: calc(100% - 125px);
+}
+
+.left, .right {
+  flex: 3;
+}
+
+.mid {
+  flex: 6;
+}
+
+.playbar {
+  height: 85px;
+  background-color: black;
+  text-align: center;
+  color: $gray;
 }

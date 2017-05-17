@@ -5,15 +5,25 @@ import SessionFormContainer from './session_form/session_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const Main = () => (
-  <div>
-  <header className="header">
-      <div className="title">
-          <h1>BetterPlaylists</h1>
+  <div className="main">
+    <header className="header">
+        <div className="title">
+            <h1>BetterPlaylists</h1>
+        </div>
+        <GreetingContainer />
+    </header>
+    <div className="content">
+      <div className="left">
       </div>
-      <GreetingContainer />
-  </header>
+      <div className="mid">
+      </div>
+      <div className="right">
+      </div>
+    </div>
+    <div className="playbar">
+      PLAYBAR
+    </div>
   </div>
-
  )
 
 export default Main;

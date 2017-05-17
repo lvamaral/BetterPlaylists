@@ -1,7 +1,7 @@
 # BetterPlaylists
 BetterPlaylists is a fullstack project inspired by Spotify that aims to provide better playlist collaboration between friends.
 
-Heroku Link (coming soon)
+<a href="https://betterplaylists.herokuapp.com/#/">Live Website"</a>
 Trello Link (coming soon)
 
 <h2>Minimum Viable Product</h2>
