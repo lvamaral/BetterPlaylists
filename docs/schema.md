@@ -30,15 +30,15 @@ column name | data type | details
 id          | integer   | not null, primary key
 title       | string    | not null
 artist      | string    | not null
-spotify_id  | integer   | indexed
-file_url    | integer   | indexed
-up_votes    | integer   | not null, default: 0
-down_votes  | integer   | not null, default: 0
+song_url    | integer   | indexed
+
 
 
 
 ## PlaylistSongs:
 column name | data type | details
 ------------|-----------|-----------------------
-songr_id    | integer   | not null, foreign key, indexed
-playlist_id | integer   | not null, foeign key, indexed
+song_id     | integer   | not null, foreign key, indexed
+playlist_id | integer   | not null, foreign key, indexed
+up_votes    | integer   | not null, default: 0
+down_votes  | integer   | not null, default: 0
