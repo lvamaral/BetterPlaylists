@@ -1,0 +1,12 @@
+@import "base/font.scss";
+.right {
+
+}
+.right input {
+  width: 90%;
+  height: 50px;
+  border-radius: 10px;
+  font-size: $medium;
+  color: black;
+  background-color: white;
+}

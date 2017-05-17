@@ -1,8 +1,12 @@
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> -->
+<script src="https://use.fontawesome.com/f58ff23766.js"></script>
+
 <script id="bootstrap-current-user" type="text/javascript">
   <% if logged_in? %>
   	window.currentUser = <%= render("api/users/user.json.jbuilder",
   		user: current_user).html_safe %>
+
   <% end %>
 </script>
+
 <main id="root"></main>

@@ -9,11 +9,15 @@ const sessionLinks = () => (
   </nav>
 );
 
+
+      // <button onClick={logout}>Log Out</button>
+
 const personalGreeting = (currentUser, logout) => (
 	<div className="account-nav">
     <h2 className="header-name">{currentUser.username}</h2>
     <div className="header-button">
-      <button onClick={logout}>Log Out</button>
+      <i className="fa fa-search button" aria-hidden="true"></i>
+      <i className="fa fa-chevron-down button" id="dropdown" aria-hidden="true"></i>
     </div>
 	</div>
 );

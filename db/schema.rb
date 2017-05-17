@@ -10,7 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170516041048) do
+ActiveRecord::Schema.define(version: 20170517172429) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "playlist_memberships", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "playlist_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["playlist_id"], name: "index_playlist_memberships_on_playlist_id", using: :btree
+    t.index ["user_id", "playlist_id"], name: "index_playlist_memberships_on_user_id_and_playlist_id", unique: true, using: :btree
+    t.index ["user_id"], name: "index_playlist_memberships_on_user_id", using: :btree
+  end
+
+  create_table "playlists", force: :cascade do |t|
+    t.string   "title",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["title"], name: "index_playlists_on_title", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false
@@ -19,9 +39,9 @@ ActiveRecord::Schema.define(version: 20170516041048) do
     t.string   "session_token",   null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["session_token"], name: "index_users_on_session_token", unique: true
-    t.index ["username"], name: "index_users_on_username", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["session_token"], name: "index_users_on_session_token", unique: true, using: :btree
+    t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
 
 end
