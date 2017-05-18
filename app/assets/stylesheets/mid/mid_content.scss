@@ -1,0 +1,20 @@
+@import "base/font.scss";
+@import "base/colors.scss";
+
+.mid {
+  height: 100%;
+  background: rgb(24,24,24);
+}
+
+
+.start {
+
+  text-align: center;
+  font-size: $big;
+  color: $gray;
+  width: 100%;
+  // padding: 500px 60px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}

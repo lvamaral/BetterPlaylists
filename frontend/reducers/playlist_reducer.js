@@ -5,7 +5,7 @@ import merge from 'lodash/merge';
 // } from '../actions/song_actions';
 
 
-const PlaylistReducer = (state = 1, action) => {
+const PlaylistReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     default:

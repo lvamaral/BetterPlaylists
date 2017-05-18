@@ -10,7 +10,7 @@ const SongReducer = (state = {}, action) => {
   switch(action.type) {
     case RECEIVE_SONGS:
       const songs = action.songs;
-      console.log(songs);
+
       return {songs: songs}
     default:
       return state;

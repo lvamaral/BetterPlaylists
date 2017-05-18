@@ -1,5 +1,13 @@
 class Api::UsersController < ApplicationController
 
+	def index
+		if params[:query]
+			@users = User.where('lower(username) LIKE ?', "%#{params[:query].downcase}%")
+		else
+			@users = User.all
+		end
+	end
+
 	def create
 		@user = User.new(user_params)
 
