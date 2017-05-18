@@ -1,9 +1,7 @@
 import React from 'react';
 
 const Playbar = () => (
-  <audio controls>
-    <source src="sample.mp3" type="audio/mpeg"/>
-  </audio>
+  <h2>PLAYBAR</h2>
 )
 
 export default Playbar;

@@ -1,16 +1,17 @@
 import { connect } from 'react-redux';
 import Search from './search';
+import {getSongs} from '../../actions/song_actions'
 
-//
-// const mapStateToProps = (state) => {
-//   songs:
-// };
+const mapStateToProps = (state) => ({
+  currentPlaylist: state.currentPlaylist,
+  songs: state.songs
+});
 
 const mapDispatchToProps = dispatch => ({
-  processForm: user => dispatch(processForm(user)),
+  getSongs: query => dispatch(getSongs(query)) ,
 });
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Search);

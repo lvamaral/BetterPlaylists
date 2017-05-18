@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import GreetingContainer from './greeting/greeting_container';
 import Playbar from './playbar/playbar'
-import SearchBar from './search/search'
+import SearchBarContainer from './search/search_container'
 import SessionFormContainer from './session_form/session_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -12,9 +12,12 @@ const Main = () => (
         <div className="title">
             <h1>BetterPlaylists</h1>
         </div>
-        <div className="midheader">
+        <div className="midheader account-nav">
+          <GreetingContainer />
         </div>
-        <GreetingContainer />
+        <div className="rightheader">
+        </div>
+
     </header>
     <div className="content">
       <div className="left">
@@ -22,7 +25,7 @@ const Main = () => (
       <div className="mid">
       </div>
       <div className="right">
-        <SearchBar />
+        <SearchBarContainer />
       </div>
     </div>
     <div className="playbar">

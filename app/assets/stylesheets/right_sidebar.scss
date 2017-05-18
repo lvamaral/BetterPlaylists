@@ -1,12 +1,76 @@
 @import "base/font.scss";
+@import "base/colors.scss";
+
 .right {
+  height: 100%;
+  background-color: rgb(18,18,18);
+  color: white;
+  font-size: 16px;
+}
+
+.search {
+  height: 100%;
+}
+
+.searchbar {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.searchbar label {
+  text-align: left;
+  font-size: $small;
+  flex: 1;
+}
+
+.searchbar i {
 
 }
-.right input {
-  width: 90%;
-  height: 50px;
+
+.searchbar input {
+  flex: 9;
+  width: 70%;
+  height: 30px;
   border-radius: 10px;
-  font-size: $medium;
-  color: black;
+  font-size: $small;
+  color: $lightgray;
   background-color: white;
+  margin: 15px;
+  padding-left: 5px;
+  outline: none;
+}
+
+.search-results {
+  width: 100%;
+}
+
+.head {
+  font-weight: 800;
+}
+
+.srow {
+  padding-left: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 1px 0;
+  height: 40px;
+}
+
+.srow:hover {
+  background-color: $lightgray;
+}
+
+.stitle,.sartist,.salbum  {
+  flex: 2;
+  text-align: left;
+  padding: 5px;
+}
+
+.addicon {
+  color: $purple;
+  text-align: center;
+  flex: 1
 }

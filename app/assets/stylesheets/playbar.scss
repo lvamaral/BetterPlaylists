@@ -1,0 +1,24 @@
+@import "base/colors.scss";
+
+.playbar {
+  font-size: 36px;
+  height: 85px;
+  text-align: center;
+  color: $gray;
+  background: rgb(40,40,40);
+
+  display: flex;
+}
+
+.playbarright, .playbarleft {
+  flex: 3;
+}
+
+.playbarmid {
+  flex: 6;
+}
+
+audio {
+  width: 100%;
+  background-color: black;
+}
