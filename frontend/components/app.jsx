@@ -16,6 +16,7 @@ const App = () => (
   <switch>
     <AuthRoute path="/" component={Splash} />
     <ProtectedRoute path="/home" component={Main} />
+    <Redirect to="/home" />
   </switch>
 );
 

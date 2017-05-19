@@ -7,7 +7,7 @@ import PlaylistReducer from './playlist_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
-  currentPlaylist: PlaylistReducer,
+  playlists: PlaylistReducer,
   songs: SongReducer,
   users: UserReducer
 });

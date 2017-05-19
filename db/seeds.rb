@@ -21,3 +21,25 @@ User.create(username: "john", password: "password", email: "hot3@hotmail.com", i
 User.create(username: "michael", password: "password", email: "hot4@hotmail.com", image_url: "user_pics/34.jpg")
 User.create(username: "rodrigo", password: "password", email: "hot5@hotmail.com", image_url: "user_pics/36.jpg")
 User.create(username: "jean machine", password: "password", email: "hot6@hotmail.com", image_url: "user_pics/74.jpg")
+
+User.create(username: "min", password: "password", email: "hot7@hotmail.com", image_url: "/user_pics/48.jpg")
+User.create(username: "anna", password: "password", email: "hot8@hotmail.com", image_url: "user_pics/62.jpg")
+User.create(username: "gregoria", password: "password", email: "hot9@hotmail.com", image_url: "user_pics/68.jpg")
+User.create(username: "michaela", password: "password", email: "hot99@hotmail.com", image_url: "user_pics/70.jpg")
+User.create(username: "margot", password: "password", email: "hot999@hotmail.com", image_url: "user_pics/82.jpg")
+User.create(username: "alexa", password: "password", email: "hot999s@hotmail.com", image_url: "user_pics/93.jpg")
+
+# Playlists
+Playlist.create(title: "Party123")
+Playlist.create(title: "Chill")
+Playlist.create(title: "TogaFriday")
+
+# playlist_memberships
+PlaylistMembership.create(user_id: 1, playlist_id: 1)
+PlaylistMembership.create(user_id: 2, playlist_id: 1)
+PlaylistMembership.create(user_id: 3, playlist_id: 1)
+PlaylistMembership.create(user_id: 4, playlist_id: 1)
+
+PlaylistMembership.create(user_id: 1, playlist_id: 2)
+PlaylistMembership.create(user_id: 4, playlist_id: 2)
+PlaylistMembership.create(user_id: 5, playlist_id: 2)

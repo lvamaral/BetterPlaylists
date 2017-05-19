@@ -1,5 +1,10 @@
 class Api::PlaylistsController < ApplicationController
   def index
+    # if params[:query]
+    #   @playlists = Playlist.all
+    # else
+    #   @playlists = Playlist.all
+    # end
     @playlists = Playlist.all
   end
 
@@ -27,5 +32,4 @@ class Api::PlaylistsController < ApplicationController
   def playlist_params
     params.require(:playlist).permit(:title, user_ids: [])
   end
-
 end

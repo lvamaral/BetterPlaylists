@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
 	validates :password, length: {minimum: 6}, allow_nil: :true
 
 	after_initialize :ensure_session_token
-	before_validation :ensure_session_token_uniqueness
 
 	has_many :playlist_memberships, dependent: :destroy, inverse_of: :user
 	has_many :playlists, through: :playlist_memberships
@@ -42,12 +41,6 @@ class User < ActiveRecord::Base
 
 	def new_session_token
 		SecureRandom.base64
-	end
-
-	def ensure_session_token_uniqueness
-		while User.find_by(session_token: self.session_token)
-			self.session_token = new_session_token
-		end
 	end
 
 end

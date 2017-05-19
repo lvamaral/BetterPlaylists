@@ -1,17 +1,17 @@
 import { connect } from 'react-redux';
-import Search from './search';
-import {getSongs} from '../../actions/song_actions'
+import PlaylistList from './playlist_list';
+import {getPlaylists} from '../../actions/playlist_actions'
 
 const mapStateToProps = (state) => ({
   currentPlaylist: state.playlists.currentPlaylist,
-  songs: state.songs
+  ownedPlaylists: state.playlists.ownedPlaylists
 });
 
 const mapDispatchToProps = dispatch => ({
-  getSongs: query => dispatch(getSongs(query)) ,
+  getPlaylists: query => dispatch(getPlaylists(query)) ,
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Search);
+)(PlaylistList);

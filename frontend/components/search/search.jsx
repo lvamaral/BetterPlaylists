@@ -5,7 +5,6 @@ import ReactDOM from 'react-dom';
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
-    this.currentPlaylist = this.props.currentPlaylist.currentPlaylist
     this.state = {query: "", songs: this.props.songs}
   }
 

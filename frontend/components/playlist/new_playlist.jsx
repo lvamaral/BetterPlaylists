@@ -6,14 +6,13 @@ class NewPlaylist extends React.Component {
   constructor(props) {
     super(props);
     const set = new Set()
-    this.state = {query: "", title: "", members: set}
+    this.state = {query: "", title: "", members: set, redirect: false}
 
   }
 
     componentDidMount() {
       this.props.getUsers();
     }
-
 
     update(property) {
       return e => {
@@ -26,7 +25,6 @@ class NewPlaylist extends React.Component {
       }
     }
 
-
     handleSubmit(e) {
       e.preventDefault();
       const newState = merge({}, this.state)
@@ -35,8 +33,10 @@ class NewPlaylist extends React.Component {
 
       const member_array = Array.from(this.state.members);
       const playlist = {title: this.state.title, user_ids: member_array};
-      this.props.createPlaylist(playlist);
-    }
+      this.props.createPlaylist(playlist).then(
+           (res) => this.props.history.push(`/playlist/${res.id}` ))
+       }
+
 
     toggleMember(user){
       const memberDiv = $("#members")

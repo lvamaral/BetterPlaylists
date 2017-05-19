@@ -5,7 +5,8 @@ import Playbar from './playbar/playbar'
 import SearchBarContainer from './search/search_container'
 import SessionFormContainer from './session_form/session_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import Start from './greeting/start'
+import Start from './greeting/start';
+import PlaylistListContainer from './playlist/playlist_list_container';
 
 const Main = () => (
   <div className="main">
@@ -22,6 +23,7 @@ const Main = () => (
 
     <div className="content">
       <div className="left">
+        <PlaylistListContainer />
       </div>
 
       <div className="mid" id="mid">
