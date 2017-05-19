@@ -8,23 +8,24 @@ class Api::PlaylistsController < ApplicationController
   end
 
   def create
-    
+    @playlist = Playlist.new(playlist_params)
+    if @playlist.save
+      render :show
+    else
+      render json: @playlist.errors.full_messages, status: 422
+    end
   end
 
-  def edit
-
-  end
-
-  def delete
-
+  def destroy
+    @playlist = Playlist.find(params[:id])
+    @playlist.destroy
+    render :show
   end
 
   private
 
   def playlist_params
-    params.require(:playlist).permit(:title)
+    params.require(:playlist).permit(:title, user_ids: [])
   end
-
-
 
 end

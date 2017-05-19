@@ -9,8 +9,8 @@ class User < ActiveRecord::Base
 	after_initialize :ensure_session_token
 	before_validation :ensure_session_token_uniqueness
 
-	has_many :playlists,
-	through: :playlist_memberships
+	has_many :playlist_memberships, dependent: :destroy, inverse_of: :user
+	has_many :playlists, through: :playlist_memberships
 
 	def password= password
 		self.password_digest = BCrypt::Password.create(password)

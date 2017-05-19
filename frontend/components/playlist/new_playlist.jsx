@@ -6,7 +6,8 @@ class NewPlaylist extends React.Component {
   constructor(props) {
     super(props);
     const set = new Set()
-    this.state = {query: "", title: "", members: set, songs: [], newmember: {}}
+    this.state = {query: "", title: "", members: set}
+
   }
 
     componentDidMount() {
@@ -26,8 +27,15 @@ class NewPlaylist extends React.Component {
     }
 
 
-    handleSubmit() {
+    handleSubmit(e) {
+      e.preventDefault();
+      const newState = merge({}, this.state)
+      newState.members.add(this.props.currentUser.id)
+      this.setState(newState)
 
+      const member_array = Array.from(this.state.members);
+      const playlist = {title: this.state.title, user_ids: member_array};
+      this.props.createPlaylist(playlist);
     }
 
     toggleMember(user){
@@ -39,7 +47,7 @@ class NewPlaylist extends React.Component {
         $(`.${user.id}`).remove()
       } else {
         newState.members.add(user.id)
-        memberDiv.append(`<img src=${user.image_url} class="user-image member-image ${user.id}"></img>`)
+        memberDiv.append(`<img src=${user.image_url} alt=${user.username} class="user-image member-image ${user.id}"></img>`)
       }
       this.setState(newState)
     }
@@ -70,7 +78,7 @@ class NewPlaylist extends React.Component {
 
       return (
         <div className="new-playlist">
-          <form onSubmit={this.handleSubmit} className="new-playlist-form">
+          <form onSubmit={this.handleSubmit.bind(this)} className="new-playlist-form">
             <h2>New Playlist</h2>
             <span className="input input--isao">
               <input value={this.state.title} onChange={this.update('title')} className="input__field input__field--isao" type="text" id="input-38" />
@@ -97,9 +105,7 @@ class NewPlaylist extends React.Component {
               <i className="fa fa-users" aria-hidden="true"></i>
             </div>
           </div>
-
-
-          <div><button className="myBtn">Create</button></div>
+            <input className="formsubmit" type="submit" value="Create"/>
           </form>
         </div>
       )
@@ -109,6 +115,10 @@ class NewPlaylist extends React.Component {
   export default NewPlaylist;
 
 
+  // <div className="btn">
+  //     <span>Create</span>
+  //     <div className="dot"></div>
+  // </div>
 
   // const users = this.props.users
   // console.log("state", this.state);

@@ -1,7 +1,8 @@
 class PlaylistMembership < ApplicationRecord
-  validates :user, uniqueness: {scope: :playlist}
+  validates :user, :playlist, presence: true
+  validates :user_id, uniqueness: {scope: :playlist_id}
 
-  has_many :users
-  has_many :playlists
+  belongs_to :users
+  belongs_to :playlists
 
 end
