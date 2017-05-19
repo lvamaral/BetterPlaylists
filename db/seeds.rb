@@ -15,9 +15,9 @@ Song.create(title: "FEEL", artist: "Kendrick Lamar", album: "DAMN", song_url: "s
 
 
 # //People
-User.create(username: "lucas", password: "password", email: "hot@hotmail.com", image_url: "")
-User.create(username: "alex", password: "password", email: "hot2@hotmail.com", image_url: "")
-User.create(username: "john", password: "password", email: "hot3@hotmail.com", image_url: "")
-User.create(username: "michael", password: "password", email: "hot4@hotmail.com", image_url: "")
-User.create(username: "rodrigo", password: "password", email: "hot5@hotmail.com", image_url: "")
-User.create(username: "Jean Machine", password: "password", email: "hot6@hotmail.com", image_url: "")
+User.create(username: "lucas", password: "password", email: "hot@hotmail.com", image_url: "/user_pics/86.jpg")
+User.create(username: "alex", password: "password", email: "hot2@hotmail.com", image_url: "user_pics/20.jpg")
+User.create(username: "john", password: "password", email: "hot3@hotmail.com", image_url: "user_pics/33.jpg")
+User.create(username: "michael", password: "password", email: "hot4@hotmail.com", image_url: "user_pics/34.jpg")
+User.create(username: "rodrigo", password: "password", email: "hot5@hotmail.com", image_url: "user_pics/36.jpg")
+User.create(username: "jean machine", password: "password", email: "hot6@hotmail.com", image_url: "user_pics/74.jpg")

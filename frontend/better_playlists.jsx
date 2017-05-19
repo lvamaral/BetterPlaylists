@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 //Components
 import Root from './components/root';
 import configureStore from './store/store';
+import * as APIUtil from './util/user_util'
 
 window.store = configureStore();
 

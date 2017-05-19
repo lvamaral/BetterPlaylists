@@ -1,11 +1,15 @@
 class Api::UsersController < ApplicationController
 
 	def index
-		if params[:query]
+		if params[:query] && params[:query] != ""
 			@users = User.where('lower(username) LIKE ?', "%#{params[:query].downcase}%")
 		else
-			@users = User.all
+			@users = {}
 		end
+	end
+
+	def show
+		@user = User.find(params[:id])
 	end
 
 	def create
