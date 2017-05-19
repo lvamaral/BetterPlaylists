@@ -7,16 +7,57 @@
   color: white;
   text-align: center;
   font-size: $big;
+
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-//
+
+#members i {
+  display: block;
+  font-size: 40px;
+  text-align: left;
+}
+
+#members {
+  padding: 2px;
+  width: 100%;
+  min-height: 60px;
+  margin-bottom: 10px;
+  flex: 1;
+}
+
+.lower-form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+    overflow-y: scroll;
+}
+
+.user-search-box {
+  flex: 1;
+
+}
+
+#members img {
+  float: left;
+  margin: 0 5px;
+  height: 40px;
+  width: 40px;
+}
+
+.selected {
+  color: black;
+  background-color: $gray;
+}
+
 .new-playlist-form h3 {
   text-align: left;
 }
 
 .new-playlist-form input {
-  font-size: $big;
+  font-size: $medium;
   width: 100%;
-  max-width: 600px;
+
 }
 
 .new-playlist-form {
@@ -27,13 +68,18 @@
   justify-content: flex-start;
   width: 80%;
   margin: 0 auto;
-  // position: relative;
-  // top: 50%;
-  // transform: translateY(-50%);
+
 }
 
 .user-image {
   flex: 1;
+}
+
+.member-image {
+  width: 40px;
+  height: 40px;
+  margin: 2px 5px 0 0;
+  border-radius: 25px;
 }
 
 .user-image img {
@@ -51,15 +97,14 @@
 }
 
 .user-row {
-  height: 40px;
-  width: 80%;
+  max-height: 45px;
+  width: 100%;
   height: 80px;
   display: flex;
   align-items: center;
 }
 
 .user-search-results {
-  overflow-y: scroll;
-  width: 80%;
-  margin-top: 20px;
+
+  width: 100%;
 }

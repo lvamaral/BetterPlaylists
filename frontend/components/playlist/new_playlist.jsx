@@ -7,7 +7,6 @@ class NewPlaylist extends React.Component {
     super(props);
     const set = new Set()
     this.state = {query: "", title: "", members: set, songs: [], newmember: {}}
-    // this.getUser = this.props.getUser.bind(this)
   }
 
     componentDidMount() {
@@ -31,30 +30,43 @@ class NewPlaylist extends React.Component {
 
     }
 
-    addMember(id){
+    toggleMember(user){
+      const memberDiv = $("#members")
       const newState = merge({}, this.state)
-      newState.members.add(id)
+      if (newState.members.has(user.id)) {
+        newState.members.delete(user.id)
+
+        $(`.${user.id}`).remove()
+      } else {
+        newState.members.add(user.id)
+        memberDiv.append(`<img src=${user.image_url} class="user-image member-image ${user.id}"></img>`)
+      }
       this.setState(newState)
     }
 
     render() {
+
       const users = this.props.users
-      console.log("users", users);
+      let userList = "";
+      let selected = "";
+      let members = this.state.members
 
-      let userList = ""
-      if (!isEqual(users, {}) && !isEqual(users, {users: {}})) {
-        debugger
-        userList = users.users.map(user => (
-          <div className="user-row" key={user.id} onClick={(e) => {
-            let id = user.id
-            this.addMember(id)
-          }}>
-            <div className="user-image"><img src={user.image_url}></img></div>
-            <div className="user-name">{user.username}</div>
-          </div>)
-          )
-        }
-
+      if (!isEqual(users, {})) {
+        userList = users.users.map(user => {
+          if (members.has(user.id)) {
+            selected = "user-row selected"
+          } else {
+            selected = "user-row"
+          }
+            return (
+            <div className={selected} key={user.id} onClick={(e) => {
+              this.toggleMember(user)}}>
+              <div className="user-image"><img src={user.image_url}></img></div>
+              <div className="user-name">{user.username}</div>
+            </div>
+          );
+        })
+      }
 
       return (
         <div className="new-playlist">
@@ -67,12 +79,27 @@ class NewPlaylist extends React.Component {
               </label>
             </span>
           <br/>
-          <input onChange={this.update('query')} type="text" placeholder="Add Users..."/>
-          <div className="members">
+
+          <div className="lower-form">
+            <div className="user-search-box">
+              <span className="input input--isao">
+                <input value={this.state.query} onChange={this.update('query')} className="input__field input__field--isao" type="text" id="input-39" />
+                <label className="input__label input__label--isao" htmlFor="input-39" data-content="Add Users">
+                  <span className="input__label-content input__label-content--isao">Add Users</span>
+                </label>
+              </span>
+              <div className="user-search-results">
+                {userList}
+              </div>
+            </div>
+
+            <div id="members">
+              <i className="fa fa-users" aria-hidden="true"></i>
+            </div>
           </div>
-          <div className="user-search-results">
-            {userList}
-          </div>
+
+
+          <div><button className="myBtn">Create</button></div>
           </form>
         </div>
       )
@@ -80,3 +107,26 @@ class NewPlaylist extends React.Component {
   }
 
   export default NewPlaylist;
+
+
+
+  // const users = this.props.users
+  // console.log("state", this.state);
+  //
+  // let userList = ""
+  // let userArray = []
+  //
+  //
+  //
+  // if (!isEqual(users, {})) {
+  //   userList = users.users.map(user => (
+  //     <div className="user-row" key={user.id} onClick={(e) => {
+  //       let id = user.id
+  //       this.addMember(id)
+  //     }}>
+  //       <div className="user-image"><img src={user.image_url}></img></div>
+  //       <div className="user-name">{user.username}</div>
+  //     </div>)
+  //     )
+  //   }
+    // <input onChange={this.update('query')} type="text" placeholder="Add Users..."/>
