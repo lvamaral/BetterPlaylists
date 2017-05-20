@@ -1,11 +1,7 @@
 class Api::PlaylistsController < ApplicationController
   def index
-    # if params[:query]
-    #   @playlists = Playlist.all
-    # else
-    #   @playlists = Playlist.all
-    # end
-    @playlists = Playlist.all
+    current_user_id = params[:currentUser][:id]
+    @playlists = Playlist.joins(:users).where("users.id = ?", current_user_id)
   end
 
   def show

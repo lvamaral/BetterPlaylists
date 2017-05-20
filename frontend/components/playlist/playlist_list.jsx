@@ -10,7 +10,7 @@ class PlaylistList extends React.Component {
   }
 
   componentDidMount(){
-    this.props.getPlaylists()
+    this.props.getPlaylists(this.props.currentUser)
   }
 
 
@@ -21,7 +21,12 @@ class PlaylistList extends React.Component {
     if (playlists !== undefined) {
       playlistList = playlists.map(playlist => (
         <div className="prow" key={playlist.id}>
-          <div className="playlist-item">{playlist.title}</div>
+          <div className="playlist-members">
+            {playlist.member_count}
+            <i className="fa fa-users" aria-hidden="true"></i>
+          </div>
+          <div className="playlist-title">{playlist.title}</div>
+          <div className="playlist-info"><i className="fa fa-question" aria-hidden="true"></i></div>
         </div>
         )
       )

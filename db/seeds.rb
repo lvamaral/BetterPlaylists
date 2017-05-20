@@ -33,6 +33,7 @@ User.create(username: "alexa", password: "password", email: "hot999s@hotmail.com
 Playlist.create(title: "Party123")
 Playlist.create(title: "Chill")
 Playlist.create(title: "TogaFriday")
+Playlist.create(title: "No Lucas Here")
 
 # playlist_memberships
 PlaylistMembership.create(user_id: 1, playlist_id: 1)

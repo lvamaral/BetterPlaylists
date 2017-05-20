@@ -4,7 +4,8 @@ import {getPlaylists} from '../../actions/playlist_actions'
 
 const mapStateToProps = (state) => ({
   currentPlaylist: state.playlists.currentPlaylist,
-  ownedPlaylists: state.playlists.ownedPlaylists
+  ownedPlaylists: state.playlists.ownedPlaylists,
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -12,6 +12,7 @@ export const createPlaylist = (playlist) => {
 export const getPlaylists = (id) => {
   return $.ajax({
     method: 'GET',
-    url: 'api/playlists/'
+    url: 'api/playlists/',
+    data: {currentUser: id}
   });
 };
