@@ -14,9 +14,9 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding-left: 10px;
-  border-bottom: white 0.5px solid;
+  border-bottom: rgb(50,50,50) 0.5px solid;
   font-size: $medium;
+  padding: 0 15px;
 }
 
 .playlist-title, .playlist-members, .playlist-info {
@@ -34,6 +34,7 @@
 }
 
 .playlists-info {
+  font-size: 10px;
   flex: 1;
   text-align: left;
 }

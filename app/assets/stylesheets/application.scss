@@ -18,10 +18,12 @@
 
 /*// Core*/
 @import "base/colors.scss";
+@import "base/font.scss";
 
 * {
   box-sizing: border-box;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: $font;
+
 }
 
  html, body, main, .splash {
@@ -53,7 +55,7 @@ input {
 
 .content {
   display: flex;
-  height: calc(100% - 125px);
+  height: calc(100% - 130px);
 }
 
 .left, .right {

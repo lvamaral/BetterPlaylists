@@ -26,7 +26,7 @@ class PlaylistList extends React.Component {
             <i className="fa fa-users" aria-hidden="true"></i>
           </div>
           <div className="playlist-title">{playlist.title}</div>
-          <div className="playlist-info"><i className="fa fa-question" aria-hidden="true"></i></div>
+          <div className="playlist-info"><i className="fa fa-info-circle" aria-hidden="true"></i></div>
         </div>
         )
       )

@@ -1,3 +1,6 @@
+@import "base/font.scss";
+@import "base/colors.scss";
+
 .input {
 	position: relative;
 	z-index: 1;
@@ -16,9 +19,9 @@
 	border: none;
 	border-radius: 0;
 	background: #f0f0f0;
-	color: #aaa;
+	color: $purple;
 	font-weight: bold;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: $font;
 	-webkit-appearance: none; /* for box shadows to show on iOS */
 }
 
@@ -65,7 +68,7 @@
 	padding: 0.75em 0.1em 0.25em;
 	width: 100%;
 	background: transparent;
-	color: #afb3b8;
+	color: $white;
 }
 
 .input__label--isao {
@@ -73,7 +76,7 @@
 	overflow: hidden;
 	padding: 0;
 	width: 100%;
-	color: #dadada;
+	color: $white;
 	text-align: left;
 }
 
@@ -83,7 +86,7 @@
 	top: 0;
 	width: 100%;
 	height: 7px;
-	background: #dadada;
+	background: $white;
 	-webkit-transform: scale3d(1, 0.4, 1);
 	transform: scale3d(1, 0.4, 1);
 	-webkit-transform-origin: 50% 100%;
@@ -100,7 +103,7 @@
 	top: 0;
 	left: 0;
 	padding: 0.75em 0.15em;
-	color: #da7071;
+	color: $purple;
 	opacity: 0;
 	-webkit-transform: translate3d(0, 50%, 0);
 	transform: translate3d(0, 50%, 0);
@@ -112,7 +115,7 @@
 }
 
 .input__field--isao:focus + .input__label--isao::before {
-	background-color: #da7071;
+	background-color: $purple;
 	-webkit-transform: scale3d(1, 1, 1);
 	transform: scale3d(1, 1, 1);
 }
