@@ -3,9 +3,51 @@
 
 .left {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: rgb(18,18,18);
   color: white;
+
+}
+
+.playlist-list {
+  flex: 9;
   overflow-y: auto;
+}
+
+.add-new-playlist {
+  flex: 1;
+  border-top: rgb(50,50,50) 0.5px solid;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.add-new-playlist p {
+  text-align: left;
+  padding-top: 8px;
+  font-size: $medium;
+  display: block;
+  flex: 9;
+}
+
+
+.left a {
+  color: $white;
+}
+
+.left a:hover {
+  color: $purple;
+}
+
+.add-new-playlist i {
+  font-size: $big;
+  text-align: right;
+  padding-right: 10px;
+  flex: 2;
 }
 
 .prow {
@@ -40,6 +82,15 @@
 }
 
 .prow:hover {
+  background-color: white;
+  color: black;
+}
+
+.playlist-link {
+  color: white;
+}
+
+.active div {
   background-color: white;
   color: black;
 }

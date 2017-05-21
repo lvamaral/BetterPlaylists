@@ -16,3 +16,10 @@ export const getPlaylists = (id) => {
     data: {currentUser: id}
   });
 };
+
+export const getPlaylist = (id) => {
+  return $.ajax({
+    method: 'GET',
+    url: `api/playlists/${id}`
+  });
+};

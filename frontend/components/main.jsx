@@ -1,5 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {
+  Route,
+  Redirect,
+  Switch,
+  Link,
+  HashRouter
+} from 'react-router-dom';
 import GreetingContainer from './greeting/greeting_container';
 import Playbar from './playbar/playbar'
 import SearchBarContainer from './search/search_container'
@@ -7,6 +13,7 @@ import SessionFormContainer from './session_form/session_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Start from './greeting/start';
 import PlaylistListContainer from './playlist/playlist_list_container';
+import PlaylistDetailContainer from './playlist/playlist_detail_container';
 
 const Main = () => (
   <div className="main">
@@ -23,11 +30,20 @@ const Main = () => (
 
     <div className="content">
       <div className="left">
-        <PlaylistListContainer />
+        <div className="playlist-list"><PlaylistListContainer /></div>
+        <Link to="/home/new">
+          <div className="add-new-playlist">
+            <i className="fa fa-plus-circle" aria-hidden="true"></i>
+            <p>New Playlist</p>
+          </div>
+        </Link>
       </div>
 
       <div className="mid" id="mid">
-        <Start />
+        <Switch>
+          <ProtectedRoute path="/home/playlist/:id" component={PlaylistDetailContainer} />
+          <Start />
+        </Switch>
       </div>
 
       <div className="right">

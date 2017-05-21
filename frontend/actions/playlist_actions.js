@@ -27,9 +27,16 @@ export const createPlaylist = playlist => dispatch => (
 );
 
 
-export const getPlaylists = query => dispatch => {
+export const getPlaylists = (id) => dispatch => {
   return (
-  APIUtil.getPlaylists(query).then(playlists => (
+  APIUtil.getPlaylists(id).then(playlists => (
     dispatch(receiveOwnedPlaylists(playlists))
+  ))
+)};
+
+export const getPlaylist = (id) => dispatch => {
+  return (
+  APIUtil.getPlaylist(id).then(playlist => (
+    dispatch(receiveCurrentPlaylist(playlist))
   ))
 )};

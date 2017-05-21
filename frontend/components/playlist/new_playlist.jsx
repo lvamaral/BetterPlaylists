@@ -1,6 +1,7 @@
 import React from 'react';
 import merge from 'lodash/merge';
-import isEqual from 'lodash/isEqual'
+import isEqual from 'lodash/isEqual';
+import PlaylistList from './playlist_list'
 
 class NewPlaylist extends React.Component {
   constructor(props) {
@@ -34,7 +35,7 @@ class NewPlaylist extends React.Component {
       const member_array = Array.from(this.state.members);
       const playlist = {title: this.state.title, user_ids: member_array};
       this.props.createPlaylist(playlist).then(
-           (res) => this.props.history.push(`/playlist/${res.id}` ))
+           (res) => this.props.history.push(`/home/playlist/${res.id}` )).then(this.props.getPlaylists(this.props.currentUser))
        }
 
 
