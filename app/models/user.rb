@@ -10,6 +10,12 @@ class User < ActiveRecord::Base
 
 	has_many :playlist_memberships, dependent: :destroy, inverse_of: :user
 	has_many :playlists, through: :playlist_memberships
+	has_many :playlist_songs
+
+	has_many :owned_playlists,
+	primary_key: :id,
+	foreign_key: :creator_id,
+	class_name: "Playlist"
 
 	def password= password
 		self.password_digest = BCrypt::Password.create(password)

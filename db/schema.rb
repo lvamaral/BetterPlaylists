@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170518164428) do
+ActiveRecord::Schema.define(version: 20170521205906) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,13 +32,17 @@ ActiveRecord::Schema.define(version: 20170518164428) do
     t.integer  "down_votes",  default: 0, null: false
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+    t.integer  "user_id",                 null: false
     t.index ["song_id", "playlist_id"], name: "index_playlist_songs_on_song_id_and_playlist_id", unique: true, using: :btree
+    t.index ["song_id", "user_id"], name: "index_playlist_songs_on_song_id_and_user_id", unique: true, using: :btree
   end
 
   create_table "playlists", force: :cascade do |t|
     t.string   "title",      null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "creator_id", null: false
+    t.index ["creator_id"], name: "index_playlists_on_creator_id", using: :btree
     t.index ["title"], name: "index_playlists_on_title", using: :btree
   end
 
@@ -49,6 +53,8 @@ ActiveRecord::Schema.define(version: 20170518164428) do
     t.string   "song_url",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "length",     null: false
+    t.index ["length"], name: "index_songs_on_length", using: :btree
     t.index ["song_url"], name: "index_songs_on_song_url", using: :btree
   end
 

@@ -13,11 +13,6 @@ class PlaylistList extends React.Component {
     this.props.getPlaylists(this.props.currentUser);
   }
 
-  // componentWillReceiveProps(nextProps){
-  //   if (this.props.currentPlaylist !== nextProps.currentPlaylist) {
-  //     this.props.getPlaylists(this.props.currentUser);
-  //   }
-  // }
 
   render() {
 
@@ -50,3 +45,6 @@ class PlaylistList extends React.Component {
 }
 
 export default PlaylistList;
+
+
+// <i className="fa fa-info-circle" aria-hidden="true"></i>

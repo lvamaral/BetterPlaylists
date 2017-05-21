@@ -56,7 +56,7 @@
 }
 
 .srow, .srow2 {
-  padding-left: 10px;
+
   width: 100%;
   display: flex;
   justify-content: flex-end;
@@ -70,9 +70,16 @@
 }
 
 .stitle,.sartist,.salbum  {
-  flex: 2;
   text-align: left;
   padding: 5px;
+}
+
+.stitle {
+  flex: 3;
+}
+
+.sartist, .salbum {
+  flex: 2
 }
 
 .addicon {

@@ -6,12 +6,23 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 # //Songs
-Song.create(title: "Here I Am", artist: "Robert", album: "Chicago", song_url: "songs/sample.mp3")
-Song.create(title: "BLOOD", artist: "Kendrick Lamar", album: "DAMN", song_url: "songs/BLOOD.mp3")
-Song.create(title: "DNA", artist: "Kendrick Lamar", album: "DAMN", song_url: "songs/DNA.mp3")
-Song.create(title: "YAH", artist: "Kendrick Lamar", album: "DAMN", song_url: "songs/YAH.mp3")
-Song.create(title: "ELEMENT", artist: "Kendrick Lamar", album: "DAMN", song_url: "songs/ELEMENT.mp3")
-Song.create(title: "FEEL", artist: "Kendrick Lamar", album: "DAMN", song_url: "songs/FEEL.mp3")
+Song.create(title: "BLOOD", artist: "Kendrick Lamar", album: "DAMN", song_url: "songs/BLOOD.mp3", length: 0)
+Song.create(title: "DNA", artist: "Kendrick Lamar", album: "DAMN", song_url: "songs/DNA.mp3", length: 0)
+Song.create(title: "YAH", artist: "Kendrick Lamar", album: "DAMN", song_url: "songs/YAH.mp3", length: 0)
+Song.create(title: "ELEMENT", artist: "Kendrick Lamar", album: "DAMN", song_url: "songs/ELEMENT.mp3", length: 0)
+Song.create(title: "FEEL", artist: "Kendrick Lamar", album: "DAMN", song_url: "songs/FEEL.mp3", length: 0)
+
+Song.create(title: "Helix", artist: "Flume", album: "Skin", song_url: "songs/Helix.mp3", length: 0)
+Song.create(title: "Never Be Like You (feat. Kai)", artist: "Flume", album: "Skin", song_url: "songs/Never Be Like You (feat. Kai).mp3", length: 0)
+Song.create(title: "Lose It (feat. Vic Mensa)", artist: "Flume", album: "Skin", song_url: "songs/Lose It (feat. Vic Mensa).mp3", length: 0)
+Song.create(title: "Pika", artist: "Flume", album: "Skin", song_url: "songs/Pika.mp3", length: 0)
+Song.create(title: "When Everything Was New", artist: "Flume", album: "Skin", song_url: "songs/When Everything Was New.mp3", length: 0)
+Song.create(title: "Free", artist: "Flume", album: "Skin", song_url: "songs/Free.mp3", length: 0)
+
+Song.create(title: "Good Morning", artist: "Kanye West", album: "Graduation", song_url: "songs/Good Morning.mp3", length: 0)
+Song.create(title: "Champion", artist: "Kanye West", album: "Graduation", song_url: "songs/Champion.mp3", length: 0)
+Song.create(title: "Stronger", artist: "Kanye West", album: "Graduation", song_url: "songs/Stronger.mp3", length: 0)
+Song.create(title: "I Wonder", artist: "Kanye West", album: "Graduation", song_url: "songs/I Wonder.mp3", length: 0)
 
 
 # //People
@@ -30,10 +41,10 @@ User.create(username: "margot", password: "password", email: "hot999@hotmail.com
 User.create(username: "alexa", password: "password", email: "hot999s@hotmail.com", image_url: "user_pics/93.jpg")
 
 # Playlists
-Playlist.create(title: "Party123")
-Playlist.create(title: "Chill")
-Playlist.create(title: "TogaFriday")
-Playlist.create(title: "No Lucas Here")
+Playlist.create(title: "Party123", creator_id: 1)
+Playlist.create(title: "Chill", creator_id: 1)
+Playlist.create(title: "TogaFriday", creator_id: 2)
+Playlist.create(title: "No Lucas Here", creator_id: 2)
 
 # playlist_memberships
 PlaylistMembership.create(user_id: 1, playlist_id: 1)
@@ -44,3 +55,10 @@ PlaylistMembership.create(user_id: 4, playlist_id: 1)
 PlaylistMembership.create(user_id: 1, playlist_id: 2)
 PlaylistMembership.create(user_id: 4, playlist_id: 2)
 PlaylistMembership.create(user_id: 5, playlist_id: 2)
+
+#playlist_songs
+PlaylistSong.create(song_id: 1, playlist_id: 1, up_votes: 0, down_votes: 0, user_id: 1)
+PlaylistSong.create(song_id: 2, playlist_id: 1, up_votes: 0, down_votes: 0, user_id: 2)
+PlaylistSong.create(song_id: 3, playlist_id: 1, up_votes: 0, down_votes: 0, user_id: 1)
+PlaylistSong.create(song_id: 4, playlist_id: 1, up_votes: 0, down_votes: 0, user_id: 3)
+PlaylistSong.create(song_id: 5, playlist_id: 1, up_votes: 0, down_votes: 0, user_id: 4)
