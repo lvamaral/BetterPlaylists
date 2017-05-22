@@ -10,7 +10,6 @@ class SearchBar extends React.Component {
 
   componentDidMount(){
     this.props.getSongs();
-
   }
 
   update(property) {
@@ -20,13 +19,31 @@ class SearchBar extends React.Component {
     }
   }
 
+  addSong(song_id, playlist_id, user_id) {
+    this.props.addSong(song_id, playlist_id, user_id).then(this.props.getPlaylist(playlist_id));
+  }
+
+  songIcon(currentSong) {
+    let addIcon = <div className="addicon"></div>
+    if (this.props.currentPlaylist.id != undefined) {
+      let songIds = this.props.currentPlaylist.songs.map( song => song.id)
+      if (songIds.includes(currentSong.id)) {
+        addIcon = <div className="addicon"><i className="fa fa-check" aria-hidden="true"></i></div>
+      } else {
+        addIcon =  <div className="addicon"><i className="fa fa-plus" aria-hidden="true" onClick={() => this.addSong(currentSong.id, this.props.currentPlaylist.id, this.props.currentUser.id)}></i></div>
+      }
+    }
+    return addIcon
+  }
+
   render() {
+
     const songs = this.props.songs
     let songList = ""
     if (songs.songs !== undefined) {
       songList = songs.songs.map(song => (
         <div className="srow" key={song.id}>
-          <div className="addicon tooltip"><span className="tooltiptext">Click to add</span><i className="fa fa-plus" aria-hidden="true"></i></div>
+          {this.songIcon(song)}
           <div className="stitle" id="test">{song.title}</div>
           <div className="sartist">{song.artist}</div>
           <div className="salbum">{song.album}</div>

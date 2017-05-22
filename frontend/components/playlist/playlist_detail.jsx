@@ -39,12 +39,23 @@ class PlaylistDetail extends React.Component {
               <div>{song.uploader.username}</div>
             </div>
             <div className="playlist-song-info">
-              <div className="playlist-song-main">
-                <p><span id="title">{song.title}</span></p>
-                <p><span id="artist">{song.artist}</span></p>
-                <div className="playlist-song-playbar">Playbar</div>
-              </div>
-              <div className="playlist-song-length">{song.length}</div>
+                <div className="playlist-song-playbtn">
+                  <i className="fa fa-play-circle" aria-hidden="true"></i>
+                </div>
+                <div className="playlist-song-core">
+                  <div className="playlist-core-title">
+                    <div className="playlist-core-title2">
+                      <p><span id="title">{song.title}</span></p>
+                      <p><span id="artist">{song.artist}</span></p>
+                    </div>
+                    <div className="playlist-core-length">{song.length}</div>
+                  </div>
+
+                  <div className="vote-box">
+                    <i className="fa fa-chevron-up" aria-hidden="true" id="up"></i>
+                    <i className="fa fa-chevron-down" aria-hidden="true" id="down"></i>
+                  </div>
+                </div>
             </div>
           </div>
         ))
@@ -58,7 +69,7 @@ class PlaylistDetail extends React.Component {
     return (
       <div className="playlist-detail">
         {playlist_detail}
-        {songs}
+        <div id="song-list">{songs}</div>
       </div>
     );
   }

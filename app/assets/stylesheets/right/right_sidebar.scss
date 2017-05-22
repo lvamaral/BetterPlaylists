@@ -13,6 +13,7 @@
   height: 100%;
   overflow-y: auto;
   overflow-x: visible !important;
+
 }
 
 .searchbar {
@@ -83,13 +84,17 @@
 }
 
 .addicon {
-  color: $purple;
+  color: $gray;
   text-align: center;
   flex: 1;
 }
 
+.fa-check {
+  color: $green;
+}
+
 .addicon:hover {
-  color: green;
+  color: $white;
 }
 
 .tooltip {

@@ -13,8 +13,8 @@ Song.create(title: "ELEMENT", artist: "Kendrick Lamar", album: "DAMN", song_url:
 Song.create(title: "FEEL", artist: "Kendrick Lamar", album: "DAMN", song_url: "songs/FEEL.mp3", length: 0)
 
 Song.create(title: "Helix", artist: "Flume", album: "Skin", song_url: "songs/Helix.mp3", length: 0)
-Song.create(title: "Never Be Like You (feat. Kai)", artist: "Flume", album: "Skin", song_url: "songs/Never Be Like You (feat. Kai).mp3", length: 0)
-Song.create(title: "Lose It (feat. Vic Mensa)", artist: "Flume", album: "Skin", song_url: "songs/Lose It (feat. Vic Mensa).mp3", length: 0)
+Song.create(title: "Never Be Like You", artist: "Flume", album: "Skin", song_url: "songs/Never Be Like You (feat. Kai).mp3", length: 0)
+Song.create(title: "Lose It", artist: "Flume", album: "Skin", song_url: "songs/Lose It (feat. Vic Mensa).mp3", length: 0)
 Song.create(title: "Pika", artist: "Flume", album: "Skin", song_url: "songs/Pika.mp3", length: 0)
 Song.create(title: "When Everything Was New", artist: "Flume", album: "Skin", song_url: "songs/When Everything Was New.mp3", length: 0)
 Song.create(title: "Free", artist: "Flume", album: "Skin", song_url: "songs/Free.mp3", length: 0)

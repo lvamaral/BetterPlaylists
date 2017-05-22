@@ -23,3 +23,11 @@ export const getPlaylist = (id) => {
     url: `api/playlists/${id}`
   });
 };
+
+export const addSong = (song_id, user_id, playlist_id) => {
+  return $.ajax({
+    method: 'POST',
+    url: `/api/playlist_songs`,
+    data: {playlist_song: {song_id: song_id, user_id: user_id, playlist_id: playlist_id}}
+  });
+};
