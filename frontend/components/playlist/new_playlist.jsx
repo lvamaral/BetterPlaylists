@@ -8,6 +8,7 @@ class NewPlaylist extends React.Component {
     super(props);
     const set = new Set()
     this.state = {query: "", title: "", members: set, redirect: false}
+    this.getPlaylists = this.props.getPlaylists.bind(this)
 
   }
 
@@ -34,9 +35,15 @@ class NewPlaylist extends React.Component {
 
       const member_array = Array.from(this.state.members);
       const playlist = {title: this.state.title, creator_id: this.props.currentUser.id, user_ids: member_array  };
+
+
       this.props.createPlaylist(playlist).then(
-           (res) => this.props.history.push(`/home/playlist/${res.id}` )).then(this.props.getPlaylists(this.props.currentUser.id))
-       }
+           (res) => this.props.history.push(`/home/playlist/${res.id}`))
+        }
+      //  this.getPlaylists(this.props.currentUser.id);
+
+
+
 
 
     toggleMember(user){

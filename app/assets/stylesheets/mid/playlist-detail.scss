@@ -18,7 +18,7 @@
   margin-top: 10px;
   padding-bottom: 10px;
   text-align: center;
-  border-bottom: rgb(50,50,50) 1px solid;
+  // border-bottom: rgb(50,50,50) 1px solid;
 }
 
 #playlist-title-box p {
@@ -33,6 +33,12 @@
 
 }
 //INDIVIDUAL SONGS
+
+.no-songs {
+  width: 100%;
+  text-align: center;
+  margin-top: 200px;
+}
 
 .playlist-detail-song {
   padding-top: 10px;

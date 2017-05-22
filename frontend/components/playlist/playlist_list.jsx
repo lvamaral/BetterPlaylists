@@ -18,6 +18,7 @@ class PlaylistList extends React.Component {
 
     const playlists = this.props.ownedPlaylists;
     let playlistList = ""
+    // console.log(playlists);
 
     if (playlists !== undefined) {
       playlistList = playlists.map(playlist => (
@@ -41,10 +42,6 @@ class PlaylistList extends React.Component {
         </div>
       )
   }
-
 }
 
 export default PlaylistList;
-
-
-// <i className="fa fa-info-circle" aria-hidden="true"></i>

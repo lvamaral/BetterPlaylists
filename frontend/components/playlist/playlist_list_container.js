@@ -9,7 +9,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  getPlaylists: query => dispatch(getPlaylists(query)) ,
+  getPlaylists: query => dispatch(getPlaylists(query))
 });
 
 export default connect(

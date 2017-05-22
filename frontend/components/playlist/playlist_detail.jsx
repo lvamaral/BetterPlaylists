@@ -23,7 +23,7 @@ class PlaylistDetail extends React.Component {
     const playlist = this.props.currentPlaylist
 
     let playlist_detail = ""
-    let songs = (<p>Use the search bar on the right to add songs</p>)
+    let songs = (<p className="no-songs">Use the search bar on the right to add songs</p>)
     if (!isEqual(playlist, {})) {
       playlist_detail = (
         <span id="playlist-title-box">

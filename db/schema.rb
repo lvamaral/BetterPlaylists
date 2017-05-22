@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170521205906) do
+ActiveRecord::Schema.define(version: 20170522180256) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 20170521205906) do
     t.datetime "updated_at",              null: false
     t.integer  "user_id",                 null: false
     t.index ["song_id", "playlist_id"], name: "index_playlist_songs_on_song_id_and_playlist_id", unique: true, using: :btree
-    t.index ["song_id", "user_id"], name: "index_playlist_songs_on_song_id_and_user_id", unique: true, using: :btree
   end
 
   create_table "playlists", force: :cascade do |t|

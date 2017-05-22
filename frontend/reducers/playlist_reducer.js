@@ -19,11 +19,8 @@ const PlaylistReducer = (state = sample, action) => {
     case RECEIVE_CURRENT_PLAYLIST:
       return {ownedPlaylists: state.ownedPlaylists, currentPlaylist: action.currentPlaylist};
     case RECEIVE_OWNED_PLAYLISTS:
+    let newOwned = merge(state.ownedPlaylists, action.ownedPlaylists)
       return {ownedPlaylists: action.ownedPlaylists, currentPlaylist: state.currentPlaylist};
-    // case RECEIVE_SONG:
-    //   const newCurrentPlaylist = merge({}, state.currentPlaylist, )
-    //   return
-
     default:
       return state;
   };

@@ -4,7 +4,6 @@ import {getSongs} from '../../actions/song_actions'
 import {addSong, getPlaylist} from '../../actions/playlist_actions'
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   return {
     currentPlaylist: state.playlists.currentPlaylist,
     currentUser: state.session.currentUser,

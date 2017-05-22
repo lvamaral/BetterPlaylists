@@ -1,8 +1,8 @@
 class Api::PlaylistsController < ApplicationController
   def index
-    # debugger
     current_user_id = params[:currentUser_id]
     @playlists = Playlist.joins(:users).where("users.id = ?", current_user_id)
+    render :index
   end
 
   def show

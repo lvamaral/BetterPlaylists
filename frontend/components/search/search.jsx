@@ -21,8 +21,7 @@ class SearchBar extends React.Component {
   }
 
   addSong(song_id, playlist_id, user_id) {
-    this.props.addSong(song_id, playlist_id, user_id)
-    // .then(this.props.getPlaylist(playlist_id));
+    this.props.addSong(song_id, playlist_id, user_id);
   }
 
   songIcon(currentSong) {
