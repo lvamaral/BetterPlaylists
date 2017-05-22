@@ -1,24 +1,56 @@
 @import "base/colors.scss";
+@import 'base/font.scss';
 
 .playbar {
+  width: 100%;
   font-size: 36px;
   height: 85px;
   text-align: center;
   color: $gray;
   background: rgb(40,40,40);
-
   display: flex;
+
 }
 
-.playbarright, .playbarleft {
+.playbarleft, .playbarright {
+  height: 100%;
   flex: 3;
 }
 
-.playbarmid {
-  flex: 6;
+.playbar span {
+  display: block;
+  display: flex;
 }
 
-audio {
+
+.playbarmid {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex: 6;
+  font-size: $medium;
+}
+
+
+.scrobble {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
   width: 100%;
-  background-color: black;
+  height: 50%;
+}
+
+.scrobble p {
+  display: block;
+  flex: 1;
+}
+.scrobble div {
+  flex: 9;
+  background-color: red;
+}
+
+.play-control {
+  display: flex;
+  justify-content: space-around;
+
 }

@@ -18,6 +18,7 @@
   margin-top: 10px;
   padding-bottom: 10px;
   text-align: center;
+  color: $gray;
   // border-bottom: rgb(50,50,50) 1px solid;
 }
 
@@ -45,6 +46,7 @@
   height: 80px;
   display: flex;
   width: 100%;
+  border-bottom: 0.5px solid $lightgray;
 }
 
 .playlist-uploader {
@@ -66,6 +68,10 @@
   flex: 1;
   height: 100%;
   font-size: $big;
+}
+
+.playlist-song-playbtn:hover {
+  color: $purple;
 }
 
 .playlist-song-core {
@@ -123,7 +129,7 @@
   height: 100%;
   padding: 10px 0;
   font-size: 16px;
-  color: $lightgray;
+  color: $gray;
   text-align: center;
   flex: 1;
 }

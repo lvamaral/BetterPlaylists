@@ -4,6 +4,9 @@ import {
   RECEIVE_SONGS
 } from '../actions/song_actions';
 
+const sample = {
+  searchedSongs: [],
+}
 
 const SongReducer = (state = {}, action) => {
   Object.freeze(state)

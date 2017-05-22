@@ -7,7 +7,7 @@ import {
   HashRouter
 } from 'react-router-dom';
 import GreetingContainer from './greeting/greeting_container';
-import Playbar from './playbar/playbar'
+import PlaybarContainer from './playbar/playbar_container'
 import SearchBarContainer from './search/search_container'
 import SessionFormContainer from './session_form/session_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
@@ -51,16 +51,8 @@ const Main = () => (
       </div>
     </div>
 
-    <div className="playbar">
-      <div className="playbarleft">
-      </div>
-      <div className="playbarmid">
-        <Playbar />
-      </div>
-      <div className="playbarright">
-      </div>
 
-    </div>
+    <PlaybarContainer />
   </div>
  )
 

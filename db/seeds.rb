@@ -6,23 +6,23 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 # //Songs
-Song.create(title: "BLOOD", artist: "Kendrick Lamar", album: "DAMN", song_url: "songs/BLOOD.mp3", length: 0)
-Song.create(title: "DNA", artist: "Kendrick Lamar", album: "DAMN", song_url: "songs/DNA.mp3", length: 0)
-Song.create(title: "YAH", artist: "Kendrick Lamar", album: "DAMN", song_url: "songs/YAH.mp3", length: 0)
-Song.create(title: "ELEMENT", artist: "Kendrick Lamar", album: "DAMN", song_url: "songs/ELEMENT.mp3", length: 0)
-Song.create(title: "FEEL", artist: "Kendrick Lamar", album: "DAMN", song_url: "songs/FEEL.mp3", length: 0)
+Song.create(title: "BLOOD", artist: "Kendrick Lamar", album: "DAMN", song_url: "songs/BLOOD.mp3", length: 119)
+Song.create(title: "DNA", artist: "Kendrick Lamar", album: "DAMN", song_url: "songs/DNA.mp3", length: 186)
+Song.create(title: "YAH", artist: "Kendrick Lamar", album: "DAMN", song_url: "songs/YAH.mp3", length: 160)
+Song.create(title: "ELEMENT", artist: "Kendrick Lamar", album: "DAMN", song_url: "songs/ELEMENT.mp3", length: 209)
+Song.create(title: "FEEL", artist: "Kendrick Lamar", album: "DAMN", song_url: "songs/FEEL.mp3", length: 215)
 
-Song.create(title: "Helix", artist: "Flume", album: "Skin", song_url: "songs/Helix.mp3", length: 0)
-Song.create(title: "Never Be Like You", artist: "Flume", album: "Skin", song_url: "songs/Never Be Like You (feat. Kai).mp3", length: 0)
-Song.create(title: "Lose It", artist: "Flume", album: "Skin", song_url: "songs/Lose It (feat. Vic Mensa).mp3", length: 0)
-Song.create(title: "Pika", artist: "Flume", album: "Skin", song_url: "songs/Pika.mp3", length: 0)
-Song.create(title: "When Everything Was New", artist: "Flume", album: "Skin", song_url: "songs/When Everything Was New.mp3", length: 0)
-Song.create(title: "Free", artist: "Flume", album: "Skin", song_url: "songs/Free.mp3", length: 0)
+Song.create(title: "Helix", artist: "Flume", album: "Skin", song_url: "songs/Helix.mp3", length: 210)
+Song.create(title: "Never Be Like You", artist: "Flume", album: "Skin", song_url: "songs/Never Be Like You (feat. Kai).mp3", length: 233)
+Song.create(title: "Lose It", artist: "Flume", album: "Skin", song_url: "songs/Lose It (feat. Vic Mensa).mp3", length: 226)
+Song.create(title: "Pika", artist: "Flume", album: "Skin", song_url: "songs/Pika.mp3", length: 116)
+Song.create(title: "When Everything Was New", artist: "Flume", album: "Skin", song_url: "songs/When Everything Was New.mp3", length: 207)
+Song.create(title: "Free", artist: "Flume", album: "Skin", song_url: "songs/Free.mp3", length: 176)
 
-Song.create(title: "Good Morning", artist: "Kanye West", album: "Graduation", song_url: "songs/Good Morning.mp3", length: 0)
-Song.create(title: "Champion", artist: "Kanye West", album: "Graduation", song_url: "songs/Champion.mp3", length: 0)
-Song.create(title: "Stronger", artist: "Kanye West", album: "Graduation", song_url: "songs/Stronger.mp3", length: 0)
-Song.create(title: "I Wonder", artist: "Kanye West", album: "Graduation", song_url: "songs/I Wonder.mp3", length: 0)
+Song.create(title: "Good Morning", artist: "Kanye West", album: "Graduation", song_url: "songs/Good Morning.mp3", length: 195)
+Song.create(title: "Champion", artist: "Kanye West", album: "Graduation", song_url: "songs/Champion.mp3", length: 168)
+Song.create(title: "Stronger", artist: "Kanye West", album: "Graduation", song_url: "songs/Stronger.mp3", length: 312)
+Song.create(title: "I Wonder", artist: "Kanye West", album: "Graduation", song_url: "songs/I Wonder.mp3", length: 243)
 
 
 # //People

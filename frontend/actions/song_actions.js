@@ -1,6 +1,8 @@
 import * as APIUtil from '../util/song_util'
 
 export const RECEIVE_SONGS = 'RECEIVE_SONGS';
+export const RECEIVE_CURRENT_SONG = 'RECEIVE_CURRENT_SONG';
+
 
 export const receiveSongs = songs => ({
   type: RECEIVE_SONGS,

@@ -19,7 +19,24 @@ class PlaylistDetail extends React.Component {
     }
   }
 
+  convertTime(timestamp){
+    let minutes = Math.floor(timestamp / 60);
+    let seconds = timestamp - (minutes * 60);
+     if (seconds < 10) { seconds = '0' + seconds; }
+     timestamp = minutes + ':' + seconds;
+     return timestamp;
+    }
+
+    songPlaying(song) {
+      if (song === this.props.currentSong) {
+        return (<i className="fa fa-pause-circle-o" aria-hidden="true"></i>)
+      } else {
+        return (<i className="fa fa-play-circle" aria-hidden="true" onClick={() => this.props.playSong(song)}></i>)
+      }
+    }
+
   render() {
+
     const playlist = this.props.currentPlaylist
 
     let playlist_detail = ""
@@ -28,7 +45,7 @@ class PlaylistDetail extends React.Component {
       playlist_detail = (
         <span id="playlist-title-box">
           <div className="playlist-detail-title"><h2>{playlist.title}</h2></div>
-          <div className="playlist-detail-uploader"><h3>By: {playlist.creator.username}</h3></div>
+          <div className="playlist-detail-uploader"><h3>Created by: {playlist.creator.username}</h3></div>
         </span>
       )
       if (!isEqual(playlist.songs, {})) {
@@ -40,7 +57,7 @@ class PlaylistDetail extends React.Component {
             </div>
             <div className="playlist-song-info">
                 <div className="playlist-song-playbtn">
-                  <i className="fa fa-play-circle" aria-hidden="true"></i>
+                  {this.songPlaying(song)}
                 </div>
                 <div className="playlist-song-core">
                   <div className="playlist-core-title">
@@ -48,7 +65,7 @@ class PlaylistDetail extends React.Component {
                       <p><span id="title">{song.title}</span></p>
                       <p><span id="artist">{song.artist}</span></p>
                     </div>
-                    <div className="playlist-core-length">{song.length}</div>
+                    <div className="playlist-core-length">{this.convertTime(song.length)}</div>
                   </div>
 
                   <div className="vote-box">

@@ -24,6 +24,7 @@ json.songs do
     json.upvotes playlist_song.up_votes
     json.downvotes playlist_song.down_votes
     json.uploader playlist_song.user
+    json.url playlist_song.song.song_url
   end
 end
 
