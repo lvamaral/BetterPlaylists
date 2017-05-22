@@ -10,7 +10,7 @@ class PlaylistList extends React.Component {
   }
 
   componentDidMount(){
-    this.props.getPlaylists(this.props.currentUser);
+    this.props.getPlaylists(this.props.currentUser.id);
   }
 
 

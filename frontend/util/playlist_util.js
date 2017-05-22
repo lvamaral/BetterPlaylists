@@ -4,6 +4,7 @@ export const createPlaylist = (playlist) => {
     url: 'api/playlists/',
     data: { playlist:
       {title: playlist.title,
+      creator_id: playlist.creator_id,
       user_ids: playlist.user_ids }
     }
   });
@@ -13,7 +14,7 @@ export const getPlaylists = (id) => {
   return $.ajax({
     method: 'GET',
     url: 'api/playlists/',
-    data: {currentUser: id}
+    data: {currentUser_id: id}
   });
 };
 

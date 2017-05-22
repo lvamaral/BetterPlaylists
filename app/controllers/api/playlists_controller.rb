@@ -1,6 +1,7 @@
 class Api::PlaylistsController < ApplicationController
   def index
-    current_user_id = params[:currentUser][:id]
+    # debugger
+    current_user_id = params[:currentUser_id]
     @playlists = Playlist.joins(:users).where("users.id = ?", current_user_id)
   end
 
@@ -26,6 +27,6 @@ class Api::PlaylistsController < ApplicationController
   private
 
   def playlist_params
-    params.require(:playlist).permit(:title, user_ids: [])
+    params.require(:playlist).permit(:title, :creator_id, user_ids: [])
   end
 end

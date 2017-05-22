@@ -49,5 +49,7 @@ export const getPlaylist = (id) => dispatch => {
 
 export const addSong = (song_id, playlist_id, user_id) => dispatch => {
   return (
-  APIUtil.addSong(song_id, playlist_id, user_id)
+  APIUtil.addSong(song_id, playlist_id, user_id).then(playlist => (
+    dispatch(receiveCurrentPlaylist(playlist))
+  ))
 )};

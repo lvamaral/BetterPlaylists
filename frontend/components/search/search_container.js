@@ -3,11 +3,14 @@ import Search from './search';
 import {getSongs} from '../../actions/song_actions'
 import {addSong, getPlaylist} from '../../actions/playlist_actions'
 
-const mapStateToProps = (state) => ({
-  currentPlaylist: state.playlists.currentPlaylist,
-  currentUser: state.session.currentUser,
-  songs: state.songs
-});
+const mapStateToProps = (state, ownProps) => {
+  debugger
+  return {
+    currentPlaylist: state.playlists.currentPlaylist,
+    currentUser: state.session.currentUser,
+    songs: state.songs
+  }
+};
 
 const mapDispatchToProps = dispatch => ({
   getSongs: query => dispatch(getSongs(query)),

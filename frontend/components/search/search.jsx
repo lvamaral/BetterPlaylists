@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {withRouter} from 'react-router-dom';
 
 
 class SearchBar extends React.Component {
@@ -20,7 +21,8 @@ class SearchBar extends React.Component {
   }
 
   addSong(song_id, playlist_id, user_id) {
-    this.props.addSong(song_id, playlist_id, user_id).then(this.props.getPlaylist(playlist_id));
+    this.props.addSong(song_id, playlist_id, user_id)
+    // .then(this.props.getPlaylist(playlist_id));
   }
 
   songIcon(currentSong) {
@@ -37,11 +39,9 @@ class SearchBar extends React.Component {
   }
 
   render() {
-
-    const songs = this.props.songs
     let songList = ""
-    if (songs.songs !== undefined) {
-      songList = songs.songs.map(song => (
+    if (this.props.songs.songs !== undefined) {
+      songList = this.props.songs.songs.map(song => (
         <div className="srow" key={song.id}>
           {this.songIcon(song)}
           <div className="stitle" id="test">{song.title}</div>
@@ -77,4 +77,4 @@ class SearchBar extends React.Component {
   }
 
 
-export default SearchBar;
+export default withRouter(SearchBar);

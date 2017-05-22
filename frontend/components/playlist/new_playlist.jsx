@@ -33,9 +33,9 @@ class NewPlaylist extends React.Component {
       this.setState(newState)
 
       const member_array = Array.from(this.state.members);
-      const playlist = {title: this.state.title, user_ids: member_array};
+      const playlist = {title: this.state.title, creator_id: this.props.currentUser.id, user_ids: member_array  };
       this.props.createPlaylist(playlist).then(
-           (res) => this.props.history.push(`/home/playlist/${res.id}` )).then(this.props.getPlaylists(this.props.currentUser))
+           (res) => this.props.history.push(`/home/playlist/${res.id}` )).then(this.props.getPlaylists(this.props.currentUser.id))
        }
 
 
