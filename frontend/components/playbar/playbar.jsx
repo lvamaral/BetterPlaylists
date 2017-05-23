@@ -109,11 +109,11 @@ class Playbar extends React.Component {
         $(".inner-timebar").css('width',`${percentage}%`);
       }
 
-
+      handleClick(e){
+        console.log(e.target);
+      }
 
     render() {
-
-
       const playbarleft = (
         <div className="play-title"></div>
       );
@@ -133,7 +133,7 @@ class Playbar extends React.Component {
       if (this.props.playbar.currentSong !== "") {
         scrobble = (
           <div className="scrobble">
-            <p>{this.state.playTime}</p><div className="outer-timebar"><div className="inner-timebar"></div></div>{this.hasLength()}
+            <p>{this.state.playTime}</p><div className="outer-timebar" onClick={this.handleClick}><div className="inner-timebar"></div></div>{this.hasLength()}
           </div>
         );
 
