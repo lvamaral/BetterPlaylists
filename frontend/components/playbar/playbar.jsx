@@ -89,6 +89,7 @@ class Playbar extends React.Component {
 
       let scrobble = (<div className="scrobble"></div>);
       let audio = (<audio id="audio"></audio>);
+      let image = "";
 
       if (this.props.playbar.currentSong !== "") {
         scrobble = (
@@ -98,12 +99,15 @@ class Playbar extends React.Component {
         );
 
         audio = (<audio autoPlay id="audio" src={this.props.playbar.currentSong.url}></audio>);
+        image = (<img src={this.props.playbar.currentSong.art_url}></img>)
       };
 
       return (
       <div className="playbar">
         <div className="playbarleft">
-          <div className="cover-art"></div>
+          <div className="cover-art">
+            {image}
+          </div>
           <div className="playbar-info">
             <p><span id="title">{this.props.playbar.currentSong.title}</span></p>
             <p><span id="artist">{this.props.playbar.currentSong.artist}</span></p>

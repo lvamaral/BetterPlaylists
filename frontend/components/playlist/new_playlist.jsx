@@ -40,7 +40,8 @@ class NewPlaylist extends React.Component {
       this.props.createPlaylist(playlist).then(
            (res) => this.props.history.push(`/home/playlist/${res.id}`))
         }
-      //  this.getPlaylists(this.props.currentUser.id);
+        // .then(this.getPlaylists(this.props.currentUser.id))
+
 
 
 

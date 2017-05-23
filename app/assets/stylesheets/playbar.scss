@@ -18,7 +18,7 @@
 }
 
 .playbarleft {
-  padding-top: 10px;
+  padding: 12px 0 12px 15px;
   display: flex;
 }
 
@@ -39,7 +39,7 @@
 
 .playbar-info {
   margin-left: 5px;
-  padding-top: 20px;
+  padding-top: 10px;
   display: flex;
   flex: 3;
   flex-direction: column;
@@ -47,6 +47,12 @@
 
 .cover-art {
   flex: 1;
+  justify-content: center;
+}
+
+.cover-art img {
+  height: 60px;
+  width: 60px;
 }
 
 .playbar-info p {

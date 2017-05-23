@@ -13,6 +13,10 @@ class PlaylistList extends React.Component {
     this.props.getPlaylists(this.props.currentUser.id);
   }
 
+  componentWillReceiveProps(nextProps){
+    // console.log("next", nextProps.ownedPlaylists);
+  }
+
 
   render() {
 
