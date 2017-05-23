@@ -32,12 +32,6 @@ class PlaylistDetail extends React.Component {
       } else {
         return (<i className="fa fa-play-circle" aria-hidden="true" onClick={() => this.props.playSong(song)}></i>)
       }
-
-      // if (song === this.props.currentSong) {
-      //   return (<i className="fa fa-pause-circle-o playing" aria-hidden="true" onClick={() => this.pauseSong()}></i>)
-      // } else {
-      //   return (<i className="fa fa-play-circle" aria-hidden="true" onClick={() => this.props.playSong(song)}></i>)
-      // }
     }
 
     pauseSong(){

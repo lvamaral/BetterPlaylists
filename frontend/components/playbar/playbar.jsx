@@ -98,7 +98,7 @@ class Playbar extends React.Component {
           </div>
         );
 
-        audio = (<audio autoPlay id="audio" src={this.props.playbar.currentSong.url}></audio>);
+        audio = (<audio autoPlay id="audio" src={this.props.playbar.currentSong.song_url}></audio>);
         image = (<img src={this.props.playbar.currentSong.art_url}></img>)
       };
 

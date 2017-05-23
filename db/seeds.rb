@@ -46,6 +46,19 @@ Playlist.create(title: "Chill", creator_id: 1, art_url: "album_art/skin.jpg", pu
 Playlist.create(title: "TogaFriday", creator_id: 2, art_url: "album_art/skin.jpg", public: false)
 Playlist.create(title: "No Lucas Here", creator_id: 2, art_url: "album_art/skin.jpg", public: false)
 
+Playlist.create(title: "Country", creator_id: 1, art_url: "album_art/country.png", public: true)
+Playlist.create(title: "EDM", creator_id: 1, art_url: "album_art/edm.png", public: true)
+Playlist.create(title: "Hip Hop", creator_id: 2, art_url: "album_art/hip hop.png", public: true)
+Playlist.create(title: "Latino", creator_id: 2, art_url: "album_art/latino.png", public: true)
+Playlist.create(title: "Lounge", creator_id: 3, art_url: "album_art/lounge.png", public: true)
+Playlist.create(title: "Pop", creator_id: 3, art_url: "album_art/pop.png", public: true)
+Playlist.create(title: "RnB", creator_id: 4, art_url: "album_art/rnb.png", public: true)
+Playlist.create(title: "Rock", creator_id: 4, art_url: "album_art/rock.png", public: true)
+Playlist.create(title: "Study", creator_id: 5, art_url: "album_art/study.png", public: true)
+Playlist.create(title: "Summer", creator_id: 5, art_url: "album_art/summer.png", public: true)
+
+
+
 # playlist_memberships
 PlaylistMembership.create(user_id: 1, playlist_id: 1)
 PlaylistMembership.create(user_id: 2, playlist_id: 1)

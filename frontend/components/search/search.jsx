@@ -47,18 +47,28 @@ class SearchBar extends React.Component {
     console.log("state",this.state)
   }
 
+  isPlaying(song) {
+    if (song === this.props.currentSong) {
+      return (<div className="stitle playing">{song.title}</div>)
+    } else {
+      return (<div className="stitle">{song.title}</div>)
+    }
+  }
+
+
+
+
   render() {
     let songList = ""
     if (this.props.songs.songs !== undefined) {
       songList = this.props.songs.songs.map(song => (
-        <div className="srow" key={song.id}>
+        <div className="srow" key={song.id} onClick={() => this.props.playSong(song)}>
           {this.songIcon(song)}
           <div className="sart"><img src={song.art_url}></img></div>
           <div className="score">
-            <div className="stitle" id="test">{song.title}</div>
+            {this.isPlaying(song)}
             <div className="sartist">{song.artist} - {song.album}</div>
           </div>
-
         </div>)
         )
       }

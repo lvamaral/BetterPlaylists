@@ -42,11 +42,6 @@ class NewPlaylist extends React.Component {
         }
         // .then(this.getPlaylists(this.props.currentUser.id))
 
-
-
-
-
-
     toggleMember(user){
       const memberDiv = $("#members")
       const newState = merge({}, this.state)
