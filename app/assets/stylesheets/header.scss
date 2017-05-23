@@ -8,7 +8,7 @@
   vertical-align: middle;
   background-color: black;
   color: white;
-  font-size: $medium;
+  font-size: 20px;
   align-items: center;
   display: flex;
   background: #000000;  /* fallback for old browsers */
@@ -17,12 +17,14 @@
 }
 
 .title {
+  padding: 10px 0;
+  font-family: Behance;
   text-align: center;
   flex: $left;
   color: $purple;
   font-weight: 800;
-  font-size: 35px;
-  line-height: 35px;
+  font-size: 30px;
+  line-height: 30px;
 }
 
 .midheader {

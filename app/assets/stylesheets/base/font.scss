@@ -3,3 +3,8 @@ $medium: 24px;
 $small: 16px;
 
 $font: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+
+@font-face {
+    font-family: Behance;
+    src: url("/behance.otf") format("opentype");
+}
