@@ -59,7 +59,7 @@
 
 .playlist-song-info {
   padding-top: 10px;
-  flex: 8;
+  flex: 9;
   height: 100%;
   display: flex;
 }
@@ -122,7 +122,7 @@
 }
 
 .playlist-core-title p {
-  margin: 1px 0;
+  margin: 2px 0;
 }
 
 .playlist-core-length {
@@ -142,4 +142,8 @@
 
 .playlist-uploader p {
   margin-top: 5px;
+}
+
+.playing {
+  color: $purple;
 }

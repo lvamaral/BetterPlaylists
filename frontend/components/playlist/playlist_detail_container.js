@@ -6,7 +6,8 @@ import {playSong} from '../../actions/playbar_actions'
 const mapStateToProps = (state) => ({
   currentPlaylist: state.playlists.currentPlaylist,
   currentUser: state.session.currentUser,
-  currentSong: state.playbar.currentSong
+  currentSong: state.playbar.currentSong,
+  playbar: state.playbar
 });
 
 const mapDispatchToProps = dispatch => ({

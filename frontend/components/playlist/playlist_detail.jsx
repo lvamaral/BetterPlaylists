@@ -6,7 +6,6 @@ import isEqual from 'lodash/isEqual';
 class PlaylistDetail extends React.Component {
   constructor(props) {
     super(props);
-
   }
 
   componentDidMount() {
@@ -29,16 +28,23 @@ class PlaylistDetail extends React.Component {
 
     songPlaying(song) {
       if (song === this.props.currentSong) {
-        return (<i className="fa fa-pause-circle-o" aria-hidden="true" onClick={() => this.pauseSong()}></i>)
+        return (<i className="fa fa-play-circle playing" aria-hidden="true"></i>)
       } else {
         return (<i className="fa fa-play-circle" aria-hidden="true" onClick={() => this.props.playSong(song)}></i>)
       }
+
+      // if (song === this.props.currentSong) {
+      //   return (<i className="fa fa-pause-circle-o playing" aria-hidden="true" onClick={() => this.pauseSong()}></i>)
+      // } else {
+      //   return (<i className="fa fa-play-circle" aria-hidden="true" onClick={() => this.props.playSong(song)}></i>)
+      // }
     }
 
     pauseSong(){
       let audio = document.getElementById('audio');
       audio.pause();
     }
+
 
   render() {
 

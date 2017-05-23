@@ -41,10 +41,10 @@ User.create(username: "margot", password: "password", email: "hot999@hotmail.com
 User.create(username: "alexa", password: "password", email: "hot999s@hotmail.com", image_url: "user_pics/93.jpg")
 
 # Playlists
-Playlist.create(title: "Party123", creator_id: 1)
-Playlist.create(title: "Chill", creator_id: 1)
-Playlist.create(title: "TogaFriday", creator_id: 2)
-Playlist.create(title: "No Lucas Here", creator_id: 2)
+Playlist.create(title: "Party123", creator_id: 1, art_url: "album_art/skin.jpg", public: false)
+Playlist.create(title: "Chill", creator_id: 1, art_url: "album_art/skin.jpg", public: false)
+Playlist.create(title: "TogaFriday", creator_id: 2, art_url: "album_art/skin.jpg", public: false)
+Playlist.create(title: "No Lucas Here", creator_id: 2, art_url: "album_art/skin.jpg", public: false)
 
 # playlist_memberships
 PlaylistMembership.create(user_id: 1, playlist_id: 1)

@@ -19,6 +19,7 @@
 /*// Core*/
 @import "base/colors.scss";
 @import "base/font.scss";
+@import "base/grid.scss";
 
 * {
   box-sizing: border-box;
@@ -57,12 +58,17 @@ input {
   height: calc(100% - 130px);
 }
 
-.left, .right {
-  flex: 3;
+.left {
+  flex: $left;
 }
 
+.right {
+  flex: $right;
+}
+
+
 .mid {
-  flex: 6;
+  flex: $mid;
 }
 
 

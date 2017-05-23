@@ -56,14 +56,23 @@
   font-weight: 800;
 }
 
-.srow, .srow2 {
-
+.srow{
   width: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   margin: 1px 0;
-  height: 40px;
+  height: 60px;
+}
+
+.srow2 {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.stitle2,.sartist2,.salbum2 {
+  flex: 1;
 }
 
 .srow:hover {
@@ -75,13 +84,29 @@
   padding: 5px;
 }
 
-.stitle {
-  flex: 3;
+.sart {
+  flex: 1;
 }
 
-.sartist, .salbum {
-  flex: 2
+.sart img {
+  height: 45px;
+  width: 45px;
 }
+
+.score {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+}
+
+.stitle {
+  color: $white;
+}
+
+.sartist {
+  color: $gray;
+}
+
 
 .addicon {
   color: $gray;
@@ -97,38 +122,6 @@
   color: $white;
 }
 
-.tooltip {
-    position: relative;
-    display: inline-block;
-}
-
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: 150%;
-    left: 50%;
-    margin-left: -60px;
-}
-
-.tooltip .tooltiptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: black transparent transparent transparent;
-}
-
-.tooltip:hover .tooltiptext {
-    transition: opacity 2.5s;
-    opacity: 1;
+.source-selected {
+  color: $gray;
 }

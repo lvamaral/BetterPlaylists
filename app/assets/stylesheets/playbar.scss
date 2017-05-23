@@ -89,7 +89,12 @@
 .play-control {
   padding-top: 20px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+}
+
+.play-control i {
+  margin: 0 30px;
+  font-size: 25px;
 }
 
 .outer-timebar{
