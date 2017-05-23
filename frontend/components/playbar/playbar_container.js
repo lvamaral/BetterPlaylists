@@ -8,7 +8,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-
+  playSong: song => dispatch(playSong(song))
 });
 
 export default connect(

@@ -8,8 +8,45 @@ class Playbar extends React.Component {
 
   componentDidMount(){
     this.setState({playStatus: this.props.playbar.playStatus});
-
+    let audio = document.getElementById('audio');
+    audio.addEventListener('ended', this.nextSong)
   }
+
+  nextSong() {
+    let audio = document.getElementById('audio');
+    const playlist = this.props.currentPlaylist.songs
+    const current_idx = playlist.indexOf(this.props.playbar.currentSong)
+
+    let nextSong
+    if (current_idx + 1 >= playlist.length) {
+      nextSong = playlist[current_idx + 1 - playlist.length]
+    } else {
+      nextSong = playlist[current_idx + 1]
+    }
+
+
+    audio.pause();
+    this.props.playSong(nextSong)
+  }
+
+
+    previousSong() {
+      let audio = document.getElementById('audio');
+      const playlist = this.props.currentPlaylist.songs
+      const current_idx = playlist.indexOf(this.props.playbar.currentSong)
+
+      let previousSong
+      if (current_idx - 1 < 0) {
+        previousSong = playlist[playlist.length - 1]
+      } else {
+        previousSong = playlist[current_idx - 1]
+      }
+
+
+      audio.pause();
+      this.props.playSong(previousSong)
+    }
+
 
   componentWillReceiveProps(nextProps, nextState){
     if(nextProps.playbar != this.props.playbar){
@@ -19,7 +56,6 @@ class Playbar extends React.Component {
          _this.updateTime();
        }, 100);
     }
-
   }
 
   convertTime(timestamp){
@@ -73,7 +109,10 @@ class Playbar extends React.Component {
         $(".inner-timebar").css('width',`${percentage}%`);
       }
 
+
+
     render() {
+
 
       const playbarleft = (
         <div className="play-title"></div>
@@ -81,9 +120,9 @@ class Playbar extends React.Component {
 
       const playbarmid = (
           <div className="play-control">
-            <i className="fa fa-step-backward" aria-hidden="true"></i>
+            <i className="fa fa-step-backward" aria-hidden="true" onClick={this.previousSong.bind(this)}></i>
             {this.isPlaying()}
-            <i className="fa fa-step-forward" aria-hidden="true"></i>
+            <i className="fa fa-step-forward" aria-hidden="true" onClick={this.nextSong.bind(this)}></i>
           </div>
       );
 

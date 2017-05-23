@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import PlaylistDetail from './playlist_detail';
 import {getPlaylist} from '../../actions/playlist_actions';
-import {playSong} from '../../actions/playbar_actions'
+import {playSong} from '../../actions/playbar_actions';
 
 const mapStateToProps = (state) => ({
   currentPlaylist: state.playlists.currentPlaylist,
