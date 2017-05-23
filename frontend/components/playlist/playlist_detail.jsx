@@ -29,10 +29,15 @@ class PlaylistDetail extends React.Component {
 
     songPlaying(song) {
       if (song === this.props.currentSong) {
-        return (<i className="fa fa-pause-circle-o" aria-hidden="true"></i>)
+        return (<i className="fa fa-pause-circle-o" aria-hidden="true" onClick={() => this.pauseSong()}></i>)
       } else {
         return (<i className="fa fa-play-circle" aria-hidden="true" onClick={() => this.props.playSong(song)}></i>)
       }
+    }
+
+    pauseSong(){
+      let audio = document.getElementById('audio');
+      audio.pause();
     }
 
   render() {
