@@ -5,8 +5,9 @@ export const createPlaylist = (playlist) => {
     data: { playlist:
       {title: playlist.title,
       creator_id: playlist.creator_id,
-      user_ids: playlist.user_ids,
-      public: true}
+      public: playlist.public,
+      user_ids: playlist.user_ids
+      }
     }
   });
 };

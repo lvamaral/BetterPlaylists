@@ -1,7 +1,7 @@
 import * as APIUtil from '../util/playlist_util'
 
 export const RECEIVE_CURRENT_PLAYLIST = 'RECEIVE_PLAYLIST';
-export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+export const RECEIVE_PLAYLIST_ERRORS = 'RECEIVE_PLAYLIST_ERRORS';
 export const RECEIVE_OWNED_PLAYLISTS = 'RECEIVE_OWNED_PLAYLISTS';
 export const RECEIVE_ALL_PLAYLISTS = 'RECEIVE_ALL_PLAYLISTS';
 export const RECEIVE_SONG = 'RECEIVE_SONG';
@@ -23,7 +23,7 @@ export const receiveAllPlaylists = Playlists => ({
 
 
 export const receiveErrors = errors => ({
-  type: RECEIVE_ERRORS,
+  type: RECEIVE_PLAYLIST_ERRORS,
   errors
 });
 
@@ -32,12 +32,21 @@ export const receiveSong = song => ({
   song
 });
 
+// export const createPlaylist = playlist => dispatch => (
+//   APIUtil.createPlaylist(playlist).then(playlist => {
+//     dispatch(receiveCurrentPlaylist(playlist));
+//     return (playlist)
+//   })
+// );
+
 export const createPlaylist = playlist => dispatch => (
-  APIUtil.createPlaylist(playlist).then(playlist => {
-    dispatch(receiveCurrentPlaylist(playlist));
-    return (playlist)
-  })
+  APIUtil.createPlaylist(playlist).then(playlist => (
+    dispatch(receiveCurrentPlaylist(playlist))
+  ), err => (
+    dispatch(receiveErrors(err.responseJSON))
+  ))
 );
+
 
 
 export const getPlaylists = (id) => dispatch => {

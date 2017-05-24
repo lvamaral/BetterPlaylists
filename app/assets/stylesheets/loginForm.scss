@@ -48,6 +48,7 @@
 }
 
 .login-form input:focus {
+  text-indent: 5px;
   outline-color: white;
 }
 
@@ -55,6 +56,9 @@
   margin-top: 15px;
 }
 
-.login-form li {
+.login-form-box li {
+  color: $red;
+  padding-left: 10px;
+  text-align: left;
   margin-top: 15px;
 }

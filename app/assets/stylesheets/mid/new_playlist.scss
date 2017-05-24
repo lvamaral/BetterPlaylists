@@ -7,9 +7,16 @@
   color: $white;
   text-align: center;
   font-size: $big;
+}
 
+
+.new-playlist h2 {
   font-weight: bold;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.new-playlist-form {
+  display: flex;
+  flex-direction: column;
 }
 
 #members i {
@@ -29,14 +36,54 @@
 
 .lower-form {
   width: 100%;
-  height: 100%;
+  flex: 1;
   display: flex;
   overflow-y: scroll;
 }
 
+.upper-form {
+  margin-top: 20px;
+  width: 100%;
+  flex: 1;
+  display: flex;
+}
+
+.upper-form span {
+  flex: 2;
+}
+
+.form-public {
+  padding: 30px 0 0 25px;
+  flex: 1;
+  display: flex;
+  font-size: $medium;
+}
+
+.form-public p {
+  margin-left: 5px;
+  padding-top: 5px;
+}
+
+.form-public input {
+  margin-top: 5px;
+}
+
+#public, #private {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+#public {
+  justify-content: flex-start;
+}
+
+.form-public div label {
+  display: block;
+}
+
 .user-search-box {
   flex: 1;
-
 }
 
 #members img {
@@ -116,76 +163,10 @@ input.formsubmit {
   color: $white;
   margin-bottom: 20px;
   border: 2px solid $white;
-  height: 100px !important;
+  height: 75px !important;
   width: 100px !important;
 }
 
 input.formsubmit:hover {
   font-weight: 800;
 }
-
-
-// BUTTON
-
-
-
-// :root {
-//     --bg: #3C465C;
-//     --primary: $white;
-//     --solid: #fff;
-//     --btn-w: 5em;
-//     --dot-w: calc(var(--btn-w)*.2);
-//     --tr-X: calc(var(--btn-w) - var(--dot-w));
-// }
-// * {box-sizing: border-box;}
-// *:before, *:after {box-sizing: border-box;}
-//
-// .btn {
-//     position: relative;
-//     margin: 0 auto;
-//     width: var(--btn-w);
-//     color: var(--primary);
-//     border: .15em solid var(--primary);
-//     border-radius: 5em;
-//     text-transform: uppercase;
-//     text-align: center;
-//     font-size: $medium;
-//     line-height: 2em;
-//     cursor: pointer;
-//     margin-bottom: 20px;
-// }
-// .dot {
-//     content: '';
-//     position: absolute;
-//     top: 0;
-//     width: var(--dot-w);
-//     height: 100%;
-//     border-radius: 100%;
-//     transition: all 300ms ease;
-//     display: none;
-// }
-// .dot:after {
-//     content: '';
-//     position: absolute;
-//     left: calc(50% - .4em);
-//     top: -.4em;
-//     height: .8em;
-//     width: .8em;
-//     background: var(--primary);
-//     border-radius: 1em;
-//     border: .25em solid var(--solid);
-//     box-shadow: 0 0 .7em var(--solid),
-//                 0 0 2em var(--primary);
-// }
-// .btn:hover .dot,
-// .btn:focus .dot {
-//     animation: atom 2s infinite linear;
-//     display: block;
-// }
-// @keyframes atom {
-//     0% {transform: translateX(0) rotate(0);}
-//     30%{transform: translateX(var(--tr-X)) rotate(0);}
-//     50% {transform: translateX(var(--tr-X)) rotate(180deg);}
-//     80% {transform: translateX(0) rotate(180deg);}
-//     100% {transform: translateX(0) rotate(360deg);}
-// }

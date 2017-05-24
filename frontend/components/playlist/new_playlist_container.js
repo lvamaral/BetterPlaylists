@@ -7,7 +7,8 @@ import * as APIUtil from '../../util/user_util';
 const mapStateToProps = (state) => ({
   users: state.users.users,
   newMember: state.users.newMember,
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  errors: state.playlists.errors
 });
 
 const mapDispatchToProps = dispatch => ({

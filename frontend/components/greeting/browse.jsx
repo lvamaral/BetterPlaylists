@@ -114,7 +114,7 @@ class Browse extends React.Component {
 
 
   render() {
-    console.log(this.props);
+
     let playlist_browse = "";
     let start_message = "";
       if (this.props.match.params.browsetype === "following") {

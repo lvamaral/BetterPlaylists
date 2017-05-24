@@ -51,8 +51,9 @@
 //PLAYLISTS
 
 .playlist-grid {
-  width: 100%;
-  padding: 50px 20px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 20px 0;
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
@@ -71,8 +72,8 @@
 }
 
 .owned-art img {
-  height: 230px;
-  width: 230px;
+  height: 250px;
+  width: 250px;
 }
 
 .owned-info {

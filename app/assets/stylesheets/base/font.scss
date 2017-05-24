@@ -3,8 +3,16 @@ $medium: 24px;
 $small: 16px;
 
 $font: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+// $font: "proxima-nova", sans-serif;
 
 @font-face {
     font-family: Behance;
     src: url("/behance.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "proxima-nova";
+  src: url("/proxima-nova.otf") format("opentype");
+  font-style: normal;
+  font-weight: 100;
 }

@@ -10,16 +10,32 @@
 .playlist-detail-title {
   margin-top: 10px;
   width: 100%;
-  text-align: center;
   font-size: $big;
+}
+
+#playlist-title-box {
+  width: 90%;
+  margin: 0 auto;
+  height: 300px;
+  display: flex;
+  padding: 20px;
+}
+
+.playlist-detail-core {
+  flex: 1;
+  margin-left: 20px;
+  text-align: left;
+}
+
+#playlist-title-box img {
+  height: 230px;
+  width: 230px;
 }
 
 .playlist-detail-uploader {
   margin-top: 10px;
-  padding-bottom: 10px;
-  text-align: center;
   color: $gray;
-  // border-bottom: rgb(50,50,50) 1px solid;
+
 }
 
 #playlist-title-box p {
@@ -31,8 +47,61 @@
 
 #song-list {
   height: 100%;
-
 }
+
+#playlist-members {
+  margin-left: 5px;
+  color: $white;
+}
+
+#playlist-public {
+  font-size: 18px;
+  margin-left: 10px;
+  color: $white;
+}
+
+.playlist-detail-buttons {
+  margin-top: 40px;
+  display: flex;
+}
+
+.playlist-detail-buttons-h {
+  padding-top: 16px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.playlist-detail-buttons button {
+  margin: 0 10px;
+  width: 170px;
+  padding: 12px 0 10px 0;
+  height: 50px;
+  color: $white;
+  background-color: black;
+  font-size: $medium;
+  border: 1px solid $white;
+  outline:none;
+}
+
+.playlist-detail-buttons button:hover {
+  color: $purple;
+  border-color: $purple;
+}
+
+#follow, #edit {
+  font-size: $medium;
+  margin: 0 10px;
+  display: block;
+}
+
+#follow:hover {
+  color: $purple;
+  font-weight: 800;
+}
+
+
+
 //INDIVIDUAL SONGS
 
 .no-songs {

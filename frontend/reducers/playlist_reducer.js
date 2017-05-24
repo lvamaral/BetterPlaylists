@@ -4,30 +4,32 @@ import {
   RECEIVE_CURRENT_PLAYLIST,
   RECEIVE_OWNED_PLAYLISTS,
   RECEIVE_ALL_PLAYLISTS,
-  RECEIVE_ERRORS,
+  RECEIVE_PLAYLIST_ERRORS,
   RECEIVE_SONG
 } from '../actions/playlist_actions';
 
 const sample = {
   ownedplaylists: {},
   currentPlaylist: {},
-  allPlaylists: {}
+  allPlaylists: {},
+  errors: []
 }
 
 
 const PlaylistReducer = (state = sample, action) => {
   Object.freeze(state);
-  let newOwned
+
   switch(action.type) {
     case RECEIVE_CURRENT_PLAYLIST:
-      return {ownedPlaylists: state.ownedPlaylists, currentPlaylist: action.currentPlaylist, allPlaylists: state.allPlaylists};
+      return {ownedPlaylists: state.ownedPlaylists, currentPlaylist: action.currentPlaylist, allPlaylists: state.allPlaylists, errors: state.errors};
     case RECEIVE_OWNED_PLAYLISTS:
-      return {ownedPlaylists: action.ownedPlaylists, currentPlaylist: state.currentPlaylist, allPlaylists: state.allPlaylists};
+      return {ownedPlaylists: action.ownedPlaylists, currentPlaylist: state.currentPlaylist, allPlaylists: state.allPlaylists, errors: state.errors};
     case RECEIVE_ALL_PLAYLISTS:
-    console.log(action.Playlists);
-      return {ownedPlaylists: state.ownedPlaylists, currentPlaylist: state.currentPlaylist, allPlaylists: action.Playlists};
+      return {ownedPlaylists: state.ownedPlaylists, currentPlaylist: state.currentPlaylist, allPlaylists: action.Playlists, errors: state.errors};
+    case RECEIVE_PLAYLIST_ERRORS:
+      return {ownedPlaylists: state.ownedPlaylists, currentPlaylist: state.currentPlaylist, allPlaylists: state.allPlaylists, errors: action.errors};
     default:
-      return state;
+      return state
   };
 };
 
