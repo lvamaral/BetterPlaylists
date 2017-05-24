@@ -63,6 +63,18 @@ class NewPlaylist extends React.Component {
       this.setState(newState)
     }
 
+    renderErrors() {
+      return(
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              <p className="playlist-error">{error}</p>
+            </li>
+          ))}
+        </ul>
+      );
+    }
+
     render() {
 
       const users = this.props.users
@@ -86,12 +98,14 @@ class NewPlaylist extends React.Component {
           );
         })
       }
+        //
 
       return (
 
         <div className="new-playlist">
           <form onSubmit={this.handleSubmit.bind(this)} className="new-playlist-form">
             <h2>New Playlist</h2>
+            {this.renderErrors()}
             <div className="upper-form">
               <span className="input input--isao">
                 <input value={this.state.title} onChange={this.update('title')} className="input__field input__field--isao" type="text" id="input-38" />

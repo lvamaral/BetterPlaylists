@@ -69,10 +69,12 @@ class PlaylistDetail extends React.Component {
     }
 
     renderFollow(owned){
-      if (owned || this.props.currentPlaylist.creator.username === this.props.currentUser.username) {
-        return (<span id="follow">UNFOLLOW</span>)
+      if (this.props.currentPlaylist.creator.username === this.props.currentUser.username) {
+        return (<span id="follow">EDIT</span>)
       }
-      else{
+      else if (owned ){
+        return (<span id="follow">UNFOLLOW</span>)
+      } else {
         return (<span id="follow">FOLLOW</span>)
       }
 
@@ -151,10 +153,6 @@ class PlaylistDetail extends React.Component {
         ))
       }
     }
-
-
-
-
 
     return (
       <div className="playlist-detail">
