@@ -26,37 +26,38 @@ Song.create(title: "I Wonder", artist: "Kanye West", album: "Graduation", song_u
 
 
 # //People
-User.create(username: "lucas", password: "password", email: "hot@hotmail.com", image_url: "/user_pics/86.jpg")
-User.create(username: "alex", password: "password", email: "hot2@hotmail.com", image_url: "user_pics/20.jpg")
-User.create(username: "john", password: "password", email: "hot3@hotmail.com", image_url: "user_pics/33.jpg")
-User.create(username: "michael", password: "password", email: "hot4@hotmail.com", image_url: "user_pics/34.jpg")
-User.create(username: "rodrigo", password: "password", email: "hot5@hotmail.com", image_url: "user_pics/36.jpg")
-User.create(username: "jean machine", password: "password", email: "hot6@hotmail.com", image_url: "user_pics/74.jpg")
+User.create(username: "lucas", password: "password", email: "hot@hotmail.com", image_url: "/user_pic/86.jpg")
+User.create(username: "alex", password: "password", email: "hot2@hotmail.com", image_url: "user_pic/20.jpg")
+User.create(username: "john", password: "password", email: "hot3@hotmail.com", image_url: "user_pic/33.jpg")
+User.create(username: "michael", password: "password", email: "hot4@hotmail.com", image_url: "user_pic/34.jpg")
+User.create(username: "rodrigo", password: "password", email: "hot5@hotmail.com", image_url: "user_pic/36.jpg")
+User.create(username: "jean machine", password: "password", email: "hot6@hotmail.com", image_url: "user_pic/74.jpg")
 
-User.create(username: "min", password: "password", email: "hot7@hotmail.com", image_url: "/user_pics/48.jpg")
-User.create(username: "anna", password: "password", email: "hot8@hotmail.com", image_url: "user_pics/62.jpg")
-User.create(username: "gregoria", password: "password", email: "hot9@hotmail.com", image_url: "user_pics/68.jpg")
-User.create(username: "michaela", password: "password", email: "hot99@hotmail.com", image_url: "user_pics/70.jpg")
-User.create(username: "margot", password: "password", email: "hot999@hotmail.com", image_url: "user_pics/82.jpg")
-User.create(username: "alexa", password: "password", email: "hot999s@hotmail.com", image_url: "user_pics/93.jpg")
+User.create(username: "min", password: "password", email: "hot7@hotmail.com", image_url: "/user_pic/48.jpg")
+User.create(username: "anna", password: "password", email: "hot8@hotmail.com", image_url: "user_pic/62.jpg")
+User.create(username: "gregoria", password: "password", email: "hot9@hotmail.com", image_url: "user_pic/68.jpg")
+User.create(username: "michaela", password: "password", email: "hot99@hotmail.com", image_url: "user_pic/70.jpg")
+User.create(username: "margot", password: "password", email: "hot999@hotmail.com", image_url: "user_pic/82.jpg")
+User.create(username: "alexa", password: "password", email: "hot999s@hotmail.com", image_url: "user_pic/93.jpg")
 
 # Playlists
 Playlist.create(title: "Party123", creator_id: 1, art_url: "album_art/skin.jpg", public: false)
-Playlist.create(title: "Chill", creator_id: 1, art_url: "album_art/skin.jpg", public: false)
-Playlist.create(title: "TogaFriday", creator_id: 2, art_url: "album_art/skin.jpg", public: false)
-Playlist.create(title: "No Lucas Here", creator_id: 2, art_url: "album_art/skin.jpg", public: false)
-
+Playlist.create(title: "Chill", creator_id: 1, art_url: "album_art/graduation.jpg", public: false)
+Playlist.create(title: "TogaFriday", creator_id: 2, art_url: "album_art/damn.jpg", public: false)
+Playlist.create(title: "No Lucas Here", creator_id: 2, art_url: "album_art/skin.png", public: false)
 Playlist.create(title: "Country", creator_id: 1, art_url: "album_art/country.png", public: true)
 Playlist.create(title: "EDM", creator_id: 1, art_url: "album_art/edm.png", public: true)
-Playlist.create(title: "Hip Hop", creator_id: 2, art_url: "album_art/hip hop.png", public: true)
-Playlist.create(title: "Latino", creator_id: 2, art_url: "album_art/latino.png", public: true)
-Playlist.create(title: "Lounge", creator_id: 3, art_url: "album_art/lounge.png", public: true)
 Playlist.create(title: "Pop", creator_id: 3, art_url: "album_art/pop.png", public: true)
 Playlist.create(title: "RnB", creator_id: 4, art_url: "album_art/rnb.png", public: true)
 Playlist.create(title: "Rock", creator_id: 4, art_url: "album_art/rock.png", public: true)
 Playlist.create(title: "Study", creator_id: 5, art_url: "album_art/study.png", public: true)
+Playlist.create(title: "Hip Hop", creator_id: 2, art_url: "album_art/hip hop.png", public: true)
+Playlist.create(title: "Latino", creator_id: 2, art_url: "album_art/latino.png", public: true)
 Playlist.create(title: "Summer", creator_id: 5, art_url: "album_art/summer.png", public: true)
+Playlist.create(title: "Lounge", creator_id: 3, art_url: "album_art/lounge.png", public: true)
 
+# playlist(4-13)
+# ppl(0-11)
 
 
 # playlist_memberships
@@ -68,6 +69,15 @@ PlaylistMembership.create(user_id: 4, playlist_id: 1)
 PlaylistMembership.create(user_id: 1, playlist_id: 2)
 PlaylistMembership.create(user_id: 4, playlist_id: 2)
 PlaylistMembership.create(user_id: 5, playlist_id: 2)
+
+PlaylistMembership.create(user_id: 5, playlist_id: 3)
+PlaylistMembership.create(user_id: 1, playlist_id: 3)
+PlaylistMembership.create(user_id: 2, playlist_id: 3)
+
+50.times do
+  PlaylistMembership.create(user_id: rand(2..11), playlist_id: rand(4..13))
+end
+
 
 #playlist_songs
 PlaylistSong.create(song_id: 1, playlist_id: 1, up_votes: 0, down_votes: 0, user_id: 1)

@@ -14,12 +14,14 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Start from './greeting/start';
 import PlaylistListContainer from './playlist/playlist_list_container';
 import PlaylistDetailContainer from './playlist/playlist_detail_container';
+import Browse from './greeting/browse_container';
+import NewPlaylistContainer from './playlist/new_playlist_container';
 
 const Main = () => (
   <div className="main">
     <header className="header">
         <div className="title">
-            <h1>BetterPlaylists</h1>
+            <Link to={'/home/featured'}><h1>BetterPlaylists</h1></Link>
         </div>
         <div className="midheader account-nav">
           <GreetingContainer />
@@ -30,30 +32,33 @@ const Main = () => (
 
     <div className="content">
       <div className="left">
-        <div className="playlist-list"><PlaylistListContainer /></div>
-        <Link to="/home/new">
-          <div className="add-new-playlist">
-            <i className="fa fa-plus-circle" aria-hidden="true"></i>
-            <p>New Playlist</p>
-          </div>
-        </Link>
+        <SearchBarContainer />
+
       </div>
 
       <div className="mid" id="mid">
         <Switch>
+          <Route path="/home/new" component={NewPlaylistContainer} />
           <ProtectedRoute path="/home/playlist/:id" component={PlaylistDetailContainer} />
-          <Start />
+          <Route path="/home/:browsetype" component={Browse}/>
         </Switch>
       </div>
 
       <div className="right">
-        <SearchBarContainer />
+
       </div>
     </div>
-
 
     <PlaybarContainer />
   </div>
  )
 
+
+ // <div className="playlist-list"><PlaylistListContainer /></div>
+ // <Link to="/home/new">
+ //   <div className="add-new-playlist">
+ //     <i className="fa fa-plus-circle" aria-hidden="true"></i>
+ //     <p>New Playlist</p>
+ //   </div>
+ // </Link>
 export default Main;

@@ -1,7 +1,11 @@
 class Api::PlaylistsController < ApplicationController
   def index
     current_user_id = params[:currentUser_id]
-    @playlists = Playlist.joins(:users).where("users.id = ?", current_user_id)
+    if params[:currentUser_id] == nil
+      @playlists = Playlist.all.where("public = true")
+    else
+      @playlists = Playlist.joins(:users).where("users.id = ?", current_user_id)
+    end
     render :index
   end
 

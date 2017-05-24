@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: rgb(18,18,18);
+  background-color: rgb(10,10,10);
   color: white;
 
 }
@@ -25,15 +25,17 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+
 }
 
 .add-new-playlist p {
   text-align: left;
-  margin-left: 5px;
+  padding-left: 20px;
   padding-top: 8px;
   font-size: $medium;
   display: block;
   flex: 9;
+
 }
 
 

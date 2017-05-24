@@ -19,6 +19,13 @@ export const getPlaylists = (id) => {
   });
 };
 
+export const getAllPlaylists = () => {
+  return $.ajax({
+    method: 'GET',
+    url: 'api/playlists/'
+  });
+};
+
 export const getPlaylist = (id) => {
   return $.ajax({
     method: 'GET',

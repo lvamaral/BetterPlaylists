@@ -14,7 +14,7 @@ const sessionLinks = () => (
 
 const personalGreeting = (currentUser, logout) => (
 	<div className="account-nav">
-    <i className="fa fa-user-circle" aria-hidden="true"></i>
+    <div className="header-pic"><img src={currentUser.image_url}/></div>
     <h2 className="header-name">{currentUser.username}</h2>
     <div className="header-button" onClick={logout} >
       <i className="fa fa-sign-out" aria-hidden="true"></i>

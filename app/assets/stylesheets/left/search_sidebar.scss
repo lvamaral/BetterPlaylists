@@ -2,8 +2,9 @@
 @import "base/colors.scss";
 
 .right {
+  display: none;
   height: 100%;
-  background-color: rgb(18,18,18);
+  background-color: black;
   color: white;
   font-size: 15px;
 
@@ -11,6 +12,9 @@
 
 .search {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   overflow-y: auto;
   overflow-x: visible !important;
 
@@ -21,6 +25,7 @@
   display: flex;
   justify-content: flex-start;
   flex:1;
+  border-bottom: 1px solid $lightgray;
 }
 
 .searchbar label {
@@ -48,6 +53,7 @@
 }
 
 .search-results {
+  height: 100%;
   width: 100%;
 
 }
@@ -57,6 +63,7 @@
 }
 
 .srow{
+  padding-left: 10px;
   width: 100%;
   display: flex;
   justify-content: flex-end;

@@ -1,0 +1,112 @@
+@import "base/font.scss";
+@import "base/colors.scss";
+
+
+.browse-header {
+  padding-top: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+}
+.browse-link {
+  font-size: $medium;
+  text-align: center;
+
+  flex: 1;
+}
+
+.browse-link a {
+    color: $gray;
+}
+
+.browse-active {
+  font-size: 30px;
+  transition: font-size 0.7s;
+  color: $white !important;
+}
+
+.browse-link a:hover {
+  color: $white;
+}
+
+
+
+.browse-start {
+  margin: 50px 0;
+  color: $white;
+  font-size: $big;
+  width: 100%;
+  text-align: center;
+}
+
+.browse-start a:hover {
+  cursor: pointer;
+}
+
+.playlist-list {
+
+}
+
+//PLAYLISTS
+
+.playlist-grid {
+  width: 100%;
+  padding: 50px 20px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.owned-playlist {
+  margin: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.owned-playlist img:hover {
+  filter: sepia(1);
+}
+
+.owned-art img {
+  height: 230px;
+  width: 230px;
+}
+
+.owned-info {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 7px;
+}
+
+.owned-info-2 {
+  display: flex;
+  flex-direction: column;
+  flex: 4;
+
+}
+
+.owned-info-2 p {
+  display: block;
+}
+
+.playlist-members {
+  flex: 1;
+}
+
+.owned-playlist-title {
+  color: $white;
+  font-size: 18px;
+}
+
+.owned-playlist-title:hover {
+  color: $purple;
+}
+
+.owned-playlist-owner {
+  margin-top: 7px;
+  color: $gray;
+}
