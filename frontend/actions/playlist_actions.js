@@ -5,6 +5,8 @@ export const RECEIVE_PLAYLIST_ERRORS = 'RECEIVE_PLAYLIST_ERRORS';
 export const RECEIVE_OWNED_PLAYLISTS = 'RECEIVE_OWNED_PLAYLISTS';
 export const RECEIVE_ALL_PLAYLISTS = 'RECEIVE_ALL_PLAYLISTS';
 export const RECEIVE_SONG = 'RECEIVE_SONG';
+export const RECEIVE_MEMBER = 'RECEIVE_MEMBER';
+export const DELETE_MEMBER = 'DELETE_MEMBER';
 
 export const receiveCurrentPlaylist = currentPlaylist => ({
   type: RECEIVE_CURRENT_PLAYLIST,
@@ -32,12 +34,15 @@ export const receiveSong = song => ({
   song
 });
 
-// export const createPlaylist = playlist => dispatch => (
-//   APIUtil.createPlaylist(playlist).then(playlist => {
-//     dispatch(receiveCurrentPlaylist(playlist));
-//     return (playlist)
-//   })
-// );
+export const receiveMember = member => ({
+  type: RECEIVE_MEMBER,
+  member
+});
+
+export const deleteMember = member => ({
+  type: DELETE_MEMBER,
+  member
+});
 
 export const createPlaylist = playlist => dispatch => (
   APIUtil.createPlaylist(playlist).then(playlist => (
@@ -47,8 +52,6 @@ export const createPlaylist = playlist => dispatch => (
   ))
 );
 
-
-
 export const getPlaylists = (id) => dispatch => {
   return (
   APIUtil.getPlaylists(id).then(playlists => (
@@ -57,12 +60,13 @@ export const getPlaylists = (id) => dispatch => {
 )};
 
 export const followPlaylist = (user_id, playlist_id) => dispatch => {(
-  APIUtil.followPlaylist(user_id, playlist_id)
+  APIUtil.followPlaylist(user_id, playlist_id).then(member => dispatch(receiveMember(member)))
 )};
 
-// .then(getPlaylists(user_id)).then(playlists => (
-//   dispatch(receiveOwnedPlaylists(playlists))
-//
+export const unFollowPlaylist = (user_id, playlist_id) => dispatch => {(
+  APIUtil.unFollowPlaylist(user_id, playlist_id).then(member => dispatch(deleteMember(member)))
+)};
+
 
 export const getAllPlaylists = () => dispatch => {
   return (

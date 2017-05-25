@@ -12,6 +12,20 @@ export const createPlaylist = (playlist) => {
   });
 };
 
+export const updatePlaylist = (playlist) => {
+  return $.ajax({
+    method: 'POST',
+    url: 'api/playlists/',
+    data: { playlist:
+      {title: playlist.title,
+      creator_id: playlist.creator_id,
+      public: playlist.public,
+      user_ids: playlist.user_ids
+      }
+    }
+  });
+};
+
 export const getPlaylists = (id) => {
   return $.ajax({
     method: 'GET',
@@ -38,6 +52,14 @@ export const followPlaylist = (user_id, playlist_id) => {
   return $.ajax({
     method: 'POST',
     url: `/api/playlist_memberships`,
+    data: {user_id: user_id, playlist_id: playlist_id}
+  });
+};
+
+export const unFollowPlaylist = (user_id, playlist_id) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `/api/playlist_memberships/1`,
     data: {user_id: user_id, playlist_id: playlist_id}
   });
 };

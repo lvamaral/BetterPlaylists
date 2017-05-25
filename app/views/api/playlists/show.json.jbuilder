@@ -12,9 +12,11 @@ json.members do
       json.id user.id
       json.username user.username
       json.image_url user.image_url
+      json.membership_id user.playlist_memberships.where(playlist_id: @playlist.id)
     end
   end
 end
+
 
 json.songs do
   json.array! @playlist.playlist_songs.each do |playlist_song|

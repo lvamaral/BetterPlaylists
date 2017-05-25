@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import {includes, values, some, isEqual} from 'lodash';
+import {includes, values, some, isEqual, at} from 'lodash';
 import size from 'lodash/size'
 import {Link, Redirect} from 'react-router-dom'
 
@@ -8,11 +8,12 @@ import {Link, Redirect} from 'react-router-dom'
 class PlaylistDetail extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {owned: "", following: ""}
+    this.state = {owned: "", editing: false, title: ""}
   }
 
   componentDidMount() {
     this.props.getPlaylist(this.props.match.params.id);
+    $("#title-edit").focus()
   }
 
 
@@ -68,27 +69,45 @@ class PlaylistDetail extends React.Component {
       }
     }
 
-    renderFollow(owned){
-      if (this.props.currentPlaylist.creator.username === this.props.currentUser.username) {
-        return (<span id="follow">EDIT</span>)
+    renderFollow(){
+      let owned = this.isFollowing()
+
+      if (this.state.editing) {
+        return (<span id="follow" onClick={this.startEdit.bind(this)}>DONE</span>)
+      } else if (this.props.currentPlaylist.creator.username === this.props.currentUser.username) {
+        return (<span id="follow" onClick={this.startEdit.bind(this)}>EDIT</span>)
       }
-      else if (owned ){
-        return (<span id="follow">UNFOLLOW</span>)
+      else if (owned){
+        return (<span id="follow" onClick={this.toggleFollow.bind(this)}>UNFOLLOW</span>)
       } else {
-        return (<span id="follow" onClick={this.Follow.bind(this)}>FOLLOW</span>)
+        return (<span id="follow" onClick={this.toggleFollow.bind(this)}>FOLLOW</span>)
       }
     }
 
-    Follow(){
-      this.props.followPlaylist(this.props.currentUser.id, this.props.currentPlaylist.id);
-      this.props.getPlaylist(this.props.match.params.id);
-      $("#follow").html("UNFOLLOW");
+    toggleFollow(){
+      if (this.isFollowing() == true) {
+        this.unFollow()
+      } else {
+        this.follow()
+      }
     }
 
-    isFollowing(playlist){
-      let owned
-      if (playlist != undefined){
-        if (values(this.props.ownedPlaylists).some(owned => owned.id === playlist.id )) {
+    follow(){
+      this.props.followPlaylist(this.props.currentUser.id, this.props.currentPlaylist.id);
+    }
+
+    unFollow(){
+      const playlist_members = this.props.currentPlaylist.members
+      const id = this.props.currentUser.id
+      const ref = _.at(playlist_members,[`${id}.membership_id[0].id`])
+      this.props.unFollowPlaylist(this.props.currentUser.id, this.props.currentPlaylist.id);
+
+    }
+
+    isFollowing(){
+      let owned = false
+      if (this.props.members !== undefined){
+        if (Object.keys(this.props.members).includes(String(this.props.currentUser.id))) {
           owned = true
         } else {
           owned = false
@@ -97,10 +116,34 @@ class PlaylistDetail extends React.Component {
       return owned
     }
 
+    startEdit(){
+      this.setState({editing: true});
+
+    }
+
+    isEditing(){
+      if (this.state.editing) {
+        return (<input type="text" autoFocus id="title-edit" value={this.props.currentPlaylist.title} onChange={this.update('title')}/>)
+      } else {
+        return (this.props.currentPlaylist.title)
+      }
+    }
+
+    focusTitle(){
+
+    }
+
+    update(property) {
+      return e => {
+        this.setState({[property]: e.target.value})
+      }
+    }
+
 
   render() {
-    const playlist = this.props.currentPlaylist
-    let owned = this.isFollowing(playlist);
+    console.log(this.state.editing);
+    const playlist = this.props.currentPlaylist;
+    let owned = this.isFollowing();
 
     if (!isEqual(playlist, {}) && !owned && !this.props.currentPlaylist.public) {
       return(
@@ -115,13 +158,13 @@ class PlaylistDetail extends React.Component {
         <div id="playlist-title-box">
           <div className="playlist-detail-img"><img src={playlist.art_url}/></div>
           <div className="playlist-detail-core">
-            <div className="playlist-detail-title"><h2>{playlist.title}</h2></div>
+            <div className="playlist-detail-title"><h2>{this.isEditing()}</h2></div>
             <div className="playlist-detail-uploader"><h3>By <Link to={`/home/users/${playlist.creator.id}`}>{playlist.creator.username}</Link></h3></div>
             {this.hasSongs()}
             <div className="playlist-detail-buttons">
               <button onClick={this.playFirstSong.bind(this)}>PLAY</button>
               <div className="playlist-detail-buttons-h">
-                <p id="follow">{this.renderFollow(owned)}</p>
+                <p id="follow">{this.renderFollow()}</p>
                 <p id="edit"></p>
               </div>
             </div>

@@ -3,6 +3,7 @@ json.extract! @user, :id, :username, :image_url
 json.user_info do
   json.uploaded_songs @user.playlist_songs.count
   json.made_playlists @user.owned_playlists.count
+  json.playlist_memberships @user.playlist_memberships
 end
 
 json.playlists do
