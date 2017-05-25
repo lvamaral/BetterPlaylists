@@ -107,12 +107,13 @@ class PlaylistDetail extends React.Component {
     let playlist_detail = ""
     let songs = (<p className="no-songs">Use the search bar on the right to add songs</p>)
     if (!isEqual(playlist, {})) {
+      console.log(playlist);
       playlist_detail = (
         <div id="playlist-title-box">
           <div className="playlist-detail-img"><img src={playlist.art_url}/></div>
           <div className="playlist-detail-core">
             <div className="playlist-detail-title"><h2>{playlist.title}</h2></div>
-            <div className="playlist-detail-uploader"><h3>By <Link to="/">{playlist.creator.username}</Link></h3></div>
+            <div className="playlist-detail-uploader"><h3>By <Link to={`/home/users/${playlist.creator.id}`}>{playlist.creator.username}</Link></h3></div>
             {this.hasSongs()}
             <div className="playlist-detail-buttons">
               <button onClick={this.playFirstSong.bind(this)}>PLAY</button>
@@ -129,7 +130,7 @@ class PlaylistDetail extends React.Component {
           <div className="playlist-detail-song" key={song.id}>
             <div className="playlist-uploader">
               <img src={song.uploader.image_url}></img>
-              <div>{song.uploader.username}</div>
+              <div><Link to={`/home/users/${song.uploader.id}`}>{song.uploader.username}</Link></div>
             </div>
             <div className="playlist-song-info">
                 <div className="playlist-song-playbtn">

@@ -35,7 +35,10 @@
 .playlist-detail-uploader {
   margin-top: 10px;
   color: $gray;
+}
 
+.playlist-detail-uploader a:hover {
+  color: $purple;
 }
 
 #playlist-title-box p {
@@ -124,6 +127,10 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+.playlist-uploader a:hover {
+  color: $purple;
 }
 
 .playlist-song-info {

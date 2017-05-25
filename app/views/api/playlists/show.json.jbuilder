@@ -3,6 +3,7 @@ json.extract! @playlist, :id, :title, :art_url, :public
 json.creator do
   json.username @playlist.creator.username
   json.image_url @playlist.creator.image_url
+  json.id @playlist.creator.id
 end
 
 json.members do

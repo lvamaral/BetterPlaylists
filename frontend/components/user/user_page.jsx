@@ -24,7 +24,7 @@ class UserPage extends React.Component {
     if (playlists !== undefined) {
       playlistList = playlists.map(playlist => (
         <NavLink to={`/home/playlist/${playlist.id}`} exact={true} className="playlist-link" activeClassName="active" key={playlist.id}>
-          <div className="user-playlist" >
+          <div className="user-playlist" key={playlist.id} >
             <div className="user-art">
               <img src={playlist.art_url}></img>
             </div>
@@ -52,7 +52,7 @@ class UserPage extends React.Component {
 
   render() {
     const user = this.props.user.newMember;
-    console.log("user",user);
+
     let playlists
     let made_playlists = 0
     let uploaded_songs = 0
