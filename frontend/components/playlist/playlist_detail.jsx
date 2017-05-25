@@ -1,8 +1,9 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import {includes, values, some, isEqual, at} from 'lodash';
-import size from 'lodash/size'
-import {Link, Redirect} from 'react-router-dom'
+import size from 'lodash/size';
+import {Link, Redirect} from 'react-router-dom';
+import SongDetailContainer from './song_detail_container';
 
 
 class PlaylistDetail extends React.Component {
@@ -13,23 +14,31 @@ class PlaylistDetail extends React.Component {
 
   componentDidMount() {
     this.props.getPlaylist(this.props.match.params.id);
-    $("#title-edit").focus()
   }
 
 
   componentWillReceiveProps(nextProps) {
     if (this.props.match.params.id !== nextProps.match.params.id) {
-      console.log("changed");
       this.props.getPlaylist(nextProps.match.params.id);
     }
   }
 
-  convertTime(timestamp){
-    let minutes = Math.floor(timestamp / 60);
-    let seconds = timestamp - (minutes * 60);
-     if (seconds < 10) { seconds = '0' + seconds; }
-     timestamp = minutes + ':' + seconds;
-     return timestamp;
+  hasSongs(){
+      const playlist = this.props.currentPlaylist
+      if (!isEqual(playlist.songs, {})) {
+        return (<div className="playlist-detail-uploader"><h3>{playlist.songs.length} songs <span id="playlist-members">{size(playlist.members)}<i className="fa fa-users" aria-hidden="true"></i></span></h3></div>)
+      } else {
+        return (<div className="playlist-detail-uploader"><h3><span id="playlist-members">{size(playlist.members)}<i className="fa fa-users" aria-hidden="true"></i></span></h3></div>)
+      }
+  }
+
+    isPublic(){
+      const playlist = this.props.currentPlaylist
+      if (playlist.public === true) {
+        return (<span id="playlist-public"><i className="fa fa-globe" aria-hidden="true"></i></span>)
+      } else {
+        return (<span id="playlist-public"><i className="fa fa-lock" aria-hidden="true"></i></span>)
+      }
     }
 
     songPlaying(song) {
@@ -45,24 +54,6 @@ class PlaylistDetail extends React.Component {
       audio.pause();
     }
 
-    hasSongs(){
-      const playlist = this.props.currentPlaylist
-      if (!isEqual(playlist.songs, {})) {
-        return (<div className="playlist-detail-uploader"><h3>{playlist.songs.length} songs <span id="playlist-members">{size(playlist.members)}<i className="fa fa-users" aria-hidden="true"></i></span></h3></div>)
-      } else {
-        return (<div className="playlist-detail-uploader"><h3><span id="playlist-members">{size(playlist.members)}<i className="fa fa-users" aria-hidden="true"></i></span></h3></div>)
-      }
-    }
-
-    isPublic(){
-      const playlist = this.props.currentPlaylist
-      if (playlist.public === true) {
-        return (<span id="playlist-public"><i className="fa fa-globe" aria-hidden="true"></i></span>)
-      } else {
-        return (<span id="playlist-public"><i className="fa fa-lock" aria-hidden="true"></i></span>)
-      }
-    }
-
     playFirstSong() {
       if (this.props.currentPlaylist.songs[0] != undefined) {
         this.props.playSong(this.props.currentPlaylist.songs[0])
@@ -73,7 +64,7 @@ class PlaylistDetail extends React.Component {
       let owned = this.isFollowing()
 
       if (this.state.editing) {
-        return (<span id="follow" onClick={this.startEdit.bind(this)}>DONE</span>)
+        return (<span id="follow" onClick={this.handleSubmit.bind(this)}>DONE</span>)
       } else if (this.props.currentPlaylist.creator.username === this.props.currentUser.username) {
         return (<span id="follow" onClick={this.startEdit.bind(this)}>EDIT</span>)
       }
@@ -123,15 +114,12 @@ class PlaylistDetail extends React.Component {
 
     isEditing(){
       if (this.state.editing) {
-        return (<input type="text" autoFocus id="title-edit" value={this.props.currentPlaylist.title} onChange={this.update('title')}/>)
+        return (<input type="text" autoFocus id="title-edit" value={this.state.title} onChange={this.update('title')}/>)
       } else {
         return (this.props.currentPlaylist.title)
       }
     }
 
-    focusTitle(){
-
-    }
 
     update(property) {
       return e => {
@@ -139,9 +127,14 @@ class PlaylistDetail extends React.Component {
       }
     }
 
+    handleSubmit(e) {
+      e.preventDefault();
+      this.setState({editing: false})
+      this.props.updatePlaylist(this.props.currentPlaylist.id, this.state.title)
+    }
+
 
   render() {
-    console.log(this.state.editing);
     const playlist = this.props.currentPlaylist;
     let owned = this.isFollowing();
 
@@ -173,31 +166,7 @@ class PlaylistDetail extends React.Component {
       )
       if (!isEqual(playlist.songs, {})) {
         songs = playlist.songs.map( (song) => (
-          <div className="playlist-detail-song" key={song.id}>
-            <div className="playlist-uploader">
-              <img src={song.uploader.image_url}></img>
-              <div><Link to={`/home/users/${song.uploader.id}`}>{song.uploader.username}</Link></div>
-            </div>
-            <div className="playlist-song-info">
-                <div className="playlist-song-playbtn">
-                  {this.songPlaying(song)}
-                </div>
-                <div className="playlist-song-core">
-                  <div className="playlist-core-title">
-                    <div className="playlist-core-title2">
-                      <p><span id="title">{song.title}</span></p>
-                      <p><span id="artist">{song.artist}</span></p>
-                    </div>
-                    <div className="playlist-core-length">{song.length}</div>
-                  </div>
-
-                  <div className="vote-box">
-                    <i className="fa fa-chevron-up" aria-hidden="true" id="up"></i>
-                    <i className="fa fa-chevron-down" aria-hidden="true" id="down"></i>
-                  </div>
-                </div>
-            </div>
-          </div>
+          <SongDetailContainer key={song.id}  song={song}/>
         ))
       }
     }
@@ -212,3 +181,34 @@ class PlaylistDetail extends React.Component {
 }
 
 export default PlaylistDetail;
+
+
+// if (!isEqual(playlist.songs, {})) {
+//   songs = playlist.songs.map( (song) => (
+//     <div className="playlist-detail-song" key={song.id}>
+//       <div className="playlist-uploader">
+//         <img src={song.uploader.image_url}></img>
+//         <div><Link to={`/home/users/${song.uploader.id}`}>{song.uploader.username}</Link></div>
+//       </div>
+//       <div className="playlist-song-info">
+//           <div className="playlist-song-playbtn">
+//             {this.songPlaying(song)}
+//           </div>
+//           <div className="playlist-song-core">
+//             <div className="playlist-core-title">
+//               <div className="playlist-core-title2">
+//                 <p><span id="title">{song.title}</span></p>
+//                 <p><span id="artist">{song.artist}</span></p>
+//               </div>
+//               <div className="playlist-core-length">{song.length}</div>
+//             </div>
+//
+//             <div className="vote-box">
+//               <i className="fa fa-chevron-up" aria-hidden="true" id="up"></i>
+//               <i className="fa fa-chevron-down" aria-hidden="true" id="down"></i>
+//             </div>
+//           </div>
+//       </div>
+//     </div>
+//   ))
+// }

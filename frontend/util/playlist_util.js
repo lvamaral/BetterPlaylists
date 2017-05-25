@@ -12,19 +12,14 @@ export const createPlaylist = (playlist) => {
   });
 };
 
-export const updatePlaylist = (playlist) => {
+export const updatePlaylist = (id, title) => {
   return $.ajax({
-    method: 'POST',
-    url: 'api/playlists/',
-    data: { playlist:
-      {title: playlist.title,
-      creator_id: playlist.creator_id,
-      public: playlist.public,
-      user_ids: playlist.user_ids
-      }
-    }
-  });
-};
+    method: 'PATCH',
+    url: `api/playlists/${id}`,
+    data: {id: id, title: title}
+    })
+  };
+
 
 export const getPlaylists = (id) => {
   return $.ajax({

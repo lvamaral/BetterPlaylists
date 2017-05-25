@@ -29,7 +29,7 @@ class Api::PlaylistsController < ApplicationController
 
   def update
     @playlist = Playlist.find(params[:id])
-      if @playlist.update(post_params)
+      if @playlist.update(title: params[:title])
         render :show
       else
         render json: @playlist.errors.full_messages, status: 422

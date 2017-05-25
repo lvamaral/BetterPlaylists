@@ -24,13 +24,26 @@ class SearchBar extends React.Component {
     this.props.addSong(song_id, playlist_id, user_id);
   }
 
+  isFollowing(){
+    let following = false
+
+    if (this.props.currentPlaylist.members !== undefined){
+      if (Object.keys(this.props.currentPlaylist.members).includes(String(this.props.currentUser.id))) {
+        following = true
+      } else {
+        following = false
+      }
+    }
+    return following
+  }
+
   songIcon(currentSong) {
     let addIcon = <div className="addicon"></div>
     if (this.props.currentPlaylist.id != undefined) {
       let songIds = this.props.currentPlaylist.songs.map( song => song.id)
       if (songIds.includes(currentSong.id)) {
         addIcon = <div className="addicon"><i className="fa fa-check" aria-hidden="true"></i></div>
-      } else {
+      } else if (this.isFollowing()) {
         addIcon =  <div className="addicon"><i className="fa fa-plus" aria-hidden="true" onClick={() => this.addSong(currentSong.id, this.props.currentPlaylist.id, this.props.currentUser.id)}></i></div>
       }
     }
@@ -44,7 +57,6 @@ class SearchBar extends React.Component {
 
     $(".head").removeClass("source-selected")
     $(e.target).addClass("source-selected")
-    console.log("state",this.state)
   }
 
   isPlaying(song) {
