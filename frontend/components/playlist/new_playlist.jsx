@@ -7,7 +7,7 @@ class NewPlaylist extends React.Component {
   constructor(props) {
     super(props);
     const set = new Set()
-    this.state = {query: "", title: "", public: true, members: set, redirect: false}
+    this.state = {query: "", title: "", public: true, members: set, redirect: false, editing: false}
     this.getPlaylists = this.props.getPlaylists.bind(this)
 
   }

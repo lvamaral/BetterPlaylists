@@ -19,7 +19,7 @@ export const getUsers = query => dispatch => {
   ))
 )};
 
-export const getUser = query => dispatch => {
+export const getUser = id => dispatch => {
   return (
   APIUtil.user(id).then(user => (
     dispatch(receiveUser(user))

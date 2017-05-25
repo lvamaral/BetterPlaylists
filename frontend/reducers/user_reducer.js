@@ -13,12 +13,10 @@ const UserReducer = (state = def_state, action) => {
   switch(action.type) {
     case RECEIVE_USERS:
       const users = {users: action.users};
-      // debugger
       return {users: users, newMember: state.newMember}
     case RECEIVE_USER:
       const user = action.user;
-      console.log("user red", merge(state, {newMember: user}));
-      return merge(state, {newMember: user})
+      return {users: state.users, newMember: user}
     default:
       return state;
   }

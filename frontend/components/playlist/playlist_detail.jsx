@@ -19,6 +19,7 @@ class PlaylistDetail extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.match.params.id !== nextProps.match.params.id) {
+      console.log("changed");
       this.props.getPlaylist(nextProps.match.params.id);
     }
   }

@@ -16,6 +16,7 @@ import PlaylistListContainer from './playlist/playlist_list_container';
 import PlaylistDetailContainer from './playlist/playlist_detail_container';
 import Browse from './greeting/browse_container';
 import NewPlaylistContainer from './playlist/new_playlist_container';
+import UserPageContainer from './user/user_page_container';
 
 const Main = () => (
   <div className="main">
@@ -38,6 +39,7 @@ const Main = () => (
 
       <div className="mid" id="mid">
         <Switch>
+          <Route path='/home/users/:user_id' component={UserPageContainer}/>
           <Route path="/home/new" component={NewPlaylistContainer} />
           <ProtectedRoute path="/home/playlist/:id" component={PlaylistDetailContainer} />
           <Route path="/home/:browsetype" component={Browse}/>
