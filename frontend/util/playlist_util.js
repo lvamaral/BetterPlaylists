@@ -34,6 +34,14 @@ export const getPlaylist = (id) => {
   });
 };
 
+export const followPlaylist = (user_id, playlist_id) => {
+  return $.ajax({
+    method: 'POST',
+    url: `/api/playlist_memberships`,
+    data: {user_id: user_id, playlist_id: playlist_id}
+  });
+};
+
 export const addSong = (song_id, playlist_id, user_id) => {
   return $.ajax({
     method: 'POST',

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import PlaylistDetail from './playlist_detail';
-import {getPlaylist} from '../../actions/playlist_actions';
+import {getPlaylist, followPlaylist} from '../../actions/playlist_actions';
 import {playSong} from '../../actions/playbar_actions';
 
 const mapStateToProps = (state) => ({
@@ -13,7 +13,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = dispatch => ({
   getPlaylist: query => dispatch(getPlaylist(query)),
-  playSong: song => dispatch(playSong(song))
+  playSong: song => dispatch(playSong(song)),
+  followPlaylist: (user_id, playlist_id) => dispatch(followPlaylist(user_id,playlist_id))
 });
 
 export default connect(

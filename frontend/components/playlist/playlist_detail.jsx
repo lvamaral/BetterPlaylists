@@ -8,12 +8,11 @@ import {Link, Redirect} from 'react-router-dom'
 class PlaylistDetail extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {owned: ""}
+    this.state = {owned: "", following: ""}
   }
 
   componentDidMount() {
     this.props.getPlaylist(this.props.match.params.id);
-
   }
 
 
@@ -76,9 +75,14 @@ class PlaylistDetail extends React.Component {
       else if (owned ){
         return (<span id="follow">UNFOLLOW</span>)
       } else {
-        return (<span id="follow">FOLLOW</span>)
+        return (<span id="follow" onClick={this.Follow.bind(this)}>FOLLOW</span>)
       }
+    }
 
+    Follow(){
+      this.props.followPlaylist(this.props.currentUser.id, this.props.currentPlaylist.id);
+      this.props.getPlaylist(this.props.match.params.id);
+      $("#follow").html("UNFOLLOW");
     }
 
     isFollowing(playlist){
@@ -107,7 +111,6 @@ class PlaylistDetail extends React.Component {
     let playlist_detail = ""
     let songs = (<p className="no-songs">Use the search bar on the right to add songs</p>)
     if (!isEqual(playlist, {})) {
-      console.log(playlist);
       playlist_detail = (
         <div id="playlist-title-box">
           <div className="playlist-detail-img"><img src={playlist.art_url}/></div>

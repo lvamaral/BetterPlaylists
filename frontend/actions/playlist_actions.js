@@ -56,6 +56,14 @@ export const getPlaylists = (id) => dispatch => {
   ))
 )};
 
+export const followPlaylist = (user_id, playlist_id) => dispatch => {(
+  APIUtil.followPlaylist(user_id, playlist_id)
+)};
+
+// .then(getPlaylists(user_id)).then(playlists => (
+//   dispatch(receiveOwnedPlaylists(playlists))
+//
+
 export const getAllPlaylists = () => dispatch => {
   return (
   APIUtil.getAllPlaylists().then(playlists => (

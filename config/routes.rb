@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :playlists, only: [:create,:destroy,:show,:index]
     resources :songs, only: [:index]
     resources :playlist_songs, only: [:create, :update]
+    resources :playlist_memberships, only: [:create, :destroy]
   end
 
   root "static_pages#root"
