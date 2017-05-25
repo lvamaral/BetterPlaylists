@@ -49,9 +49,9 @@ class SearchBar extends React.Component {
 
   isPlaying(song) {
     if (song === this.props.currentSong) {
-      return (<div className="stitle playing">{song.title}</div>)
+      return (<div className="stitle playing"><p>{song.title}</p></div>)
     } else {
-      return (<div className="stitle">{song.title}</div>)
+      return (<div className="stitle"><p>{song.title}</p></div>)
     }
   }
 

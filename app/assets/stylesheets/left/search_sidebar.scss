@@ -16,7 +16,6 @@
   flex-direction: column;
   justify-content: space-between;
   overflow-y: auto;
-  overflow-x: visible !important;
 
 }
 
@@ -55,7 +54,7 @@
 .search-results {
   height: 100%;
   width: 100%;
-
+  min-width: 0;
 }
 
 .head {
@@ -69,17 +68,14 @@
   justify-content: flex-end;
   align-items: center;
   margin: 1px 0;
-  height: 60px;
+  height: 70px;
+  min-width: 0
 }
 
 .srow2 {
   width: 100%;
   display: flex;
   justify-content: space-around;
-}
-
-.stitle2,.sartist2,.salbum2 {
-  flex: 1;
 }
 
 .srow:hover {
@@ -89,6 +85,7 @@
 .stitle,.sartist,.salbum  {
   text-align: left;
   padding: 5px;
+  min-width: 0
 }
 
 .sart {
@@ -109,9 +106,15 @@
 
 .stitle {
   color: $white;
+  min-width: 0;
+}
+
+.stitle > p {
+
 }
 
 .sartist {
+
   color: $gray;
 }
 

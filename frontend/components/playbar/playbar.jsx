@@ -78,7 +78,7 @@ class Playbar extends React.Component {
 
     hasLength(){
       if (this.props.playbar.currentSong !== undefined) {
-        let len = this.convertTime(this.props.playbar.currentSong.length)
+        let len = this.props.playbar.currentSong.length
         return (<p>{len}</p>)
       } else {
         return (<p></p>)

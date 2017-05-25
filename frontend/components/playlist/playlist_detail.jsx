@@ -145,7 +145,7 @@ class PlaylistDetail extends React.Component {
                       <p><span id="title">{song.title}</span></p>
                       <p><span id="artist">{song.artist}</span></p>
                     </div>
-                    <div className="playlist-core-length">{this.convertTime(song.length)}</div>
+                    <div className="playlist-core-length">{song.length}</div>
                   </div>
 
                   <div className="vote-box">
