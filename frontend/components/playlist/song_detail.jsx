@@ -88,7 +88,7 @@ class SongDetail extends React.Component{
                 </div>
 
                 <div className="vote-box">
-                  {this.renderUpVote()}
+
 
                 </div>
               </div>
@@ -108,7 +108,7 @@ class SongDetail extends React.Component{
 export default SongDetail;
       // {this.renderDownVote()}
         // {this.renderUpVote()}
-
+          // {this.renderUpVote()}
       // {this.songPlaying(this.song)}
 
       // <i className="fa fa-chevron-up" aria-hidden="true" id="up" onClick={()=>this.vote()}></i>

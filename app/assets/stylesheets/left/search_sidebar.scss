@@ -7,8 +7,25 @@
   background-color: black;
   color: white;
   font-size: 15px;
+}
+
+.left {
+  padding-top: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgb(10,10,10);
+  color: white;
+  display: none;
 
 }
+
+.left:hover {
+  width: 100%;
+  max-width: 100%;
+}
+
 
 .search {
   height: 100%;
@@ -16,7 +33,9 @@
   flex-direction: column;
   justify-content: space-between;
   overflow-y: auto;
+  display: none;
 }
+
 
 .search-top {
   flex: 9;
@@ -78,7 +97,7 @@
   justify-content: flex-end;
   align-items: center;
   margin: 1px 0;
-  height: 70px;
+  height: 60px;
   min-width: 0
 }
 

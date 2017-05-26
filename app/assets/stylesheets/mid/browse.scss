@@ -40,8 +40,16 @@
   text-align: center;
 }
 
+.browse-start a {
+  color: $purple;
+}
+
+
 .browse-start a:hover {
   cursor: pointer;
+  text-decoration: underline;
+  // font-size: 37px;
+
 }
 
 .playlist-list {

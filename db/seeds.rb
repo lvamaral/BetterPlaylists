@@ -28,11 +28,10 @@ require "CSV"
 
 CSV.foreach("public/songlist.csv") do |row|
   title = row[0]
-  length = row[1]
+  length = row[1].to_s
   artist = row[2]
   album = row[3]
   art_url = row[4]
-  trackn = row[5]
   Song.create(title: title, artist: artist, album: album, song_url: "songs/#{title}.mp3", length: length, art_url: "album_art/#{art_url}")
 end
 
@@ -63,9 +62,78 @@ User.create(username: "zanika", password: "password", email: "hot994s@hotail.com
 
 # Playlists
 Playlist.create(title: "Party123", creator_id: 1, art_url: "album_art/skin.jpg", public: false)
+PlaylistMembership.create(user_id: 1, playlist_id: 1)
+PlaylistMembership.create(user_id: 1, playlist_id: 2)
+PlaylistMembership.create(user_id: 1, playlist_id: 3)
+PlaylistMembership.create(user_id: 1, playlist_id: 4)
+
+PlaylistSong.create(song_id: 1, playlist_id: 1, user_id: 1)
+PlaylistSong.create(song_id: 2, playlist_id: 1, user_id: 2)
+PlaylistSong.create(song_id: 3, playlist_id: 1, user_id: 1)
+PlaylistSong.create(song_id: 4, playlist_id: 1, user_id: 3)
+PlaylistSong.create(song_id: 5, playlist_id: 1, user_id: 4)
+
 Playlist.create(title: "Chill", creator_id: 1, art_url: "album_art/graduation.jpg", public: false)
+PlaylistMembership.create(user_id: 1, playlist_id: 2)
+
+PlaylistMembership.create(user_id: 10, playlist_id: 2)
+PlaylistMembership.create(user_id: 6, playlist_id: 2)
+PlaylistMembership.create(user_id: 7, playlist_id: 2)
+PlaylistMembership.create(user_id: 9, playlist_id: 2)
+PlaylistMembership.create(user_id: 11, playlist_id: 2)
+PlaylistMembership.create(user_id: 12, playlist_id: 2)
+PlaylistMembership.create(user_id: 13, playlist_id: 2)
+PlaylistMembership.create(user_id: 14, playlist_id: 2)
+
+PlaylistSong.create(song_id: 20, playlist_id: 2, user_id: 10)
+PlaylistSong.create(song_id: 30, playlist_id: 2, user_id: 6)
+PlaylistSong.create(song_id: 25, playlist_id: 2, user_id: 7)
+PlaylistSong.create(song_id: 15, playlist_id: 2, user_id: 9)
+PlaylistSong.create(song_id: 10, playlist_id: 2, user_id: 12)
+
+Playlist.create(title: "You&I", creator_id: 1, art_url: "album_art/youandi.jpg", public: false)
+PlaylistMembership.create(user_id: 8, playlist_id: 3)
+PlaylistMembership.create(user_id: 1, playlist_id: 3)
+
+# array = [1..19]
+# array2 = [20..35]
+# 5.times do
+#   PlaylistSong.create(song_id: array.shuffle.pop, playlist_id: 3, user_id: 1)
+#   PlaylistSong.create(song_id: array2.shuffle.pop, playlist_id: 3, user_id: 8)
+# end
+
+Playlist.create(title: "Hiking Trip", creator_id: 1, art_url: "album_art/hike.jpg", public: false)
+PlaylistMembership.create(user_id: 1, playlist_id: 4)
+
+
+# 10.times do
+#   user_id = rand(2..15)
+#   PlaylistMembership.create(user_id: user_id, playlist_id: 5)
+#   PlaylistSong.create(song_id: rand(1..35), playlist_id: 5, user_id: user_id)
+# end
+
+
+Playlist.create(title: "Boat Tunes", creator_id: 1, art_url: "album_art/boating.jpg", public: false)
+PlaylistMembership.create(user_id: 1, playlist_id: 5)
+
+# 8.times do
+#   user_id = rand(2..15)
+#   PlaylistMembership.create(user_id: user_id, playlist_id: 5)
+#   PlaylistSong.create(song_id: rand(1..35), playlist_id: 5, user_id: user_id)
+# end
+
+Playlist.create(title: "Zen", creator_id: 1, art_url: "album_art/garden.jpg", public: false)
+PlaylistMembership.create(user_id: 1, playlist_id: 6)
+
+# 10.times do
+#   user_id = rand(2..15)
+#   PlaylistMembership.create(user_id: user_id, playlist_id: 6)
+#   PlaylistSong.create(song_id: rand(1..35), playlist_id: 6, user_id: user_id)
+# end
+
+
 Playlist.create(title: "TogaFriday", creator_id: 2, art_url: "album_art/DAMN..jpg", public: false)
-Playlist.create(title: "No Lucas Here", creator_id: 2, art_url: "album_art/skin.jpg", public: false)
+Playlist.create(title: "No Break", creator_id: 2, art_url: "album_art/skin.jpg", public: false)
 Playlist.create(title: "Country", creator_id: 1, art_url: "album_art/country.png", public: true)
 Playlist.create(title: "EDM", creator_id: 1, art_url: "album_art/edm.png", public: true)
 Playlist.create(title: "Pop", creator_id: 3, art_url: "album_art/pop.png", public: true)
@@ -83,6 +151,8 @@ Playlist.create(title: "Lounge", creator_id: 3, art_url: "album_art/lounge.png",
 
 # playlist_memberships
 PlaylistMembership.create(user_id: 1, playlist_id: 1)
+PlaylistMembership.create(user_id: 1, playlist_id: 5)
+PlaylistMembership.create(user_id: 1, playlist_id: 6)
 PlaylistMembership.create(user_id: 2, playlist_id: 1)
 PlaylistMembership.create(user_id: 3, playlist_id: 1)
 PlaylistMembership.create(user_id: 4, playlist_id: 1)
@@ -95,18 +165,11 @@ PlaylistMembership.create(user_id: 5, playlist_id: 3)
 PlaylistMembership.create(user_id: 1, playlist_id: 3)
 PlaylistMembership.create(user_id: 2, playlist_id: 3)
 
-100.times do
-  PlaylistMembership.create(user_id: rand(2..17), playlist_id: rand(4..13))
-end
-
-
-#playlist_songs
-PlaylistSong.create(song_id: 1, playlist_id: 1, up_votes: 0, down_votes: 0, user_id: 1)
-PlaylistSong.create(song_id: 2, playlist_id: 1, up_votes: 0, down_votes: 0, user_id: 2)
-PlaylistSong.create(song_id: 3, playlist_id: 1, up_votes: 0, down_votes: 0, user_id: 1)
-PlaylistSong.create(song_id: 4, playlist_id: 1, up_votes: 0, down_votes: 0, user_id: 3)
-PlaylistSong.create(song_id: 5, playlist_id: 1, up_votes: 0, down_votes: 0, user_id: 4)
-
-100.times do
-  PlaylistSong.create(song_id: rand(2..35), playlist_id: rand(4..13), up_votes: 0, down_votes: 0, user_id: rand(2..17))
-end
+# 100.times do
+#   user_id = rand(2..17)
+#   playlist_id = rand(7..13)
+#   PlaylistMembership.create(user_id: user_id, playlist_id: playlist_id)
+#   30.times do
+#     PlaylistSong.create(song_id: rand(2..60), playlist_id: playlist_id, user_id: user_id)
+#   end
+# end

@@ -34,7 +34,6 @@ const Main = () => (
     <div className="content">
       <div className="left">
         <SearchBarContainer />
-
       </div>
 
       <div className="mid" id="mid">

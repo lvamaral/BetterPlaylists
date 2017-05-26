@@ -24,8 +24,6 @@ json.songs do
     json.title playlist_song.song.title
     json.artist playlist_song.song.artist
     json.length playlist_song.song.length
-    json.upvotes playlist_song.up_votes
-    json.downvotes playlist_song.down_votes
     json.uploader playlist_song.user
     json.song_url playlist_song.song.song_url
     json.art_url playlist_song.song.art_url

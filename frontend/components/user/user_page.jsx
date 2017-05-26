@@ -8,7 +8,9 @@ class UserPage extends React.Component {
   }
 
   componentDidMount(){
-    this.props.getUser(this.props.match.params.user_id)
+    this.props.getUser(this.props.match.params.user_id);
+    $(".left").hide();
+    $(".search").hide();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -19,7 +21,7 @@ class UserPage extends React.Component {
 
   renderOwnPlaylists(user){
     const playlists = user.playlists;
-  
+
     let playlistList = ""
     if (playlists !== undefined) {
       playlistList = playlists.map(playlist => (

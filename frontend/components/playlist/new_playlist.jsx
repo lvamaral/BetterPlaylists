@@ -14,6 +14,8 @@ class NewPlaylist extends React.Component {
 
     componentDidMount() {
       this.props.getUsers();
+      $(".left").hide();
+      $(".search").hide();
     }
 
     update(property) {
@@ -124,7 +126,7 @@ class NewPlaylist extends React.Component {
             <div className="user-search-box">
               <span className="input input--isao">
                 <input value={this.state.query} onChange={this.update('query')} className="input__field input__field--isao" type="text" id="input-39" />
-                <label className="input__label input__label--isao" htmlFor="input-39" data-content="Add Users">
+                <label className="input__label input__label--isao" htmlFor="input-39" data-content="Search for users...">
                   <span className="input__label-content input__label-content--isao">Add Users</span>
                 </label>
               </span>

@@ -15,6 +15,8 @@ class Browse extends React.Component {
   componentDidMount() {
     this.props.getPlaylists(this.props.currentUser.id);
     this.props.getAllPlaylists();
+    $(".left").hide();
+    $(".search").hide();
   }
 
   browseHeader() {
@@ -46,6 +48,7 @@ class Browse extends React.Component {
                 {playlist.member_count}
                 <i className="fa fa-users" aria-hidden="true"></i>
               </div>
+
             </div>
           </div>
         </NavLink>

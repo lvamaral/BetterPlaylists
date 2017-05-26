@@ -28,12 +28,15 @@ class SearchBar extends React.Component {
     let following = false
 
     if (this.props.currentPlaylist.members !== undefined){
-      if (Object.keys(this.props.currentPlaylist.members).includes(String(this.props.currentUser.id))) {
+      console.log(this.props.currentPlaylist.creator.id);
+      if (this.props.currentPlaylist.creator.id === this.props.currentUser.id || Object.keys(this.props.currentPlaylist.members).includes(String(this.props.currentUser.id))) {
         following = true
       } else {
+
         following = false
       }
     }
+
     return following
   }
 
@@ -110,11 +113,5 @@ class SearchBar extends React.Component {
     }
   }
 
-  // <div className="srow2">
-  //   <div className="addicon"></div>
-  //   <div className="stitle2 head" onClick={this.handleClick.bind(this)}>Title</div>
-  //   <div className="sartist2 head" onClick={this.handleClick.bind(this)}>Artist</div>
-  //   <div className="salbum2 head" onClick={this.handleClick.bind(this)}>Album</div>
-  // </div>
 
 export default withRouter(SearchBar);
