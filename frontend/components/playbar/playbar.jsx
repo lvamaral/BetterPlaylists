@@ -111,7 +111,7 @@ class Playbar extends React.Component {
       }
 
       handleClick(e){
-        console.log(e.target);
+        
       }
 
     render() {

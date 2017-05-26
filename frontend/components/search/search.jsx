@@ -28,7 +28,6 @@ class SearchBar extends React.Component {
     let following = false
 
     if (this.props.currentPlaylist.members !== undefined){
-      console.log(this.props.currentPlaylist.creator.id);
       if (this.props.currentPlaylist.creator.id === this.props.currentUser.id || Object.keys(this.props.currentPlaylist.members).includes(String(this.props.currentUser.id))) {
         following = true
       } else {
