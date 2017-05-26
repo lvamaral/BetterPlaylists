@@ -109,7 +109,7 @@ class Browse extends React.Component {
         )
       )
     }
-    return shuffle(playlistList).slice(0,5)
+    return shuffle(playlistList).slice(0,4)
   }
 
 

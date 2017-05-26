@@ -75,7 +75,7 @@ class SearchBar extends React.Component {
           <div className="sart" onClick={() => this.props.playSong(song)}><img src={song.art_url}></img></div>
           <div className="score" onClick={() => this.props.playSong(song)}>
             {this.isPlaying(song)}
-            <div className="sartist">{song.artist} - {song.album}</div>
+            <div className="sartist">{song.artist}</div>
           </div>
           {this.songIcon(song)}
         </div>)

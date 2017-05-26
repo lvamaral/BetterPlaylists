@@ -1,10 +1,20 @@
 import React from 'react';
 import {Link, Redirect} from 'react-router-dom';
+import {values, last} from 'lodash';
+import{size, isEqual} from 'lodash';
 
 class SongDetail extends React.Component{
   constructor(props) {
     super(props)
     this.song = this.props.song
+    this.state = {voted: ""}
+  }
+
+  componentDidMount(){
+    this.props.getVotes(this.props.currentUser.id, this.song.id, this.props.currentPlaylist.id);
+    if (!isEqual(this.props.votes, {}) && !isEqual(this.props.votes, [])) {
+      this.setState({voted: true})
+    }
   }
 
   convertTime(timestamp){
@@ -28,8 +38,35 @@ class SongDetail extends React.Component{
       audio.pause();
     }
 
+    vote(){
+     const type = 1;
+     const user_id = this.props.currentUser.id;
+     const playlist_id = this.props.currentPlaylist.id;
+     const song_id = this.props.song.id
+     this.props.createVote(type, user_id, playlist_id, song_id)
+    }
+
+    renderUpVote(){
+      if (this.state.voted === true || this.props.votes.length > 0)
+      {
+        return (<i className="fa fa-chevron-up up-voted" aria-hidden="true" id="up"></i>)
+      } else {
+        return (<i className="fa fa-chevron-up" aria-hidden="true" id="up" onClick={()=>this.vote()}></i>)
+      }
+    }
+
+    // renderDownVote(){
+    //   if (this.votes.some(vote => vote.user_id === this.props.currentUser.id)
+    //   && this.votes.some(vote => vote.song_id === this.song.id)) {
+    //     return (<i className="fa fa-chevron-up up-voted" aria-hidden="true" id="up"></i>)
+    //   } else {
+    //     return (<i className="fa fa-chevron-up" aria-hidden="true" id="up" onClick={()=>this.vote()}></i>)
+    //   }
+    // }
+
 
   render ()  {
+    console.log("state", this.state.voted);
     const songDetail = (
         <div className="playlist-detail-song">
           <div className="playlist-uploader">
@@ -51,8 +88,8 @@ class SongDetail extends React.Component{
                 </div>
 
                 <div className="vote-box">
-                  <i className="fa fa-chevron-up" aria-hidden="true" id="up"></i>
-                  <i className="fa fa-chevron-down" aria-hidden="true" id="down"></i>
+                  {this.renderUpVote()}
+
                 </div>
               </div>
           </div>
@@ -69,5 +106,10 @@ class SongDetail extends React.Component{
 }
 
 export default SongDetail;
+      // {this.renderDownVote()}
+        // {this.renderUpVote()}
 
       // {this.songPlaying(this.song)}
+
+      // <i className="fa fa-chevron-up" aria-hidden="true" id="up" onClick={()=>this.vote()}></i>
+      // <i className="fa fa-chevron-down" aria-hidden="true" id="down"></i>

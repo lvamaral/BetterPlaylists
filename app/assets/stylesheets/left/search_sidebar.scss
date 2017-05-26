@@ -16,7 +16,17 @@
   flex-direction: column;
   justify-content: space-between;
   overflow-y: auto;
+}
 
+.search-top {
+  flex: 9;
+  width: 100%;
+}
+
+
+.search a {
+  display: block;
+  flex: 1;
 }
 
 .searchbar {
@@ -84,7 +94,8 @@
 
 .stitle,.sartist,.salbum  {
   text-align: left;
-  padding: 5px;
+  margin-left: 5px;
+  padding: 2px 0;
   min-width: 0
 }
 

@@ -166,7 +166,7 @@ class PlaylistDetail extends React.Component {
       )
       if (!isEqual(playlist.songs, {})) {
         songs = playlist.songs.map( (song) => (
-          <SongDetailContainer key={song.id}  song={song}/>
+          <SongDetailContainer key={song.id} song={song}/>
         ))
       }
     }

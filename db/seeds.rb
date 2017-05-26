@@ -55,7 +55,7 @@ User.create(username: "alexa", password: "password", email: "hot999s@hotmail.com
 # Playlists
 Playlist.create(title: "Party123", creator_id: 1, art_url: "album_art/skin.jpg", public: false)
 Playlist.create(title: "Chill", creator_id: 1, art_url: "album_art/graduation.jpg", public: false)
-Playlist.create(title: "TogaFriday", creator_id: 2, art_url: "album_art/damn.jpg", public: false)
+Playlist.create(title: "TogaFriday", creator_id: 2, art_url: "album_art/DAMN..jpg", public: false)
 Playlist.create(title: "No Lucas Here", creator_id: 2, art_url: "album_art/skin.jpg", public: false)
 Playlist.create(title: "Country", creator_id: 1, art_url: "album_art/country.png", public: true)
 Playlist.create(title: "EDM", creator_id: 1, art_url: "album_art/edm.png", public: true)

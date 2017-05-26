@@ -8,6 +8,9 @@ class Playlist < ApplicationRecord
   has_many :playlist_songs, dependent: :destroy, inverse_of: :playlist
   has_many :songs, through: :playlist_songs
 
+  has_many :votes, dependent: :destroy, inverse_of: :playlist
+  
+
   belongs_to :creator,
   primary_key: :id,
   foreign_key: :creator_id,
