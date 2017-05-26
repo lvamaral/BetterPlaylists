@@ -19,12 +19,12 @@ class UserPage extends React.Component {
 
   renderOwnPlaylists(user){
     const playlists = user.playlists;
-    console.log(playlists);
+  
     let playlistList = ""
     if (playlists !== undefined) {
       playlistList = playlists.map(playlist => (
         <NavLink to={`/home/playlist/${playlist.id}`} exact={true} className="playlist-link" activeClassName="active" key={playlist.id}>
-          <div className="user-playlist" key={playlist.id} >
+          <div className="user-playlist" >
             <div className="user-art">
               <img src={playlist.art_url}></img>
             </div>

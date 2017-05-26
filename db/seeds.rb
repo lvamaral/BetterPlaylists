@@ -38,7 +38,7 @@ end
 
 
 # //People
-User.create(username: "lucas", password: "password", email: "hot@hotmail.com", image_url: "user_pic/86.jpg")
+User.create(username: "guest", password: "password", email: "hot@hotmail.com", image_url: "user_pic/86.jpg")
 User.create(username: "alex", password: "password", email: "hot2@hotmail.com", image_url: "user_pic/20.jpg")
 User.create(username: "john", password: "password", email: "hot3@hotmail.com", image_url: "user_pic/33.jpg")
 User.create(username: "michael", password: "password", email: "hot4@hotmail.com", image_url: "user_pic/34.jpg")
@@ -51,6 +51,15 @@ User.create(username: "gregoria", password: "password", email: "hot9@hotmail.com
 User.create(username: "michaela", password: "password", email: "hot99@hotmail.com", image_url: "user_pic/70.jpg")
 User.create(username: "margot", password: "password", email: "hot999@hotmail.com", image_url: "user_pic/82.jpg")
 User.create(username: "alexa", password: "password", email: "hot999s@hotmail.com", image_url: "user_pic/93.jpg")
+
+User.create(username: "lindsay", password: "password", email: "hot9994s@hotmail.com", image_url: "user_pic/27.jpg")
+User.create(username: "johnatan", password: "password", email: "ho4s@hotmail.com", image_url: "user_pic/100.jpg")
+User.create(username: "monica", password: "password", email: "h994s@hoail.com", image_url: "user_pic/128.jpg")
+User.create(username: "mike", password: "password", email: "t9994ss@hotmil.com", image_url: "user_pic/120.jpg")
+User.create(username: "big joe", password: "password", email: "hot994s@htmail.com", image_url: "user_pic/130.jpg")
+User.create(username: "zanika", password: "password", email: "hot994s@hotail.com", image_url: "user_pic/girl.jpg")
+
+
 
 # Playlists
 Playlist.create(title: "Party123", creator_id: 1, art_url: "album_art/skin.jpg", public: false)
@@ -86,8 +95,8 @@ PlaylistMembership.create(user_id: 5, playlist_id: 3)
 PlaylistMembership.create(user_id: 1, playlist_id: 3)
 PlaylistMembership.create(user_id: 2, playlist_id: 3)
 
-50.times do
-  PlaylistMembership.create(user_id: rand(2..11), playlist_id: rand(4..13))
+100.times do
+  PlaylistMembership.create(user_id: rand(2..17), playlist_id: rand(4..13))
 end
 
 
@@ -97,3 +106,7 @@ PlaylistSong.create(song_id: 2, playlist_id: 1, up_votes: 0, down_votes: 0, user
 PlaylistSong.create(song_id: 3, playlist_id: 1, up_votes: 0, down_votes: 0, user_id: 1)
 PlaylistSong.create(song_id: 4, playlist_id: 1, up_votes: 0, down_votes: 0, user_id: 3)
 PlaylistSong.create(song_id: 5, playlist_id: 1, up_votes: 0, down_votes: 0, user_id: 4)
+
+100.times do
+  PlaylistSong.create(song_id: rand(2..35), playlist_id: rand(4..13), up_votes: 0, down_votes: 0, user_id: rand(2..17))
+end

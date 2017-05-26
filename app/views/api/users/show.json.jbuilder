@@ -9,6 +9,7 @@ end
 json.playlists do
   json.array! @user.playlists.each do |playlist|
       json.title playlist.title
+      json.id playlist.id
       json.creator playlist.creator.username
       json.creator_id playlist.creator.id
       json.songs playlist.songs.length
