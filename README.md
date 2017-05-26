@@ -1,6 +1,6 @@
 # BetterPlaylists
 
-BetterPlaylists live
+[BetterPlaylists Live]: https://betterplaylists.herokuapp.com/#/
 
 BetterPlaylists is a full-stack web application inspired by Spotify. The idea behind the website is to provide a better interface to manage collaborative playlists, making song sharing more social. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.  
 
@@ -22,13 +22,13 @@ As the name suggests, the website revolves around creating playlists. To that en
 
 ### Playlist Creation
 
-Playlists can be public (they show on Explore for all users) or private. Users are added through a search input that fires an index query on the backend given typed parameters, and once a playlist is created, relevant playlist_user associations are automatically made.
+![demo](docs/screencasts/make_playlist.gif)
 
-[code?]
+Playlists can be public (they show on Explore for all users) or private. Users are added through a search input that fires an index query on the backend given typed parameters, and once a playlist is created, relevant playlist_user associations are automatically made.
 
 ### Ability to follow/unfollow playlists
 
-[screencast]: docs/screencasts/make_playlist.gif
+[screen cast]
 
 If a user accesses a private playlist, the user is automatically redirected to the home page. Public playlists, however, can be seen and followed. When a user follows a playlists, a playlist_membership association is made on the backend, and when unfollowing, the association is destroyed. The app’s state is updated with each playlist’s membership, and the components are re-rendered appropriately.
 
