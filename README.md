@@ -20,7 +20,7 @@ User pages
 
 
 Playlist Creation
-![]
+
 
 Playlists can be public (they show on Explore for all users) or private. Users are added through a search input that fires an index query on the backend given typed parameters, and once a playlist is created, relevant playlist_user associations are automatically made.
 
