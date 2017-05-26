@@ -17,6 +17,10 @@
   background: linear-gradient(to bottom, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.header a:hover{
+  color: $purple;
+}
+
 .title {
   padding: 10px 0;
   font-family: Behance;

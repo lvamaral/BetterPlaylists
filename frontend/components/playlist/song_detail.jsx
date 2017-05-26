@@ -69,8 +69,10 @@ class SongDetail extends React.Component{
     const songDetail = (
         <div className="playlist-detail-song">
           <div className="playlist-uploader">
-            <img src={this.song.uploader.image_url}></img>
-            <div><Link to={`/home/users/${this.song.uploader.id}`}>{this.song.uploader.username}</Link></div>
+            <Link to={`/home/users/${this.song.uploader.id}`}>
+              <img src={this.song.uploader.image_url}></img>
+              <div>{this.song.uploader.username}</div>
+            </Link>
           </div>
           <div className="playlist-song-info">
               <div className="playlist-song-playbtn">

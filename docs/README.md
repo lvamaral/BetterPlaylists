@@ -31,15 +31,13 @@ BetterPlaylists is a fullstack project inspired by Spotify that aims to provide 
 [schema]: docs/schema.md
 
 
-
-
 <h2>Implementation Timeline</h2>
 
 ### Phase 1: Backend setup and Front End User Authentication (2 days)
 
 **Objective:** Functioning rails project with front-end Authentication
 
-### Phase 2: Playlist Model, API, and components (4 days)
+### Phase 2: Playlist Model, API, and components (6 days)
 **Objective:** Playlists can be created, viewed, edited and destroyed through the API.
 
 **Sub-Objective:** User base can be searched to add users to playlists.
@@ -49,11 +47,11 @@ BetterPlaylists is a fullstack project inspired by Spotify that aims to provide 
 ### Phase 3: Song Search and Adding (2 days)
 **Objective:** Songs can be searched and added to playlists.
 
-### Phase 4: Voting System (1 day)
-**Objective:** Songs can be up or down voted. Songs with enough negative votes get removed from playlist
-
-### Phase 5: Play Bar (1 day)
+### Phase 4: Play Bar (2 day)
 **Objective:** Songs can be listened to from any point in the app
+
+### Phase 5 (BONUS): UP/DOWN vote functionality
+**Objective:** Allow users to vote up/down on songs, and delete songs with bad votes
 
 ### Phase 6 (BONUS): Connect with Spotify API
 **Objective:** Use Spotify API for logging in, song searching, and playlist importing/exporting

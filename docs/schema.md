@@ -14,7 +14,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 title       | string    | not null
-
+art_url     | string    | default: sample.png
 
 
 ## PlaylistMembers:
@@ -30,9 +30,9 @@ column name | data type | details
 id          | integer   | not null, primary key
 title       | string    | not null
 artist      | string    | not null
+album       | string    |
+length      | string    | 
 song_url    | integer   | indexed
-
-
 
 
 ## PlaylistSongs:
@@ -40,5 +40,4 @@ column name | data type | details
 ------------|-----------|-----------------------
 song_id     | integer   | not null, foreign key, indexed
 playlist_id | integer   | not null, foreign key, indexed
-up_votes    | integer   | not null, default: 0
-down_votes  | integer   | not null, default: 0
+user_id     | integer   | not null, foreign key, indexed
