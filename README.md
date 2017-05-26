@@ -1,60 +1,63 @@
-# BetterPlaylists
-BetterPlaylists is a fullstack project inspired by Spotify that aims to provide better playlist collaboration between friends.
-
-<a href="https://betterplaylists.herokuapp.com/#/">Live Website"</a>
-Trello Link (coming soon)
-
-<h2>Minimum Viable Product</h2>
-<p>BetterPlaylists is a web application that extends the basic functionality of Spotify by providing a better system to create collaborative playlists. It is built using Ruby on Rails, PostgreSQL, and React/Redux. By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:</p>
-<ul>
-<li>New account creation, login, and guest/demo login</li>
-<li>A production README</li>
-<li>Hosting on Heroku</li>
-<li>Playlist CRUD</li>
-<li>Following playlists/Friending users</li>
-<li>Music search</li>
-<li>Continuous play while navigating site</li>
-<li>(Bonus) Connect Spotify API</li>
-<li>(Bonus) Playlist collaboration with up/down voting feature on individual songs</li>
-</ul>
-
-## Design Docs
-* [View Wireframes][wireframes]
-* [React Components][components]
-* [API endpoints][api-endpoints]
-* [DB schema][schema]
-* [Sample State][sample-state]
-
-[wireframes]: docs/wireframes
-[components]: docs/component-hierarchy.md
-[sample-state]: docs/sample-state.md
-[api-endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md
+<h1>BetterPlaylists</h1>
 
 
+BetterPlaylists live
+
+BetterPlaylists is a full-stack web application inspired by Spotify. The idea behind the website is to provide a better interface to manage collaborative playlists, making song sharing more social. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.  
+
+[Front page pic]
 
 
-<h2>Implementation Timeline</h2>
+Features & Implementation
 
-### Phase 1: Backend setup and Front End User Authentication (2 days)
+As the name suggests, the website revolves around creating playlists. To that end, the main features revolve around:
 
-**Objective:** Functioning rails project with front-end Authentication
+Playlist creation, editing, and sharing with users
+Ability to follow/unfollow playlists
+Ability to search and add songs
+Ability to play songs continuously from a playlist
+User pages
 
-### Phase 2: Playlist Model, API, and components (4 days)
-**Objective:** Playlists can be created, viewed, edited and destroyed through the API.
 
-**Sub-Objective:** User base can be searched to add users to playlists.
+Playlist Creation
+![]
 
-**Sub-Objective:** Playlists display more info on sidebar.
+Playlists can be public (they show on Explore for all users) or private. Users are added through a search input that fires an index query on the backend given typed parameters, and once a playlist is created, relevant playlist_user associations are automatically made.
 
-### Phase 3: Song Search and Adding (2 days)
-**Objective:** Songs can be searched and added to playlists.
+[code?]
 
-### Phase 4: Voting System (1 day)
-**Objective:** Songs can be up or down voted. Songs with enough negative votes get removed from playlist
+Ability to follow/unfollow playlists
 
-### Phase 5: Play Bar (1 day)
-**Objective:** Songs can be listened to from any point in the app
+[ScreenCast Showing follow/unfollow plus song being able to be added]
 
-### Phase 6 (BONUS): Connect with Spotify API
-**Objective:** Use Spotify API for logging in, song searching, and playlist importing/exporting
+If a user accesses a private playlist, the user is automatically redirected to the home page. Public playlists, however, can be seen and followed. When a user follows a playlists, a playlist_membership association is made on the backend, and when unfollowing, the association is destroyed. The app’s state is updated with each playlist’s membership, and the components are re-rendered appropriately.
+
+
+
+
+
+III. Ability to search and add songs
+[Screen cast following plus adding songs]
+
+Songs can only be added to owned or followed playlists. Song search updates to show if a song is already on a playlist (and cannot be added again) or if available to add.
+
+[Song icon code]
+
+
+Ability to play songs continuously from a playlist
+[Screen cast playing a song from the playlist and skipping/going back, navigating away]
+
+Songs are played in a custom playbar component. Users can browse to any part of the website without interrupting a song. Playlists hold songs in an array to handle logic of skipping and going back to a previous song.
+
+User pages
+[Screen shot]
+
+User Pages show user statistics like playlists and number of songs added. It aims to emphasize the social aspect of the website. There are no artists or album pages as is typical of Spotify-like apps - this is about the users.
+
+Project Design
+BetterPlaylists was designed and built in two weeks. View the original proposal.
+
+
+Additional Features
+
+The next phase in this application is to implement the ability to vote on songs and connect to song browsing APIs such as Spotify.

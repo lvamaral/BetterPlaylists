@@ -36,15 +36,13 @@ User.create(username: "zanika", password: "password", email: "hot994s@hotail.com
 
 
 # Playlists
-Playlist.create(title: "Party123", creator_id: 1, art_url: "album_art/skin.jpg", public: false)
+Playlist.create(title: "Party123", creator_id: 1, art_url: "album_art/Skin.jpg", public: false)
 
 PlaylistSong.create(song_id: 1, playlist_id: 1, user_id: 1)
 PlaylistSong.create(song_id: 2, playlist_id: 1, user_id: 2)
-PlaylistSong.create(song_id: 3, playlist_id: 1, user_id: 1)
-PlaylistSong.create(song_id: 4, playlist_id: 1, user_id: 3)
-PlaylistSong.create(song_id: 5, playlist_id: 1, user_id: 4)
 
-Playlist.create(title: "Chill", creator_id: 1, art_url: "album_art/graduation.jpg", public: false)
+
+Playlist.create(title: "Chill", creator_id: 1, art_url: "album_art/Graduation.jpg", public: false)
 
 PlaylistMembership.create(user_id: 10, playlist_id: 2)
 PlaylistMembership.create(user_id: 6, playlist_id: 2)
@@ -71,7 +69,7 @@ end
 
 
 Playlist.create(title: "Hiking Trip", creator_id: 1, art_url: "album_art/hike.jpg", public: false)
-array = (2..5).to_a
+array = (3..5).to_a
 array.each do |n|
   user = array.shuffle.pop
   PlaylistMembership.create(user_id: user , playlist_id: 4)
