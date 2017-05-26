@@ -4,7 +4,7 @@
 
 BetterPlaylists is a full-stack web application inspired by Spotify. The idea behind the website is to provide a better interface to manage collaborative playlists, making song sharing more social. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.  
 
-[Front page pic]
+![homepage](docs/screencasts/homepage.png)
 
 
 ## Features & Implementation
@@ -28,29 +28,29 @@ Playlists can be public (they show on Explore for all users) or private. Users a
 
 ### Ability to follow/unfollow playlists
 
-[screen cast]
+![demo](docs/screencasts/follow.gif)
 
 If a user accesses a private playlist, the user is automatically redirected to the home page. Public playlists, however, can be seen and followed. When a user follows a playlists, a playlist_membership association is made on the backend, and when unfollowing, the association is destroyed. The app’s state is updated with each playlist’s membership, and the components are re-rendered appropriately.
 
 
 ### Ability to search and add songs
 
-[Screen cast following plus adding songs]
+![demo](docs/screencasts/addsong.gif)
 
 Songs can only be added to owned or followed playlists. Song search updates to show if a song is already on a playlist (and cannot be added again) or if available to add.
 
-[Song icon code]
+![song_icon_code](docs/screencasts/addicon.png)
 
 
 ### Ability to play songs continuously from a playlist
 
-[Screen cast playing a song from the playlist and skipping/going back, navigating away]
+![demo](docs/screencasts/playsong.gif)
 
 Songs are played in a custom playbar component. Users can browse to any part of the website without interrupting a song. Playlists hold songs in an array to handle logic of skipping and going back to a previous song.
 
 ### User pages
 
-[Screen shot]
+![homepage](docs/screencasts/userpage.png)
 
 User Pages show user statistics like playlists and number of songs added. It aims to emphasize the social aspect of the website. There are no artists or album pages as is typical of Spotify-like apps - this is about the users.
 
