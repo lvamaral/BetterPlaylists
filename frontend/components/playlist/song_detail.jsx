@@ -46,14 +46,14 @@ class SongDetail extends React.Component{
      this.props.createVote(type, user_id, playlist_id, song_id)
     }
 
-    renderUpVote(){
-      if (this.state.voted === true || this.props.votes.length > 0)
-      {
-        return (<i className="fa fa-chevron-up up-voted" aria-hidden="true" id="up"></i>)
-      } else {
-        return (<i className="fa fa-chevron-up" aria-hidden="true" id="up" onClick={()=>this.vote()}></i>)
-      }
-    }
+    // renderUpVote(){
+    //   if (this.state.voted === true || this.props.votes.length > 0)
+    //   {
+    //     return (<i className="fa fa-chevron-up up-voted" aria-hidden="true" id="up"></i>)
+    //   } else {
+    //     return (<i className="fa fa-chevron-up" aria-hidden="true" id="up" onClick={()=>this.vote()}></i>)
+    //   }
+    // }
 
     // renderDownVote(){
     //   if (this.votes.some(vote => vote.user_id === this.props.currentUser.id)

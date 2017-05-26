@@ -1,5 +1,5 @@
 
-require "CSV"
+require "csv"
 
 CSV.foreach("public/songlist.csv") do |row|
   title = row[0]
