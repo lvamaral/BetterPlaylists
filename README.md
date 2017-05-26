@@ -4,12 +4,12 @@
 
 BetterPlaylists is a full-stack web application inspired by Spotify. The idea behind the website is to provide a better interface to manage collaborative playlists, making song sharing more social. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.  
 
-![homepage](docs/screencasts/homepage.png)
+![homepage](docs/screencasts/home.png)
 
 
 ## Features & Implementation
 
-As the name suggests, the website revolves around creating playlists. To that end, the main features revolve around:
+As the name suggests, the website revolves around creating playlists. To that end, the main features consist of:
 
 <ol>
   <li>Playlist creation, editing, and sharing with users</li>
@@ -37,9 +37,10 @@ If a user accesses a private playlist, the user is automatically redirected to t
 
 ![demo](docs/screencasts/addsong.gif)
 
-Songs can only be added to owned or followed playlists. Song search updates to show if a song is already on a playlist (and cannot be added again) or if available to add.
+Songs can only be added to owned or followed playlists. The Song Search component updates to show if a song is already on a playlist (and cannot be added again) or if available to add.
 
 ![song_icon_code](docs/screencasts/addicon.png)
+Code snippet showing how the add icon conditionally re-renders.
 
 
 ### Ability to play songs continuously from a playlist
@@ -56,7 +57,8 @@ User Pages show user statistics like playlists and number of songs added. It aim
 
 ## Project Design
 
-BetterPlaylists was designed and built in two weeks. View the original proposal.
+BetterPlaylists was designed and built in two weeks.
+[Original Proposal]: docs/README.md
 
 
 ## Additional Features
