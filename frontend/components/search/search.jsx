@@ -108,6 +108,7 @@ class SearchBar extends React.Component {
               <p>New Playlist</p>
             </div>
           </Link>
+
         </div>
       )
     }
@@ -115,3 +116,10 @@ class SearchBar extends React.Component {
 
 
 export default withRouter(SearchBar);
+//
+// <Link to="/home/new">
+//   <div className="add-new-playlist">
+//     <i className="fa fa-plus-circle" aria-hidden="true"></i>
+//     <p>New Playlist</p>
+//   </div>
+// </Link>

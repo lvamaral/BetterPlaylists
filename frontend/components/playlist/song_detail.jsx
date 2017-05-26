@@ -66,7 +66,6 @@ class SongDetail extends React.Component{
 
 
   render ()  {
-    console.log("state", this.state.voted);
     const songDetail = (
         <div className="playlist-detail-song">
           <div className="playlist-uploader">

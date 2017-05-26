@@ -22,10 +22,12 @@ const Main = () => (
   <div className="main">
     <header className="header">
         <div className="title">
-            <Link to={'/home/featured'}><h1>BetterPlaylists</h1></Link>
+          <Link to={'/home/following'}><h1>BetterPlaylists</h1></Link>
         </div>
         <div className="midheader account-nav">
+
           <GreetingContainer />
+
         </div>
         <div className="rightheader">
         </div>

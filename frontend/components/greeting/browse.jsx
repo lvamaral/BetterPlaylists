@@ -22,9 +22,9 @@ class Browse extends React.Component {
   browseHeader() {
     return (
       <div className="browse-header">
+        <div className="browse-link"><NavLink to={`/home/following`} exact={true} activeClassName="browse-active">Following</NavLink></div>
         <div className="browse-link"><NavLink to={`/home/featured`} activeClassName="browse-active">Featured</NavLink></div>
         <div className="browse-link"><NavLink to={`/home/explore`} exact={true} activeClassName="browse-active">Explore</NavLink></div>
-        <div className="browse-link"><NavLink to={`/home/following`} exact={true} activeClassName="browse-active">Following</NavLink></div>
       </div>
     )
   }

@@ -4,7 +4,6 @@ import { Route, HashRouter, Link, NavLink, Switch } from 'react-router-dom';
 
 const Start = () => (
   <Switch>
-
       <Route path="/home" render={()=>browseHeader} />
   </Switch>
 )
