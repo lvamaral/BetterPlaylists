@@ -1,6 +1,7 @@
 
 require "csv"
 
+
 CSV.foreach("public/songlist.csv") do |row|
   title = row[0]
   length = row[1].to_s
@@ -36,13 +37,13 @@ User.create(username: "zanika", password: "password", email: "hot994s@hotail.com
 
 
 # Playlists
-Playlist.create(title: "Party123", creator_id: 1, art_url: "album_art/Skin.jpg", public: false)
+Playlist.create(title: "Party123", creator_id: 1, art_url: "album_art/Skin2.jpg", public: false)
 
 PlaylistSong.create(song_id: 1, playlist_id: 1, user_id: 1)
 PlaylistSong.create(song_id: 2, playlist_id: 1, user_id: 2)
 
 
-Playlist.create(title: "Chill", creator_id: 1, art_url: "album_art/Graduation.jpg", public: false)
+Playlist.create(title: "Chill", creator_id: 1, art_url: "album_art/Graduation2.jpg", public: false)
 
 PlaylistMembership.create(user_id: 10, playlist_id: 2)
 PlaylistMembership.create(user_id: 6, playlist_id: 2)
