@@ -58,6 +58,7 @@ User Pages show user statistics like playlists and number of songs added. It aim
 ## Project Design
 
 BetterPlaylists was designed and built in two weeks.
+
 [Original Proposal]: docs/README.md
 
 
