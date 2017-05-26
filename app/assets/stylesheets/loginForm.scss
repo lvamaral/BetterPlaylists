@@ -43,12 +43,21 @@
 }
 
 .login-form input, button {
-  background-color: $lightgray;
-  color: $gray;
+  // background-color: $lightgray;
+  // color: $gray;
+
+  background-color: transparent;
+  border: 1px solid $white;
+  color: $white;
   border-radius: 5px;
+
   height: 40px;
   font-size: 1.1em;
   padding-left: 5px;
+}
+
+.login-form input:hover, button {
+  font-size: 1.2em;
 }
 
 .login-form input:focus {
@@ -65,4 +74,20 @@
   padding-left: 10px;
   text-align: left;
   margin-top: 15px;
+}
+
+#demo {
+  background-color: transparent;
+  border: 1px solid $white;
+  color: $white;
+}
+
+#demo:hover {
+  font-size: 1.2em;
+}
+
+#demo button {
+
+  opacity: 0.5;
+  padding-top: 2px;
 }
