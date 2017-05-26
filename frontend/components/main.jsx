@@ -57,11 +57,4 @@ const Main = () => (
  )
 
 
- // <div className="playlist-list"><PlaylistListContainer /></div>
- // <Link to="/home/new">
- //   <div className="add-new-playlist">
- //     <i className="fa fa-plus-circle" aria-hidden="true"></i>
- //     <p>New Playlist</p>
- //   </div>
- // </Link>
 export default Main;
