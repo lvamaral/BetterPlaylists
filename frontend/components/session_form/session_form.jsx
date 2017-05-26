@@ -30,6 +30,11 @@ class SessionForm extends React.Component {
     this.props.processForm({user});
   }
 
+  guestLogin(e){
+    e.preventDefault();
+    this.setState({username: "guest", password: "password"})
+  }
+
 
   logInLink() {
     return <Link to="/login"> Log in</Link>;

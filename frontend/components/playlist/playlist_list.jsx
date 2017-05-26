@@ -17,7 +17,6 @@ class PlaylistList extends React.Component {
 
     const playlists = this.props.ownedPlaylists;
     let playlistList = ""
-    // console.log(playlists);
 
     if (playlists !== undefined) {
       playlistList = playlists.map(playlist => (

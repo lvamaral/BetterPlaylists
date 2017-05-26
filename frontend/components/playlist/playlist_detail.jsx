@@ -138,7 +138,6 @@ class PlaylistDetail extends React.Component {
   render() {
     $(".left").show();
     $(".search").show();
-    console.log(this.props);
     const playlist = this.props.currentPlaylist;
     let owned = this.isFollowing();
 
