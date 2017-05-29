@@ -1,7 +1,7 @@
 # BetterPlaylists
 BetterPlaylists is a fullstack project inspired by Spotify that aims to provide better playlist collaboration between friends.
 
-<a href="https://betterplaylists.herokuapp.com/#/">Live Website</a>
+<a href="http://www.betterplaylists.com/#/login">Live Website</a>
 
 <h2>Minimum Viable Product</h2>
 <p>BetterPlaylists is a web application that extends the basic functionality of Spotify by providing a better system to create collaborative playlists. It is built using Ruby on Rails, PostgreSQL, and React/Redux. By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:</p>

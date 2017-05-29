@@ -1,6 +1,6 @@
 # BetterPlaylists
 
-[BetterPlaylists Live]: https://betterplaylists.herokuapp.com/#/
+[BetterPlaylists Live]: http://www.betterplaylists.com/#/login
 
 BetterPlaylists is a full-stack web application inspired by Spotify. The idea behind the website is to provide a better interface to manage collaborative playlists, making song sharing more social. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.  
 

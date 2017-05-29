@@ -8,4 +8,6 @@ class Song < ApplicationRecord
   through: :playlist_songs,
   source: :user
 
+  #  has_attached_file :song, default_url: "3.mp3"
+  #   validates_attachment_content_type :song, content_type: /\Asong\/.*\Z/
 end

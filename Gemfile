@@ -26,6 +26,9 @@ gem "better_errors"
 gem "binding_of_caller"
 gem "pry-rails"
 gem "annotate"
+gem "paperclip", '~> 5.0.0'
+gem 'figaro'
+gem 'aws-sdk', '>= 2.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
