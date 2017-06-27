@@ -24,7 +24,7 @@ const Main = () => (
         <div className="title">
           <Link to={'/home/following'}><h1>BetterPlaylists</h1></Link>
         </div>
-        <div className="midheader account-nav">
+        <div className="midheader">
 
           <GreetingContainer />
 

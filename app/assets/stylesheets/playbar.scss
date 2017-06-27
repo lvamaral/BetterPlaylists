@@ -1,6 +1,8 @@
 @import "base/colors.scss";
 @import 'base/font.scss';
 
+
+
 .playbar {
   width: 100%;
   font-size: 36px;
@@ -9,7 +11,6 @@
   color: $gray;
   background: rgb(40,40,40);
   display: flex;
-
 }
 
 .playbarleft, .playbarright {
@@ -38,7 +39,8 @@
 }
 
 .playbar-info {
-  margin-left: 5px;
+  text-align: left;
+  margin-left: 10px;
   padding-top: 10px;
   display: flex;
   flex: 3;
@@ -112,4 +114,7 @@
 
 .inner-timebar {
   background-color: $gray;
+}
+.no-song {
+  display: none;
 }

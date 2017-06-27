@@ -58,6 +58,7 @@ class PlaylistDetail extends React.Component {
     playFirstSong() {
       if (this.props.currentPlaylist.songs[0] != undefined) {
         this.props.playSong(this.props.currentPlaylist.songs[0])
+        // $(".playbarmid").toggleClass("no-song")
       }
     }
 

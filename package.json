@@ -4,6 +4,7 @@
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "main": "webpack.config.js",
   "directories": {
+    "doc": "docs",
     "test": "test"
   },
   "dependencies": {
@@ -19,7 +20,7 @@
     "react-router-dom": "^4.1.1",
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
-    "webpack": "^2.5.1"
+    "webpack": "^2.6.1"
   },
   "devDependencies": {
     "eslint": "^3.19.0",
@@ -30,7 +31,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "webpack"
+    "webpack": "webpack"
   },
   "repository": {
     "type": "git",

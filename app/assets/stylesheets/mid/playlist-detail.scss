@@ -126,7 +126,19 @@
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
+}
+
+.playlist-uploader a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.playlist-uploader a div {
+  margin: 3px 0;
 }
 
 .playlist-uploader a:hover {

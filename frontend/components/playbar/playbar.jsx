@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 class Playbar extends React.Component {
   constructor(props) {
     super(props);
+    // console.log("playbar-props", this.props);
     this.state = {playStatus: this.props.playbar.playStatus, playTime: 0}
   }
 
@@ -28,6 +29,7 @@ class Playbar extends React.Component {
 
     audio.pause();
     this.props.playSong(nextSong)
+    audio.play();
   }
 
 
@@ -46,6 +48,7 @@ class Playbar extends React.Component {
 
       audio.pause();
       this.props.playSong(previousSong)
+      audio.play();
     }
 
 
@@ -110,9 +113,6 @@ class Playbar extends React.Component {
         $(".inner-timebar").css('width',`${percentage}%`);
       }
 
-      handleClick(e){
-        
-      }
 
     render() {
       const playbarleft = (
@@ -142,6 +142,20 @@ class Playbar extends React.Component {
         image = (<img src={this.props.playbar.currentSong.art_url}></img>)
       };
 
+      let displayBar = (
+        <div className="playbarmid">
+          {audio}
+        </div>
+      )
+      if (this.props.playbar.currentSong !== "") {
+          displayBar = (
+            <div className="playbarmid">
+              {playbarmid}
+              {scrobble}
+              {audio}
+            </div>
+          )
+      }
       return (
       <div className="playbar">
         <div className="playbarleft">
@@ -153,11 +167,7 @@ class Playbar extends React.Component {
             <p><span id="artist">{this.props.playbar.currentSong.artist}</span></p>
           </div>
         </div>
-        <div className="playbarmid">
-          {playbarmid}
-          {scrobble}
-          {audio}
-        </div>
+        {displayBar}
         <div className="playbarright">
         </div>
       </div>
@@ -166,5 +176,10 @@ class Playbar extends React.Component {
 
 }
 
+// <div className="playbarmid">
+//   {playbarmid}
+//   {scrobble}
+//   {audio}
+// </div>
 
 export default Playbar;
