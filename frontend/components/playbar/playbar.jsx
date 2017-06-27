@@ -11,10 +11,13 @@ class Playbar extends React.Component {
   componentDidMount(){
     this.setState({playStatus: this.props.playbar.playStatus});
     let audio = document.getElementById('audio');
-    audio.addEventListener('ended', this.nextSong)
+    // audio.addEventListener('ended', console.log("ended"))
+
+    // audio.addEventListener('ended', ()=> this.nextSong())
   }
 
   nextSong() {
+    console.log("CAlled??");
     let audio = document.getElementById('audio');
     const playlist = this.props.currentPlaylist.songs
     const current_idx = playlist.indexOf(this.props.playbar.currentSong)
@@ -111,6 +114,20 @@ class Playbar extends React.Component {
         this.setState({playTime: time})
         let percentage = (audio.currentTime/audio.duration)*100
         $(".inner-timebar").css('width',`${percentage}%`);
+        if (audio.currentTime === audio.duration) {
+          this.nextSong()
+        }
+      }
+
+      changeTime(e){
+        let fullWidth = $(".outer-timebar").width()
+        let relative = e.pageX - $(e.target).offset().left
+        let percent = relative/fullWidth
+
+        let audio = document.getElementById('audio');
+        audio.currentTime = percent * audio.duration;
+        let time = this.convertTime(Math.floor(audio.currentTime))
+        this.setState({playTime: time})
       }
 
 
@@ -134,7 +151,7 @@ class Playbar extends React.Component {
       if (this.props.playbar.currentSong !== "") {
         scrobble = (
           <div className="scrobble">
-            <p>{this.state.playTime}</p><div className="outer-timebar" onClick={this.handleClick}><div className="inner-timebar"></div></div>{this.hasLength()}
+            <p>{this.state.playTime}</p><div className="outer-timebar" onClick={e => this.changeTime(e)}><div className="inner-timebar"></div></div>{this.hasLength()}
           </div>
         );
 
