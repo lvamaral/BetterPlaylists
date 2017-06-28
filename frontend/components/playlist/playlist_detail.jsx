@@ -138,6 +138,7 @@ class PlaylistDetail extends React.Component {
 
 
   render() {
+
     $(".left").show();
     $(".search").show();
     const playlist = this.props.currentPlaylist;
@@ -150,7 +151,7 @@ class PlaylistDetail extends React.Component {
     }
 
     let playlist_detail = ""
-    let songs = (<p className="no-songs">Use the search bar on the right to add songs</p>)
+    let songs = (<p className="no-songs">There are no songs here yet! Use the search bar on the right to add songs to this playlist</p>)
     if (!isEqual(playlist, {})) {
       playlist_detail = (
         <div id="playlist-title-box">
@@ -169,7 +170,7 @@ class PlaylistDetail extends React.Component {
           </div>
         </div>
       )
-      if (!isEqual(playlist.songs, {})) {
+      if (!isEqual(playlist.songs, [])) {
         songs = playlist.songs.map( (song) => (
           <SongDetailContainer key={song.id} song={song}/>
         ))
