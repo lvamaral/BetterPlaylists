@@ -8,7 +8,8 @@ CSV.foreach("public/songlist.csv") do |row|
   artist = row[2]
   album = row[3]
   art_url = row[4]
-  song_url = row[5]
+  # song_url = row[5]
+  song_url = "https://s3-us-west-1.amazonaws.com/betterplaylists-dev/"+title.split(" ").join("+")+".mp3"
   Song.create(title: title, artist: artist, album: album, song_url: song_url, length: length, art_url: "album_art/#{art_url}")
 end
 
