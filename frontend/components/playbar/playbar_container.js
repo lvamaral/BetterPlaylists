@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Playbar from './playbar';
-import {playSong} from '../../actions/playbar_actions';
+import {playSong, pauseSong} from '../../actions/playbar_actions';
 
 const mapStateToProps = (state) => ({
   currentPlaylist: state.playlists.currentPlaylist,
@@ -8,7 +8,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  playSong: song => dispatch(playSong(song))
+  playSong: song => dispatch(playSong(song)),
+  pauseSong: () => dispatch(pauseSong())
 });
 
 export default connect(

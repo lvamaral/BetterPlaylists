@@ -8,6 +8,7 @@ class SongDetail extends React.Component{
     super(props)
     this.song = this.props.song
     this.state = {voted: ""}
+
   }
 
   componentDidMount(){
@@ -26,14 +27,24 @@ class SongDetail extends React.Component{
     }
 
     songPlaying(song) {
-      if (song === this.props.currentSong) {
-        return (<i className="fa fa-play-circle playing" aria-hidden="true"></i>)
+      if (song.id === this.props.currentSong.id && this.props.playStatus === "play") {
+        return (<i className="fa fa-pause-circle playing" aria-hidden="true" onClick={() => this.pauseSong()}></i>)
+      } else if (song.id === this.props.currentSong.id) {
+        return (<i className="fa fa-play-circle playing" aria-hidden="true" onClick={() => this.playSong(song)}></i>)
       } else {
-        return (<i className="fa fa-play-circle" aria-hidden="true" onClick={() => this.props.playSong(song)}></i>)
+        return (<i className="fa fa-play-circle" aria-hidden="true" onClick={() => this.playSong(song)}></i>)
       }
     }
 
-    pauseSong(){
+    playSong(song){
+
+      let audio = document.getElementById('audio');
+      audio.play();
+      this.props.playSong(song)
+    }
+
+    pauseSong(song){
+      this.props.pauseSong(song)
       let audio = document.getElementById('audio');
       audio.pause();
     }

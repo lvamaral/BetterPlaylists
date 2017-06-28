@@ -1,7 +1,7 @@
 import merge from 'lodash/merge';
 
 import {
-  RECEIVE_CURRENT_SONG,
+  RECEIVE_CURRENT_SONG, PAUSE_SONG
 } from '../actions/playbar_actions';
 
 const sample = {
@@ -21,7 +21,13 @@ const PlaybarReducer = (state = sample, action) => {
         currentQueue: "",
         playStatus: "play"
       }
-
+    case PAUSE_SONG:
+    
+      return {
+        currentSong: state.currentSong,
+        currentQueue: "",
+        playStatus: "pause"
+      }
     default:
       return state;
   };

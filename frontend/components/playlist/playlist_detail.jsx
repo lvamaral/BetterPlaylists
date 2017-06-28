@@ -15,7 +15,8 @@ class PlaylistDetail extends React.Component {
 
   componentDidMount() {
     this.props.getPlaylist(this.props.match.params.id);
-
+    let title = $("#playlistTitle").text();
+    this.setState({title: title})
   }
 
 
@@ -157,7 +158,7 @@ class PlaylistDetail extends React.Component {
         <div id="playlist-title-box">
           <div className="playlist-detail-img"><img src={playlist.art_url}/></div>
           <div className="playlist-detail-core">
-            <div className="playlist-detail-title"><h2>{this.isEditing()}</h2></div>
+            <div className="playlist-detail-title"><h2 id="playlistTitle">{this.isEditing()}</h2></div>
             <div className="playlist-detail-uploader"><h3>By <Link to={`/home/users/${playlist.creator.id}`}>{playlist.creator.username}</Link></h3></div>
             {this.hasSongs()}
             <div className="playlist-detail-buttons">

@@ -4,7 +4,6 @@ import {Link} from 'react-router-dom'
 class Playbar extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {playStatus: this.props.playbar.playStatus, playTime: 0}
   }
 
@@ -94,9 +93,11 @@ class Playbar extends React.Component {
        let status = this.state.playStatus;
        let audio = document.getElementById('audio');
        if(status === 'play') {
+         this.props.pauseSong()
          status = 'pause'; audio.pause();
          window.clearInterval(window.interval)
        } else {
+         this.props.playSong(this.props.playbar.currentSong)
          status = 'play'; audio.play();
          let _this = this;
          window.interval = window.setInterval(function() {
@@ -130,6 +131,7 @@ class Playbar extends React.Component {
 
 
     render() {
+      
       const playbarleft = (
         <div className="play-title"></div>
       );
