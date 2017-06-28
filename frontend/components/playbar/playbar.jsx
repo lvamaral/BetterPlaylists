@@ -4,20 +4,18 @@ import {Link} from 'react-router-dom'
 class Playbar extends React.Component {
   constructor(props) {
     super(props);
-    // console.log("playbar-props", this.props);
+
     this.state = {playStatus: this.props.playbar.playStatus, playTime: 0}
   }
 
   componentDidMount(){
     this.setState({playStatus: this.props.playbar.playStatus});
     let audio = document.getElementById('audio');
-    // audio.addEventListener('ended', console.log("ended"))
 
-    // audio.addEventListener('ended', ()=> this.nextSong())
   }
 
   nextSong() {
-    console.log("CAlled??");
+
     let audio = document.getElementById('audio');
     const playlist = this.props.currentPlaylist.songs
     const current_idx = playlist.indexOf(this.props.playbar.currentSong)

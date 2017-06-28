@@ -83,22 +83,22 @@ class SearchBar extends React.Component {
         </div>)
         )
       }
+      if (songList.length < 1 && this.state.query != "") {
+        songList = <p className="noSongsMatch">No songs match your query...</p>
+      }
 
 
     return (
         <div className="search">
           <div className="search-top">
             <div className="searchbar">
-            <label><i className="fa fa-search button" aria-hidden="true"></i>
-                <input onChange={this.update('query')} type="text" placeholder="Search..."/>
+            <label><i id="searchIcon" className="fa fa-search button" aria-hidden="true"></i>
+                <input id='searchInput' onChange={this.update('query')} type="text" placeholder="Search..."/>
               </label>
             </div>
 
             <div id="search-results">
-
-
               {songList}
-
             </div>
           </div>
           <Link to="/home/new">
