@@ -91,7 +91,7 @@ class SessionForm extends React.Component {
               />
             <br/>
             <input type="submit" value="Sign Up" />
-            <p>Already have an account?{this.logInLink()} instead.</p>
+            <p>Already have an account? {this.logInLink()} instead.</p>
           </div>
         </form>
       </div>
@@ -119,7 +119,7 @@ class SessionForm extends React.Component {
             <br/>
             <input type="submit" value="Log In" />
             <br />
-            <input type="submit" id="demo" value="DEMO" onClick={this.handleGuestSubmit.bind(this)} />
+            <input type="submit" id="demo" value="See How It Works" onClick={this.handleGuestSubmit.bind(this)} />
             <p>Don't have an account? {this.SignUpLink()} instead.</p>
           </div>
         </form>
@@ -136,7 +136,8 @@ class SessionForm extends React.Component {
 
     return (
       <div className="login-form-container">
-        <h1>Welcome to BetterPlaylists.</h1>
+        <h1>Music is social</h1>
+        <h2>Playlists Should Be Too</h2>
         {formContainer}
       </div>
     );
