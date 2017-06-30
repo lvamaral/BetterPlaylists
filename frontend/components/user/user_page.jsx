@@ -12,9 +12,8 @@ class UserPage extends React.Component {
     this.props.getUser(this.props.match.params.user_id);
     $(".left").hide();
     $(".search").hide();
-    let user = this.props.user.newMember
+    let user = this.props.user.newMember;
 
-    // this.setState({image_url: user.image_url, user: user })
   }
 
   componentWillReceiveProps(nextProps) {
@@ -24,9 +23,7 @@ class UserPage extends React.Component {
   }
 
   upload_image(e) {
-
     let _this = this
-
     let id = this.props.match.params.user_id
       e.preventDefault();
       cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, results){
@@ -36,15 +33,11 @@ class UserPage extends React.Component {
             url: `api/users/${id}`,
             data: {image_url: results[0]},
             success: function(user){
-
               _this.setState({image_url: user.image_url})
             }
           })
         }
       }.bind(this))
-
-
-
     }
 
   renderOwnPlaylists(user){
