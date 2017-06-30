@@ -25,9 +25,7 @@ const Main = () => (
           <Link to={'/home/following'}><h1>BetterPlaylists</h1></Link>
         </div>
         <div className="midheader">
-
           <GreetingContainer />
-
         </div>
         <div className="rightheader">
         </div>

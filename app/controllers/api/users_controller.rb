@@ -24,10 +24,23 @@ class Api::UsersController < ApplicationController
 		end
 	end
 
+	def update
+		@user = User.find(params[:id])
+
+			url = params["image_url"]["url"].split('/')
+			url[-2] = "g_face,c_thumb,w_150,h_150"
+			
+			if @user.update(image_url: url.join("/"))
+				render :show
+			else
+				render json: @user.errors.full_messages, status: 422
+			end
+	end
+
 	private
 
 	def user_params
-		params.require(:user).permit(:username, :password, :email)
+		params.require(:user).permit(:username, :password, :email, :image_url)
 	end
 
 end

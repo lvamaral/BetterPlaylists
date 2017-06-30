@@ -12,3 +12,11 @@ export const user = (id) => (
     url: `/api/users/${id}`,
   })
 );
+
+export const postPhoto = (id, photo) => (
+  $.ajax({
+    method: 'PATCH',
+    url: `api/users/${id}`,
+    data: {image_url: photo}
+  })
+)

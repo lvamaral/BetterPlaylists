@@ -5,12 +5,16 @@ import isEqual from 'lodash/isEqual';
 class UserPage extends React.Component {
   constructor(props){
     super(props);
+    this.state = {image_url: "", user: ""}
   }
 
   componentDidMount(){
     this.props.getUser(this.props.match.params.user_id);
     $(".left").hide();
     $(".search").hide();
+    let user = this.props.user.newMember
+
+    // this.setState({image_url: user.image_url, user: user })
   }
 
   componentWillReceiveProps(nextProps) {
@@ -18,6 +22,30 @@ class UserPage extends React.Component {
       this.props.getUser(nextProps.match.params.user_id);
     }
   }
+
+  upload_image(e) {
+
+    let _this = this
+
+    let id = this.props.match.params.user_id
+      e.preventDefault();
+      cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, results){
+        if(!error){
+          $.ajax({
+            method: 'PATCH',
+            url: `api/users/${id}`,
+            data: {image_url: results[0]},
+            success: function(user){
+
+              _this.setState({image_url: user.image_url})
+            }
+          })
+        }
+      }.bind(this))
+
+
+
+    }
 
   renderOwnPlaylists(user){
     const playlists = user.playlists;
@@ -52,8 +80,18 @@ class UserPage extends React.Component {
     return playlistList
   }
 
+  ownedImage(){
+
+    if (this.props.currentUser.id) {
+      return (<img src={this.state.image_url} onClick={(e)=>this.upload_image(e)}></img>)
+    } else {
+      return (<img src={this.state.image_url}></img>)
+    }
+  }
+
   render() {
     const user = this.props.user.newMember;
+    const userImg = this.ownedImage()
 
     let playlists
     let made_playlists = 0
@@ -76,7 +114,7 @@ class UserPage extends React.Component {
             <h2>{user.username}</h2>
               <div className="user-page-info">
                 <h3><span id="purple">{made_playlists}</span> playlists created</h3>
-                <h3><span id="purple">{uploaded_songs}</span>  songs uploaded</h3>
+                <h3><span id="purple">{uploaded_songs}</span> songs uploaded</h3>
               </div>
           </div>
 
