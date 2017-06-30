@@ -11,7 +11,7 @@ class Playbar extends React.Component {
     this.setState({playStatus: this.props.playbar.playStatus});
     let audio = document.getElementById('audio');
     $(window).keypress( (e) => {
-    
+
         if (e.keyCode === 0 || e.keyCode === 32) {
           e.preventDefault()
           if (this.state.playStatus === "play" || this.state.playStatus === "pause" ) {
@@ -115,13 +115,19 @@ class Playbar extends React.Component {
 
       updateTime(){
         let audio = document.getElementById('audio');
-        let time = this.convertTime(Math.floor(audio.currentTime))
-        this.setState({playTime: time})
-        let percentage = (audio.currentTime/audio.duration)*100
-        $(".inner-timebar").css('width',`${percentage}%`);
-        if (audio.currentTime === audio.duration) {
-          this.nextSong()
+        if (audio) {
+          let time = this.convertTime(Math.floor(audio.currentTime))
+          this.setState({playTime: time})
+          let percentage = (audio.currentTime/audio.duration)*100
+          $(".inner-timebar").css('width',`${percentage}%`);
+          if (audio.currentTime === audio.duration) {
+            this.nextSong()
+          } else {
+             clearInterval(window.interval)
+           }
         }
+
+
       }
 
       changeTime(e){
