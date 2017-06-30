@@ -10,11 +10,19 @@ class Playbar extends React.Component {
   componentDidMount(){
     this.setState({playStatus: this.props.playbar.playStatus});
     let audio = document.getElementById('audio');
+    $(window).keypress( (e) => {
+    
+        if (e.keyCode === 0 || e.keyCode === 32) {
+          e.preventDefault()
+          if (this.state.playStatus === "play" || this.state.playStatus === "pause" ) {
+            this.togglePlay();
+          }
+        }
+      }).bind(this)
 
   }
 
   nextSong() {
-
     let audio = document.getElementById('audio');
     const playlist = this.props.currentPlaylist.songs
     const current_idx = playlist.indexOf(this.props.playbar.currentSong)
@@ -25,7 +33,6 @@ class Playbar extends React.Component {
     } else {
       nextSong = playlist[current_idx + 1]
     }
-
 
     audio.pause();
     this.props.playSong(nextSong)
@@ -44,7 +51,6 @@ class Playbar extends React.Component {
       } else {
         previousSong = playlist[current_idx - 1]
       }
-
 
       audio.pause();
       this.props.playSong(previousSong)
@@ -131,7 +137,7 @@ class Playbar extends React.Component {
 
 
     render() {
-      
+
       const playbarleft = (
         <div className="play-title"></div>
       );
